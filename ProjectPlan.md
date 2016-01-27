@@ -26,6 +26,8 @@
 - [ ] Weekly journal entry
 
 ### Week 4
+- [ ] Start implementing DAOs
+- [ ] Start implementing Hibernate
 - [ ] Weekly journal entry
 - [ ] Code review
 
