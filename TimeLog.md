@@ -7,6 +7,6 @@
 | 1/26/16 | Started Project Plan, working on journal entry | .75 | |
 | 1/26/16 | IntelliJ Reading on Git | 1 | For Class |
 | 1/27/16 | Rest on Week 2 readings | 1.5 | For Class |
-
+| 1/28/16 | OpenShift Setup and Deployment | 1 | For Class |
 
 
