@@ -8,18 +8,18 @@
 
 ### Week 2
 - [ ] Document application flow
-- [ ] Sketch out site design
+- [X] Sketch out site design
 - [ ] Create project in IntelliJ
 - [ ] Begin creating JSPs
-- [ ] Weekly journal entry
-- [ ] Continue to flesh out project plan
+- [X] Weekly journal entry
+- [X] Continue to flesh out project plan
 - [ ] Determine Database Design
+- [X] Decide on extracurricular activity 
+- [X] Sign up for presentation time
 
 ### Week 3
 - [ ] Complete JSPs
 - [ ] Create Databases/Tables
-- [ ] Decide on extracurricular activity 
-- [ ] Sign up for presentation time
 - [ ] Continue fleshing out project plan
 - [ ] Start implementing Logging
 - [ ] Start implementing unit testing

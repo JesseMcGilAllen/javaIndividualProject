@@ -9,4 +9,4 @@
 | 1/27/16 | Rest of Week 2 readings | 1.5 | For Class |
 | 1/28/16 | OpenShift Setup and Deployment | 1 | For Class |
 | 1/31/16 | Work on rough screen design | 1 | |
-
+| 2/02/16| Documenting screen design for Project | 1 | |
