@@ -15,7 +15,7 @@ While completing the MATC program, I have been introduced to several different l
   - TBD
 
 ### Design
-
+- [Screen Design](ScreenDesign.md)
 
 ### [Project Plan](ProjectPlan.md)
 
