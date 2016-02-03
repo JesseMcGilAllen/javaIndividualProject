@@ -12,13 +12,13 @@
 - [X] Continue to flesh out project plan
 - [X] Decide on extracurricular activity 
 - [X] Sign up for presentation time
+- [X] Create project in IntelliJ
 
 ### Week 3
 - [ ] Continue fleshing out project plan
 - [ ] Start implementing Logging
 - [ ] Start implementing unit testing
 - [ ] Weekly journal entry
-- [ ] Create project in IntelliJ
 - [ ] Begin creating JSPs
 - [ ] Determine Database Design
 

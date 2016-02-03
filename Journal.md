@@ -44,6 +44,12 @@ Completed:
 Completed:
   - Documented Screen Design for Repository
 
+2/3/2016
+
+Completed:
+  - Created IntelliJ project
+  - Added JUnit and Log4J Libraries
+
 ---
 
 One unexpected issue I came across this week dealt with the orientation of pictures I was uploading for my screen design.  When uploaded, some of them displayed upside down.  After a little Googling, it turns out that I had to open each one and resave it.  After uploading the photos again the orientation was correct.  It was an amusing and annoying little bug.

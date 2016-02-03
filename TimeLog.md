@@ -13,4 +13,6 @@
 | 2/02/16 | Getting Started with week 2 exercises | 2 | For Class |
 | 2/02/16 | Working on List Exercises | 1.25 | For Class |
 | 2/02/16 | Working on Map Exercises | 2.5 | For Class |
-| 2/02/16 | Completing Class 3 Readings | 1 | For Class |
+| 2/03/16 | Completing Class 3 Readings | 1 | For Class |
+| 2/03/16 | Created IntelliJ Project | .5 | |
+
