@@ -7,26 +7,25 @@
 - [X] Begin project plan
 
 ### Week 2
-- [ ] Document application flow
 - [X] Sketch out site design
-- [ ] Create project in IntelliJ
-- [ ] Begin creating JSPs
 - [X] Weekly journal entry
 - [X] Continue to flesh out project plan
-- [ ] Determine Database Design
 - [X] Decide on extracurricular activity 
 - [X] Sign up for presentation time
 
 ### Week 3
-- [ ] Complete JSPs
-- [ ] Create Databases/Tables
 - [ ] Continue fleshing out project plan
 - [ ] Start implementing Logging
 - [ ] Start implementing unit testing
 - [ ] Weekly journal entry
+- [ ] Create project in IntelliJ
+- [ ] Begin creating JSPs
+- [ ] Determine Database Design
 
 ### Week 4
 - [ ] Start implementing DAOs
+- [ ] Complete JSPs
+- [ ] Create Databases/Tables
 - [ ] Start implementing Hibernate
 - [ ] Weekly journal entry
 - [ ] Code review
