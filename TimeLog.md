@@ -10,5 +10,6 @@
 | 1/28/16 | OpenShift Setup and Deployment | 1 | For Class |
 | 1/31/16 | Work on rough screen design | 1 | |
 | 2/02/16 | Documenting screen design for Project | 1 | |
-| 2/02/16 | Getting Started with week 2 exercises | 2 | |
-i 2/02/16 | Working on List Exercises | 1.25 | |
+| 2/02/16 | Getting Started with week 2 exercises | 2 | For Class |
+| 2/02/16 | Working on List Exercises | 1.25 | For Class |
+| 2/02/16 | Working on Map Exercises | 2.5 | For Class |
