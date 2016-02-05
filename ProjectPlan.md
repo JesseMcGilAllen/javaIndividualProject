@@ -20,15 +20,15 @@
 - [ ] Start implementing unit testing
 - [ ] Weekly journal entry
 - [ ] Begin creating JSPs
-- [ ] Determine Database Design
-
-### Week 4
 - [ ] Start implementing DAOs
-- [ ] Complete JSPs
+- [ ] Determine Database Design
 - [ ] Create Databases/Tables
 - [ ] Start implementing Hibernate
-- [ ] Weekly journal entry
+
+### Week 4
 - [ ] Code review
+- [ ] Complete JSPs
+- [ ] Weekly journal entry
 
 ### Week 5
 - [ ] Weekly journal entry

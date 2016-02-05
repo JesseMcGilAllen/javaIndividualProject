@@ -60,5 +60,7 @@ I had to push some things back in my Project Plan.  I hit upon quite a number of
 
 The second issue I had with the exercises was trying determine the difference between a negative test and an exception test.  I got deep in the weeds on this one and still don't know if there is one.
 
+### Week 3
 
+I am either not that great at planning or looking ahead, as I needed to make another change to my Project Plan.  With the Hibernate implementation exercise due next week, I figure I might as well move the database stuff up to this week.
 

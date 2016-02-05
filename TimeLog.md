@@ -15,4 +15,4 @@
 | 2/02/16 | Working on Map Exercises | 2.5 | For Class |
 | 2/03/16 | Completing Class 3 Readings | 1 | For Class |
 | 2/03/16 | Created IntelliJ Project | .5 | |
-
+| 2/05/16 | Readings for Week 4 | 1 | |
