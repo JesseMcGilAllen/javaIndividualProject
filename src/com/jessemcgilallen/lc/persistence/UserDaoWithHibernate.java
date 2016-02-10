@@ -7,6 +7,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,7 +40,6 @@ public class UserDaoWithHibernate implements UserDao {
             log.info("Added user: " + user + " with id of: " + userId);
 
         } catch (HibernateException exception) {
-
             if (transaction != null) {
                 transaction.rollback();
             }
@@ -47,7 +47,6 @@ public class UserDaoWithHibernate implements UserDao {
             log.error(exception);
 
         } finally {
-
             session.close();
 
         }
@@ -57,9 +56,33 @@ public class UserDaoWithHibernate implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        List<User> users = new ArrayList<User>();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            users = session.createQuery("from User").list();
+
+        } catch (HibernateException exception) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            log.error(exception);
+
+        } finally {
+            session.close();
+
+        }
+
+        return users;
+
     }
 
+    /**
+     * @param user to be updated
+     */
     @Override
     public void updateUser(User user) {
 
