@@ -2,7 +2,6 @@ package com.jessemcgilallen.lc.persistence;
 
 import com.jessemcgilallen.lc.entity.User;
 
-import org.hibernate.HibernateException;
 import org.junit.Before;
 import org.junit.Test;
 
