@@ -1,8 +1,9 @@
 package com.jessemcgilallen.lc.entity;
 
 /**
- * Created by jessemcgilallen on 2/9/16.
  * Represents a user in the language/kata comparison application
+ * @author jessemcgilallen
+ * @version 1.0 Febraury 9th, 2016
  */
 public class User {
 
