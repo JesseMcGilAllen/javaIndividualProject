@@ -14,10 +14,10 @@
             com.mysql.jdbc.Driver
         </property>
         <property name="connection.username">
-            admin
+            jesse
         </property>
         <property name="connection.password">
-            admin
+            entreprise_java
         </property>
         <mapping resource="User.hbm.xml" />
         <mapping class="com.jessemcgilallen.lc.entity.User" />
