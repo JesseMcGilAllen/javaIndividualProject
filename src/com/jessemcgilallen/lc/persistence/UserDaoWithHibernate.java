@@ -63,6 +63,30 @@ public class UserDaoWithHibernate implements UserDao {
     @Override
     public void updateUser(User user) {
 
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+
+            transaction = session.beginTransaction();
+            session.update(user);
+            transaction.commit();
+
+            log.info("Updated user: " + user + " with id of: " + user.getId());
+
+        } catch (HibernateException exception) {
+
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            log.error(exception);
+
+        } finally {
+
+            session.close();
+
+        }
     }
 
     /**
