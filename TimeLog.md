@@ -16,3 +16,5 @@
 | 2/03/16 | Completing Class 3 Readings | 1 | For Class |
 | 2/03/16 | Created IntelliJ Project | .5 | |
 | 2/05/16 | Readings for Week 4 | 1 | |
+| 2/08/16 | Starting on Hiberate | 1 | |
+| 2/09/16 | Implement User Hibernate DAO with Logging and Testing | 8 | |

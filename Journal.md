@@ -62,5 +62,21 @@ The second issue I had with the exercises was trying determine the difference be
 
 ### Week 3
 
+02/10/2016
+
+Completed:
+  - Started implementing Hiberate
+  - Created a User DAO
+  - Started implementing Unit Testing
+  - Started implementing Logging
+
 I am either not that great at planning or looking ahead, as I needed to make another change to my Project Plan.  With the Hibernate implementation exercise due next week, I figure I might as well move the database stuff up to this week.
+
+I have been having a rough week.  I got sick over the weekend, which restricted how much time I could spend on things.  Subsequently, I haven't started the JSPs yet, so those got pushed back yet again.  I am also getting in my own way mentally, feeling very unsure of myself about the class.
+
+Anyway, yesterday I used the weekly exercise as an opportunity to start implementing Hiberate, Unit Testing, and Logging into my project.  I found a nice article called [Simple CRUD Using Java, Hiberate and MySql](https://danielniko.wordpress.com/2012/12/03/simple-crud-using-java-hibernate-and-mysql/) that helped me fill in the gaps needed to implement the UserDao.  I mostly used that as a guide and then fixing and debugging things when writing the tests.  I found that when I ran into an issue, my logging level was set to low and finding the right information in the log was not easy.  After setting the logging level higher, it was easier to see where I went wrong. 
+
+Another issue that came up during testing was maintaining the database when running tests.  In Rails, everything is run in a test database to not affect the actual data.  However, when I added a user to the database in the @Before method it added before every test understandibly.  However, I had troubling clearing them. I spent an hour or two trying to clear the database in teardown but then realized that doesn't work when actually implementing the database for the site.  I know that it shouldn't affect the production deploy but there must be a better way.
+
+
 
