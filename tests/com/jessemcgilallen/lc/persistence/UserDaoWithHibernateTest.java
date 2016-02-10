@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
  */
 public class UserDaoWithHibernateTest {
 
+   private UserDaoWithHibernate dao = new UserDaoWithHibernate();
+
     @Before
     public void setUp() throws Exception {
 
@@ -20,18 +22,18 @@ public class UserDaoWithHibernateTest {
 
     @Test
     public void testAddUser() throws Exception {
-        UserDaoWithHibernate dao = new UserDaoWithHibernate();
-        int insertedUserId = 0;
+        int userCount = dao.getAllUsers().size();
+        int newUserCount = 0;
 
         User user = new User();
         user.setUsername("Bob");
         user.setEmailAddress("bob@example.com");
         user.setPassword("password");
-        user.setId(0);
 
-        insertedUserId = dao.addUser(user);
+        dao.addUser(user);
+        newUserCount = dao.getAllUsers().size();
 
-        assertTrue(insertedUserId > 0);
+        assertTrue(newUserCount > userCount);
     }
 
     @Test
