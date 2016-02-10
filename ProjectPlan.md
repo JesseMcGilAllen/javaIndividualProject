@@ -20,7 +20,7 @@
 - [X] Start implementing unit testing
 - [X] Weekly journal entry
 - [X] Start implementing DAOs
-- [ ] Determine Database Design
+- [X] Determine Database Design
 - [X] Create Database
 - [X] Start creating Tables
 - [X] Start implementing Hibernate
