@@ -21,3 +21,4 @@
 | 2/09/16 | Implement User Hibernate DAO with Logging and Testing | 8 | |
 | 2/10/16 | Updating Journal, TimeLog, Project Plan | 1 | |
 | 2/10/16 | Documenting Database Design | .5 | |
+| 2/10/16 | Fixing git issue related to pushing changes | .5 | |

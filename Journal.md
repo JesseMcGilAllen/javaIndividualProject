@@ -78,5 +78,6 @@ Anyway, yesterday I used the weekly exercise as an opportunity to start implemen
 
 Another issue that came up during testing was maintaining the database when running tests.  In Rails, everything is run in a test database to not affect the actual data.  However, when I added a user to the database in the @Before method it added before every test understandibly.  However, I had troubling clearing them. I spent an hour or two trying to clear the database in teardown but then realized that doesn't work when actually implementing the database for the site.  I know that it shouldn't affect the production deploy but there must be a better way.
 
+When I was pushing up my progress I ran into quite the git issue.  It turns out I had committed a log file before adding to the gitignore and removing the cached file.  It turns out that once it is the commit log it is there.  Github refused to let me push my changes because it wanted to push the 800Mb file.  After trying after Git command that I knew, I stumbled upon ``git filter-branch --index-filter 'git rm --cached --ignore-unmatch FILENAME'``  From this [article](http://www.thisprogrammingthing.com/2013/fixing-the-this-exceeds-githubs-file-size-limit-of-100-mb-error/).  That seems to have fixed the issue.
 
 
