@@ -2,8 +2,11 @@ package com.jessemcgilallen.lc.persistence;
 
 import com.jessemcgilallen.lc.entity.User;
 
+import org.hibernate.HibernateException;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -16,9 +19,26 @@ public class UserDaoWithHibernateTest {
 
     @Before
     public void setUp() throws Exception {
+        User user = new User();
+        user.setUsername("Adam");
+        user.setEmailAddress("adam@example.com");
+        user.setPassword("password");
 
+        User userTwo = new User();
+        user.setUsername("Beth");
+        user.setEmailAddress("beth@example.com");
+        user.setPassword("password");
 
+        User userThree = new User();
+        user.setUsername("Dana");
+        user.setEmailAddress("dana@example.com");
+        user.setPassword("password");
+
+        dao.addUser(user);
+        dao.addUser(userTwo);
+        dao.addUser(userThree);
     }
+
 
     @Test
     public void testAddUser() throws Exception {
@@ -33,21 +53,61 @@ public class UserDaoWithHibernateTest {
         dao.addUser(user);
         newUserCount = dao.getAllUsers().size();
 
-        assertTrue(newUserCount > userCount);
+        assertTrue("User wasn't added", newUserCount > userCount);
+        dao.deleteUser(user);
     }
 
     @Test
     public void testGetAllUsers() throws Exception {
+        List<User> users = dao.getAllUsers();
 
+        assertTrue("Users not received " + users.size(), users.size() > 0);
     }
 
     @Test
     public void testUpdateUser() throws Exception {
+        List<User> users = dao.getAllUsers();
+        User userToModify = users.get(0);
+        String name = userToModify.getUsername();
+
+        userToModify.setUsername("Zeke");
+        dao.updateUser(userToModify);
+
+        User modifiedUser = dao.getAllUsers().get(0);
+
+        boolean sameNames = modifiedUser.getUsername() == name;
+        boolean sameIds = modifiedUser.getId() == userToModify.getId();
+
+        assertFalse("Names are supposed to be different", sameNames);
+        assertTrue("IDs should be the same", sameIds);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUpdateNullUser() throws Exception {
+       User user = null;
+
+        dao.updateUser(user);
+        fail("Expect Illegal Argument Exception");
 
     }
 
     @Test
     public void testDeleteUser() throws Exception {
+        List<User> users = dao.getAllUsers();
+        int userCount = users.size();
+        User userToDelete = users.get(0);
+        dao.deleteUser(userToDelete);
+        int newUserCount = dao.getAllUsers().size();
 
+        assertTrue("User was not deleted", userCount - 1 == newUserCount);
+    }
+
+    @Test(expected = AssertionError.class)
+    public void testDeleteNullUser() throws Exception {
+        User userToDelete = new User();
+        dao.deleteUser(userToDelete);
+
+        fail("Expected Assertion Error");
     }
 }

@@ -37,8 +37,6 @@ public class UserDaoWithHibernate implements UserDao {
             userId = (Integer) session.save(user);
             transaction.commit();
 
-            log.info("Added user: " + user + " with id of: " + userId);
-
         } catch (HibernateException exception) {
             if (transaction != null) {
                 transaction.rollback();
@@ -95,8 +93,6 @@ public class UserDaoWithHibernate implements UserDao {
             transaction = session.beginTransaction();
             session.update(user);
             transaction.commit();
-
-            log.info("Updated user: " + user + " with id of: " + user.getId());
 
         } catch (HibernateException exception) {
             if (transaction != null) {
