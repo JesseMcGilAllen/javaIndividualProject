@@ -123,7 +123,7 @@ public class UserDaoWithHibernate implements UserDao {
             transaction = session.beginTransaction();
             session.delete(user);
             transaction.commit();
-            
+
         } catch (HibernateException exception) {
             if (transaction != null) {
                 transaction.rollback();
