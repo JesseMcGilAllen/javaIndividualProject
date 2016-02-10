@@ -54,6 +54,9 @@ public class UserDaoWithHibernate implements UserDao {
         return userId;
     }
 
+    /**
+     * @return users
+     */
     @Override
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<User>();
@@ -85,12 +88,10 @@ public class UserDaoWithHibernate implements UserDao {
      */
     @Override
     public void updateUser(User user) {
-
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
 
         try {
-
             transaction = session.beginTransaction();
             session.update(user);
             transaction.commit();
@@ -98,7 +99,6 @@ public class UserDaoWithHibernate implements UserDao {
             log.info("Updated user: " + user + " with id of: " + user.getId());
 
         } catch (HibernateException exception) {
-
             if (transaction != null) {
                 transaction.rollback();
             }
@@ -106,7 +106,6 @@ public class UserDaoWithHibernate implements UserDao {
             log.error(exception);
 
         } finally {
-
             session.close();
 
         }
@@ -117,6 +116,24 @@ public class UserDaoWithHibernate implements UserDao {
      */
     @Override
     public void deleteUser(User user) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
 
+        try {
+            transaction = session.beginTransaction();
+            session.delete(user);
+            transaction.commit();
+            
+        } catch (HibernateException exception) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            log.error(exception);
+
+        } finally {
+            session.close();
+
+        }
     }
 }
