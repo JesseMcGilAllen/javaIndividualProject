@@ -16,6 +16,7 @@ While completing the MATC program, I have been introduced to several different l
 
 ### Design
 - [Screen Design](ScreenDesign.md)
+- [Database Design](DatabaseDesign.md)
 
 ### [Project Plan](ProjectPlan.md)
 

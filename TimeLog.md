@@ -15,6 +15,9 @@
 | 2/02/16 | Working on Map Exercises | 2.5 | For Class |
 | 2/03/16 | Completing Class 3 Readings | 1 | For Class |
 | 2/03/16 | Created IntelliJ Project | .5 | |
-| 2/05/16 | Readings for Week 4 | 1 | |
+| 2/03/16 | Sketching out Database Design | .5 | |
+| 2/05/16 | Readings for Week 4 | 1 | For Class |
 | 2/08/16 | Starting on Hiberate | 1 | |
 | 2/09/16 | Implement User Hibernate DAO with Logging and Testing | 8 | |
+| 2/10/16 | Updating Journal, TimeLog, Project Plan | 1 | |
+| 2/10/16 | Documenting Database Design | .5 | |
