@@ -5,7 +5,7 @@
 #### User
 
 | Columns | Type |
-------------------
+|---------|--------|
 | Id | Int (Auto Increment) (PK) |
 | Username | String |
 | Email | String |
@@ -14,7 +14,7 @@
 #### Kata
 
 | Column | Type |
-------------------
+---------|--------|
 | Id | Int (Auto Increment) (PK) |
 | Name | String |
 | Description | String |
@@ -22,7 +22,7 @@
 #### Sample
 
 | Column | Type |
-------------------
+|---------|--------|
 | Id | Int (Auto Increment) (PK) |
 | Implementation | Text |
 | LanguageId | Int (FK) |
@@ -31,10 +31,9 @@
 #### Language
 
 | Column | Type |
-------------------
+|--------|--------|
 | Id | Int (Auto Increment) (PK) |
 | Name | String |
------------------
 
 ### Relationships
 
