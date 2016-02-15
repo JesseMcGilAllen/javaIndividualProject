@@ -2,6 +2,7 @@ package com.jessemcgilallen.lc.persistence;
 
 import com.jessemcgilallen.lc.entity.User;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,7 +16,6 @@ import static org.junit.Assert.*;
 public class UserDaoWithHibernateTest {
 
    private UserDaoWithHibernate dao = new UserDaoWithHibernate();
-
     @Before
     public void setUp() throws Exception {
         User user = new User();
@@ -24,18 +24,28 @@ public class UserDaoWithHibernateTest {
         user.setPassword("password");
 
         User userTwo = new User();
-        user.setUsername("Beth");
-        user.setEmailAddress("beth@example.com");
-        user.setPassword("password");
+        userTwo.setUsername("Beth");
+        userTwo.setEmailAddress("beth@example.com");
+        userTwo.setPassword("password");
 
         User userThree = new User();
-        user.setUsername("Dana");
-        user.setEmailAddress("dana@example.com");
-        user.setPassword("password");
+        userThree.setUsername("Dana");
+        userThree.setEmailAddress("dana@example.com");
+        userThree.setPassword("password");
 
         dao.addUser(user);
         dao.addUser(userTwo);
         dao.addUser(userThree);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        List<User> users = dao.getAllUsers();
+
+        for (int index = 0; index < users.size(); index++) {
+            dao.deleteUser(users.get(index));
+
+        }
     }
 
 
