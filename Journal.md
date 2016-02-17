@@ -97,3 +97,4 @@ I found a temporary solution to my database overpopulating with test data.  I ne
 
 I finally started working on the JSPs!  I am using my ancient Advanced Java project as a guide and created a doctype jsp.  After connecting it to the index page, I saw IntelliJ complaining.  I had to JSTL jars to the project which makes sense.  However, that was a lot harder then I originally thought.  I ended up finding them on [Tomcat's website](http://tomcat.apache.org/download-taglibs.cgi) and finally downloaded the right one (binary).  IntelliJ has stopped complaining, so hopefully they work.
 
+It seems I have broken everything when I moved from using Copy to iCloud.  All the paths are different.
