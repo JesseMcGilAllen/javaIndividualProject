@@ -22,3 +22,5 @@
 | 2/10/16 | Updating Journal, TimeLog, Project Plan | 1 | |
 | 2/10/16 | Documenting Database Design | .5 | |
 | 2/10/16 | Fixing git issue related to pushing changes | .5 | |
+| 2/14/16 | Fixing typo in tests and adding temporarily solution to database population issue | .5 | |
+| 2/16/16 | Team Code Reviews | 2.5 | |

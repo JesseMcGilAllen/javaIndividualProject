@@ -26,55 +26,44 @@
 - [X] Start implementing Hibernate
 
 ### Week 4
-- [ ] Code review
-- [ ] Weekly journal entry
-- [ ] Begin creating JSPs
-- [ ] Finishing Creating Known Tables
-- [ ] Create DAO for Kata
-- [ ] Deploy to OpenShift
-- [ ] Work on a new Kata in various languages
+- [X] Code review
+- [X] Weekly journal entry
+- [ ] Start on creating JSPs
+- [ ] Work on creating Known Tables
+- [ ] Work on a second DAO
+- [ ] Try implementing User Authentication before class
 
 ### Week 5
 - [ ] Weekly journal entry
-- [ ] Work on a new Kata in various languages
-- [ ] Complete JSPs
+- [ ] Work on JSPs
 - [ ] Work on Login/Registration
-- [ ] Research solution to Testing Database issue
+- [ ] Research solution to Testing Database issue (Spring?)
+- [ ] Deploy to OpenShift
 
 ### Week 7
 - [ ] Weekly journal entry
-- [ ] Work on a new Kata in various languages
-- [ ] Create add Kata Solution Functionality
 
 ### Week 8
 - [ ] Code review
 - [ ] Weekly journal entry
-- [ ] Work on a new Kata in various languages
-- [ ] Create edit Kata Solution Functionality
 
 ### Week 9
 - [ ] Weekly journal entry
-- [ ] Work on a new Kata in various languages
 
 ### Week 10
 - [ ] Weekly journal entry
-- [ ] Work on a new Kata in various languages
 
 ### Week 11
 - [ ] Weekly journal entry
-- [ ] Work on a new Kata in various languages
 
 ### Week 12
 - [ ] Weekly journal entry
-- [ ] Work on a new Kata in various languages
 
 ### Week 13
 - [ ] Weekly journal entry
-- [ ] Work on a new Kata in various languages
 
 ### Week 14
 - [ ] Weekly journal entry
-- [ ] Work on a new Kata in various languages
 
 ### Week 15
 - [ ] Final Presentation

@@ -52,6 +52,8 @@ public class UserDaoWithHibernate implements UserDao {
         return userId;
     }
 
+
+
     /**
      * @return users
      */

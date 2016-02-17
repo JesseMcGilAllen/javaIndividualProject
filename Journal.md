@@ -80,4 +80,14 @@ Another issue that came up during testing was maintaining the database when runn
 
 When I was pushing up my progress I ran into quite the git issue.  It turns out I had committed a log file before adding to the gitignore and removing the cached file.  It turns out that once it is the commit log it is there.  Github refused to let me push my changes because it wanted to push the 800Mb file.  After trying after Git command that I knew, I stumbled upon ``git filter-branch --index-filter 'git rm --cached --ignore-unmatch FILENAME'``  From this [article](http://www.thisprogrammingthing.com/2013/fixing-the-this-exceeds-githubs-file-size-limit-of-100-mb-error/).  That seems to have fixed the issue.
 
+## Week 4
+
+I talked to Paula after class and she alleviated some of my concerns with the class.  Between talking with her and Eric, I recognize that I need to code in order to understand things.  I do not pick things up by just reading or watching videos.  I have to try things for myself and then research as necessary.
+
+I have been spending a lot of time brainstorming and research an idea for iOS n the last week.  The idea is exciting and quite a substantial project.  With the iOS project and my acknowledged struggles job-hunting, I think I am going to pivot my focus to that.  
+
+My iOS team project has once again started out as a disaster.  Each of the last two weekends a team member has dropped and now I am all alone.  Luckily, Eric was able to convince someone to join me as a team so the designers wouldn't have scattered.  Hoping my curse of team doesn't extend to this class.
+
+I found a temporary solution to my database overpopulating with test data.  I need to do further research on the possibility of setting up a test database.  This [StackOverflow post](http://stackoverflow.com/questions/21576206/separate-db-just-for-junit-tests-in-spring-app) has lead me to add Spring profiles as something to research as a solution to the problem.  I have added Spring to the as a todo in the Project Plan for next week.  I think it would worthwhile subject to research due to its prevalence in the Java related job postings that I have seen.
+
 
