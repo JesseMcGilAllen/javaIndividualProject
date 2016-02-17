@@ -28,9 +28,7 @@
 ### Week 4
 - [X] Code review
 - [X] Weekly journal entry
-- [ ] Start on creating JSPs
-- [ ] Work on creating Known Tables
-- [ ] Work on a second DAO
+- [X] Start on creating JSPs
 - [ ] Try implementing User Authentication before class
 
 ### Week 5
@@ -39,6 +37,8 @@
 - [ ] Work on Login/Registration
 - [ ] Research solution to Testing Database issue (Spring?)
 - [ ] Deploy to OpenShift
+- [ ] Work on creating Known Tables
+- [ ] Work on a second DAO
 
 ### Week 7
 - [ ] Weekly journal entry
