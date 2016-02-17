@@ -24,3 +24,4 @@
 | 2/10/16 | Fixing git issue related to pushing changes | .5 | |
 | 2/14/16 | Fixing typo in tests and adding temporarily solution to database population issue | .5 | |
 | 2/16/16 | Team Code Reviews | 2.5 | |
+| 2/17/16 | Installing JSTL JARS | 2 | |

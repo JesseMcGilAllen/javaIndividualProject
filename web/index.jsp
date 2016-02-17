@@ -8,12 +8,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:import url="jsp/doctype.jsp" />
-;;
+
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
+<c:set var="pageTitle" value="Jesse's Review Site" scope="request" />
+7 <c:import url="jsp/header-tag.jsp" />
+<body>
   $END$
   </body>
 </html>

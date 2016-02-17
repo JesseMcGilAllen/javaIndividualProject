@@ -82,6 +82,11 @@ When I was pushing up my progress I ran into quite the git issue.  It turns out 
 
 ## Week 4
 
+02/17/2016
+
+Completed: 
+  - adding JSTL support for JSP templating.
+
 I talked to Paula after class and she alleviated some of my concerns with the class.  Between talking with her and Eric, I recognize that I need to code in order to understand things.  I do not pick things up by just reading or watching videos.  I have to try things for myself and then research as necessary.
 
 I have been spending a lot of time brainstorming and research an idea for iOS n the last week.  The idea is exciting and quite a substantial project.  With the iOS project and my acknowledged struggles job-hunting, I think I am going to pivot my focus to that.  
@@ -90,4 +95,5 @@ My iOS team project has once again started out as a disaster.  Each of the last 
 
 I found a temporary solution to my database overpopulating with test data.  I need to do further research on the possibility of setting up a test database.  This [StackOverflow post](http://stackoverflow.com/questions/21576206/separate-db-just-for-junit-tests-in-spring-app) has lead me to add Spring profiles as something to research as a solution to the problem.  I have added Spring to the as a todo in the Project Plan for next week.  I think it would worthwhile subject to research due to its prevalence in the Java related job postings that I have seen.
 
+I finally started working on the JSPs!  I am using my ancient Advanced Java project as a guide and created a doctype jsp.  After connecting it to the index page, I saw IntelliJ complaining.  I had to JSTL jars to the project which makes sense.  However, that was a lot harder then I originally thought.  I ended up finding them on [Tomcat's website](http://tomcat.apache.org/download-taglibs.cgi) and finally downloaded the right one (binary).  IntelliJ has stopped complaining, so hopefully they work.
 
