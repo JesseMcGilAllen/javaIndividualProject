@@ -8,7 +8,7 @@
 <form action="j_security_check" method="post">
     <div class="form-group">
         <label for="inputUsername">Username</label>
-        <input type="username" class="form-control" id="inputUsername" placeholder="Username">
+        <input type="text" class="form-control" id="inputUsername" placeholder="Username">
     </div>
     <div class="form-group">
         <label for="inputPassword">Password</label>
