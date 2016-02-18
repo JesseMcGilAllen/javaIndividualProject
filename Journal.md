@@ -99,4 +99,6 @@ I finally started working on the JSPs!  I am using my ancient Advanced Java proj
 
 It seems I have broken everything when I moved from using Copy to iCloud.  All the paths are different.  Got Tomee working again.  
 
-I have decided to change the emphasis of my project to a personal programming review type site.  Of course, it makes the site more complicated.  Which suits me as it makes it more complicated.
+I have decided to change the emphasis of my project to a personal programming review type site.  Of course, it makes the site more complicated.  Which strangely makes the project more appealing.
+
+Unfortunately, I wasn't able to get start on User Authentication before class.  It looked like jsps were necessary.  I got caught up with implementing the JSTLs.
