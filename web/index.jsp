@@ -13,6 +13,6 @@
 <c:set var="pageTitle" value="Jesse's Review Site" scope="request" />
 <c:import url="jsp/header-tag.jsp" />
 <body>
-  $END$
-  </body>
+
+</body>
 </html>
