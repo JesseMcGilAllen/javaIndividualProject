@@ -5,7 +5,6 @@
   Time: 7:38 PM
   To change this template use File | Settings | File Templates.
 --%>
-
 <form action="j_security_check" method="post">
     <div class="form-group">
         <label for="inputUsername">Username</label>
