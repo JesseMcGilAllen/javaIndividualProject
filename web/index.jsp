@@ -11,7 +11,7 @@
 
 <html>
 <c:set var="pageTitle" value="Jesse's Review Site" scope="request" />
-7 <c:import url="jsp/header-tag.jsp" />
+<c:import url="jsp/header-tag.jsp" />
 <body>
   $END$
   </body>
