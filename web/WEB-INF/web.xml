@@ -16,11 +16,12 @@
     <!-- Protect everything within the application. -->
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>root</web-resource-name>
-            <url-pattern>/index.jsp</url-pattern>
+            <web-resource-name>languages</web-resource-name>
+            <url-pattern>/language/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>administrator</role-name>
         </auth-constraint>
+
     </security-constraint>
 </web-app>

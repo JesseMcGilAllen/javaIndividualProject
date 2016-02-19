@@ -1,3 +1,5 @@
+
+
 <%--
   Created by IntelliJ IDEA.
   User: jessemcgilallen
@@ -9,7 +11,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:import url="doctype.jsp" />
-
 <html>
 <c:set var="pageTitle" value="Login | Programming Review" scope="request" />
 <c:import url="header-tag.jsp" />
@@ -18,11 +19,11 @@
 <form action="j_security_check" method="post">
     <div class="form-group">
         <label for="inputUsername">Username</label>
-        <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+        <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="j_username">
     </div>
     <div class="form-group">
         <label for="inputPassword">Password</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="j_password">
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>

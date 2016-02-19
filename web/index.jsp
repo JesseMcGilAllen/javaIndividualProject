@@ -13,6 +13,6 @@
 <c:set var="pageTitle" value="Programming Review" scope="request" />
 <c:import url="jsp/header-tag.jsp" />
 <body>
-
+<c:import url="jsp/navigation-bar.jsp" />
 </body>
 </html>
