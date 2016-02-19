@@ -100,3 +100,12 @@ I finally started working on the JSPs!  I am using my ancient Advanced Java proj
 It seems I have broken everything when I moved from using Copy to iCloud.  All the paths are different.  Got Tomee working again.  
 
 I have decided to change the emphasis of my project to a personal programming review type site.  Of course, it makes the site more complicated.  Which suits me as it makes it more complicated.
+
+## Week 5
+
+2/18/2016
+
+Completed:
+  Implementing administrator user role on one page
+  
+I finally had success implementing login into my project.  It require to major debugging sessions with Paula and Matt.  In the end, the problem was in the jsps.  I forgot the name="j_username" attribute.  Its a simple thing to forget and we were focused on the more complicated elements of the implementation, namely the xml file configurations.  What lead me down the path of the fix was enabling Realm logging for my project.  I found a [blogspot post](http://dev-answers.blogspot.com/2010/03/enable-debugtrace-level-logging-for.html) that details what to add to the tomcat logging.properties to enable it. 

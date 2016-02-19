@@ -25,4 +25,5 @@
 | 2/14/16 | Fixing typo in tests and adding temporarily solution to database population issue | .5 | |
 | 2/16/16 | Team Code Reviews | 2.5 | |
 | 2/17/16 | Installing JSTL JARS | 2 | |
-| 2/17/16 | Fixing Tomcat and confirming JSTL works | 1.5 |
+| 2/17/16 | Fixing Tomcat and confirming JSTL works | 1.5 | |
+| 2/18/16 | Implementing/Debugging Login | 3 | |
