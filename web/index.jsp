@@ -14,7 +14,5 @@
 <c:import url="jsp/header-tag.jsp" />
 <body>
 
-<c:import url="jsp/login.jsp" />
-
 </body>
 </html>
