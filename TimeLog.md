@@ -28,3 +28,4 @@
 | 2/17/16 | Fixing Tomcat and confirming JSTL works | 1.5 | |
 | 2/18/16 | Implementing/Debugging Login | 3 | |
 | 2/22/16 | Adding second security role | 1 | |
+| 2/22/16 | Creating testing database | .5 | |

@@ -32,10 +32,10 @@
 - [ ] Try implementing User Authentication before class
 
 ### Week 5
-- [ ] Weekly journal entry
+- [X] Weekly journal entry
 - [X] Work on JSPs
 - [X] Work on Login/Registration
-- [ ] Research solution to Testing Database issue (Spring?)
+- [X] Creating Testing Database 
 - [ ] Deploy to OpenShift
 - [ ] Work on creating Known Tables
 - [ ] Work on a second DAO
