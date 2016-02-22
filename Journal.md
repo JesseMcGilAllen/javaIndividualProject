@@ -108,4 +108,14 @@ I have decided to change the emphasis of my project to a personal programming re
 Completed:
   Implementing administrator user role on one page
   
+2/22/2016
+
+Completed:
+  Implementing registered user role
+
+---
+
 I finally had success implementing login into my project.  It require to major debugging sessions with Paula and Matt.  In the end, the problem was in the jsps.  I forgot the name="j_username" attribute.  Its a simple thing to forget and we were focused on the more complicated elements of the implementation, namely the xml file configurations.  What lead me down the path of the fix was enabling Realm logging for my project.  I found a [blogspot post](http://dev-answers.blogspot.com/2010/03/enable-debugtrace-level-logging-for.html) that details what to add to the tomcat logging.properties to enable it. 
+
+I implemented the registered-user role.  It was a bit more of a hassle than I was expecting.  I learned that you can only declare a route in one security constraint.  So instead of giving administrator full access and restricting the user, I have to give access to each page that user can access to both roles and then add the rest of the pages for administrator in a later constraint.
+
