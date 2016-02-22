@@ -33,8 +33,8 @@
 
 ### Week 5
 - [ ] Weekly journal entry
-- [ ] Work on JSPs
-- [ ] Work on Login/Registration
+- [X] Work on JSPs
+- [X] Work on Login/Registration
 - [ ] Research solution to Testing Database issue (Spring?)
 - [ ] Deploy to OpenShift
 - [ ] Work on creating Known Tables

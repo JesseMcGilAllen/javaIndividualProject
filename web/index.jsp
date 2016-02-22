@@ -10,9 +10,9 @@
 <c:import url="jsp/doctype.jsp" />
 
 <html>
-<c:set var="pageTitle" value="Jesse's Review Site" scope="request" />
-7 <c:import url="jsp/header-tag.jsp" />
+<c:set var="pageTitle" value="Programming Review" scope="request" />
+<c:import url="jsp/header-tag.jsp" />
 <body>
-  $END$
-  </body>
+<c:import url="jsp/navigation-bar.jsp" />
+</body>
 </html>
