@@ -15,5 +15,9 @@
 <body>
 
 <h1>Languages</h1>
+
+<h3><a href="/language/add-language.jsp">Add Language</a></h3>
+<h3><a href="/language/language.jsp">Language</a></h3>
+
 </body>
 </html>
