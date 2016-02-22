@@ -123,3 +123,5 @@ I finally had success implementing login into my project.  It require to major d
 I implemented the registered-user role.  It was a bit more of a hassle than I was expecting.  I learned that you can only declare a route in one security constraint.  So instead of giving administrator full access and restricting the user, I have to give access to each page that user can access to both roles and then add the rest of the pages for administrator in a later constraint.
 
 I followed Paula's suggestion and added a seperate testing database.  It was simple enough.  All I had to do was create the database, copy the Table designs from the other database and then create a test resources directory in my project.  In that test resources directory I put a copy of the hibernate config xml file with the database url putting to the new database. 
+
+One page I seem to keep visiting is this page on [Adding, Deleting and Moving Lines](https://www.jetbrains.com/idea/help/adding-deleting-and-moving-lines.html).  So I just think I will add it here so I don't have to search for it each time.
