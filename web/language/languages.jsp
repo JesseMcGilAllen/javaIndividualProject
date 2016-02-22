@@ -11,9 +11,10 @@
 
 <html>
 <c:set var="pageTitle" value="Languages | Programming Review" scope="request" />
-<c:import url="../jsp/header-tag.jsp" />
+<c:import url="/jsp/header-tag.jsp" />
 <body>
 
+<c:import url="/jsp/navigation-bar.jsp" />
 <h1>Languages</h1>
 
 <h3><a href="/language/add-language.jsp">Add Language</a></h3>

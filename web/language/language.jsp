@@ -14,6 +14,7 @@
 <c:set var="pageTitle" value="Language | Programming Review" scope="request" />
 <c:import url="../jsp/header-tag.jsp" />
 <body>
+<c:import url="/jsp/navigation-bar.jsp" />
 
 <h1>Language</h1>
 </body>
