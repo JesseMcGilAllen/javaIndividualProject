@@ -22,6 +22,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="/read/languages.jsp">Languages</a></li>
+
+                <li><a href="#">Algorithms</a></li>
+                <li><a href="#">Design Patterns</a></li>
+                <li><a href="#">Katas</a></li>
             </ul>
             </div>
         </div>
