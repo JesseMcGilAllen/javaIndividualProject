@@ -121,6 +121,10 @@ Completed:
 Completed:
   Created new JSP structure for current roles
 
+2/24/2016
+
+Completed:
+  Adding needed jsps
 ---
 
 I finally had success implementing login into my project.  It require to major debugging sessions with Paula and Matt.  In the end, the problem was in the jsps.  I forgot the name="j_username" attribute.  Its a simple thing to forget and we were focused on the more complicated elements of the implementation, namely the xml file configurations.  What lead me down the path of the fix was enabling Realm logging for my project.  I found a [blogspot post](http://dev-answers.blogspot.com/2010/03/enable-debugtrace-level-logging-for.html) that details what to add to the tomcat logging.properties to enable it. 
