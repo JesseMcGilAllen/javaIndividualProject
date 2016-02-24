@@ -29,3 +29,6 @@
 | 2/18/16 | Implementing/Debugging Login | 3 | |
 | 2/22/16 | Adding second security role | 1 | |
 | 2/22/16 | Creating testing database | .5 | |
+| 2/23/16 | Implementing new JSP structure | 1 | |
+| 2/23/16 | Debugging broken links due to recent file system move | 1 | |
+| 2/24/16 | Fixing Tomee configuration issue due to file system move | .5 | |

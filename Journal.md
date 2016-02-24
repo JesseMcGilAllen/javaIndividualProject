@@ -116,6 +116,11 @@ Completed:
   Implementing registered user role
   Adding Testing Database
 
+2/23/2016
+
+Completed:
+  Created new JSP structure for current roles
+
 ---
 
 I finally had success implementing login into my project.  It require to major debugging sessions with Paula and Matt.  In the end, the problem was in the jsps.  I forgot the name="j_username" attribute.  Its a simple thing to forget and we were focused on the more complicated elements of the implementation, namely the xml file configurations.  What lead me down the path of the fix was enabling Realm logging for my project.  I found a [blogspot post](http://dev-answers.blogspot.com/2010/03/enable-debugtrace-level-logging-for.html) that details what to add to the tomcat logging.properties to enable it. 
@@ -125,3 +130,9 @@ I implemented the registered-user role.  It was a bit more of a hassle than I wa
 I followed Paula's suggestion and added a seperate testing database.  It was simple enough.  All I had to do was create the database, copy the Table designs from the other database and then create a test resources directory in my project.  In that test resources directory I put a copy of the hibernate config xml file with the database url putting to the new database. 
 
 One page I seem to keep visiting is this page on [Adding, Deleting and Moving Lines](https://www.jetbrains.com/idea/help/adding-deleting-and-moving-lines.html).  So I just think I will add it here so I don't have to search for it each time.
+
+I decided to create seperate directories for jsps using CRUD terminology.  When initially implementing the user role for the class exercise I found I had to manually give permission to individual files for each security constraint.  Paula suggested restructuring the JSPs into directories based on their purpose.  It seems to have worked out well.
+
+I have discovered that I cannot edit the url paths for the Tomee instance of my application when I move it.  I must delete the configuration and create a new one.
+
+I was working on the expanded site's database design yesterday and noticed that most of the table had the same fields.  I am curious what the best practice is for an instance like this.  I was intending on having seperate tables/objects but if there is no difference outside of the table name?

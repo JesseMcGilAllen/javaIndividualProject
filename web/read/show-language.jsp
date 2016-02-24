@@ -17,5 +17,8 @@
 <c:import url="/jsp/navigation-bar.jsp" />
 
 <h1>Language</h1>
+
+<h3><a href="/update/update-language.jsp">Language</a></h3>
+<h3><a href="/delete/delete-language.jsp">Language</a></h3>
 </body>
 </html>
