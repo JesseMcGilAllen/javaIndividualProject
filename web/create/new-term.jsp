@@ -14,6 +14,6 @@
 <c:import url="../jsp/header-tag.jsp" />
 <body>
 <c:import url="../jsp/navigation-bar.jsp" />
-<h1>Add Language</h1>
+<h1>Add Term</h1>
 </body>
 </html>
