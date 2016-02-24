@@ -16,17 +16,25 @@
 <c:import url="header-tag.jsp" />
 <body>
 
-<form action="j_security_check" method="post">
-    <div class="form-group">
-        <label for="inputUsername">Username</label>
-        <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="j_username">
-    </div>
-    <div class="form-group">
-        <label for="inputPassword">Password</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="j_password">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+<c:import url="navigation-bar.jsp" />
+
+<div class="container">
+    <form action="j_security_check" method="post">
+        <div class="row">
+            <div class="form-group col-lg-6">
+                <label for="inputUsername">Username</label>
+                <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="j_username">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-lg-6">
+                <label for="inputPassword">Password</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="j_password">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
 
 </body>
 </html>
