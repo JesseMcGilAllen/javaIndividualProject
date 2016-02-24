@@ -17,8 +17,8 @@
 <c:import url="/jsp/navigation-bar.jsp" />
 <h1>Languages</h1>
 
-<h3><a href="/create/new-language.jsp">Add Language</a></h3>
-<h3><a href="/read/show-language.jsp">Language</a></h3>
+<h3><a href="../create/new-language.jsp">Add Language</a></h3>
+<h3><a href="../read/show-language.jsp">Language</a></h3>
 
 </body>
 </html>
