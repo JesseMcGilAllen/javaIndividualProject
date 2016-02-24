@@ -36,12 +36,17 @@
 - [X] Work on JSPs
 - [X] Work on Login/Registration
 - [X] Creating Testing Database 
+
+### Week 6
+- [ ] Weekly Journal Entry
 - [ ] Deploy to OpenShift
 - [ ] Work on creating Known Tables
-- [ ] Work on a second DAO
+- [ ] Work on a creating DAOs
+- [ ] Work on Presentation
 
 ### Week 7
 - [ ] Weekly journal entry
+- [ ] Work on Presentation
 
 ### Week 8
 - [ ] Code review
