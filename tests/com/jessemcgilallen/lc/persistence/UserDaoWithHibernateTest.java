@@ -42,8 +42,8 @@ public class UserDaoWithHibernateTest {
     public void tearDown() throws Exception {
         List<User> users = dao.getAllUsers();
 
-        for (int index = 0; index < users.size(); index++) {
-            dao.deleteUser(users.get(index));
+        for (User user : users) {
+            dao.deleteUser(user);
 
         }
     }
@@ -84,7 +84,7 @@ public class UserDaoWithHibernateTest {
 
         User modifiedUser = dao.getAllUsers().get(0);
 
-        boolean sameNames = modifiedUser.getUsername() == name;
+        boolean sameNames = modifiedUser.getUsername().equals(name);
         boolean sameIds = modifiedUser.getId() == userToModify.getId();
 
         assertFalse("Names are supposed to be different", sameNames);
