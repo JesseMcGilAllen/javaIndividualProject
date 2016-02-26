@@ -1,7 +1,7 @@
 # Jesse McGil Allen Individual Project
 
 ### Problem Statement
-While completing the MATC program, I have been introduced to several different languages and technologies.  I have also never seemed to have a strong preference towards a particular language. I would like to be able to easily compare different languages solution to the same programming problem. Well-known problems such as FizzBuzz, Towers of Hanoi, and possibly interpretations of various computer science concepts.  Therefore, I would like to create a website that aggregates different language solutions to various programming problems for comparison.
+I have been having trouble finding a job.  One area I seem to particularly struggle in is the technical interview.  Part of the reason I believe I struggle at technical interviews is that I can't keep the similar elements of different languages straight.  For instance, I can't keep track of which languages use length, size, or count to get the size of an Array.  I would like to build a website that helps me prepare for job interviews.  It would have sections devoted to language-specific concepts and other sections devoted to comparing languages.
 
 ### Project Technologies/Techniques
 - Security/Authentication
@@ -12,7 +12,8 @@ While completing the MATC program, I have been introduced to several different l
 - Jenkins for Continous Integration
 - Unit Testing
 - Independent Research Topic
-  - TBD
+  - Maven/Gradle
+  - Spring
 
 ### Design
 - [Screen Design](ScreenDesign.md)
