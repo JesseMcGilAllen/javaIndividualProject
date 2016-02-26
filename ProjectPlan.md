@@ -39,7 +39,8 @@
 
 ### Week 6
 - [ ] Weekly Journal Entry
-- [ ] Deploy to OpenShift
+- [ ] Research Maven/Gradle
+- [ ] Implement Maven/Gradle
 - [ ] Work on creating Known Tables
 - [ ] Work on a creating DAOs
 - [ ] Work on Presentation
@@ -47,6 +48,7 @@
 ### Week 7
 - [ ] Weekly journal entry
 - [ ] Work on Presentation
+- [ ] Deploy to OpenShift
 
 ### Week 8
 - [ ] Code review

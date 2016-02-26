@@ -140,3 +140,13 @@ I decided to create seperate directories for jsps using CRUD terminology.  When 
 I have discovered that I cannot edit the url paths for the Tomee instance of my application when I move it.  I must delete the configuration and create a new one.
 
 I was working on the expanded site's database design yesterday and noticed that most of the table had the same fields.  I am curious what the best practice is for an instance like this.  I was intending on having seperate tables/objects but if there is no difference outside of the table name?
+
+## Week 6
+
+---
+
+After the multiple times that I have moved my project and the inconveniences that it has caused, I have decided after a discussion with Paula that I need to implement a dependency manager such as Maven.  I have decided to research Maven and its competitors this week.  After my research has been done I will try to implement my choice.  I decided to make this a priority because I am sure to move things again and I would prefer that they do not break when I do.
+
+The other item I want to make a priority this week is the database elements.  I would like to create all the table I think I need at this time for the project and work on the DAOs needed for them.  I would like to make at the very least substantial progress towards the DAOs (with testing) by the end of the week.
+
+This means that I am pushing deployment to OpenShift off again.  I did not have much trouble deploying the sample application and have experienced deploying various things before.  I also would like to wait until I have more of the application done before deploying.  
