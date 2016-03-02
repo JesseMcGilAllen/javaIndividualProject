@@ -19,7 +19,7 @@
         <property name="connection.password">
             entreprise_java
         </property>
-        <mapping resource="main.resources.User.hbm.xml" />
+        <mapping resource="User.hbm.xml" />
         <mapping class="main.java.com.jessemcgilallen.lc.entity.User" />
     </session-factory>
 
