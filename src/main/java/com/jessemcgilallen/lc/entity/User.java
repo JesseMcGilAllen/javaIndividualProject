@@ -1,4 +1,4 @@
-package com.jessemcgilallen.lc.entity;
+package main.java.com.jessemcgilallen.lc.entity;
 
 /**
  * Represents a user in the language/kata comparison application

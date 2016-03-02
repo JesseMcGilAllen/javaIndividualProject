@@ -1,6 +1,6 @@
-package com.jessemcgilallen.lc.persistence;
+package main.java.com.jessemcgilallen.lc.persistence;
 
-import com.jessemcgilallen.lc.entity.User;
+import main.java.com.jessemcgilallen.lc.entity.User;
 
 import java.util.List;
 
