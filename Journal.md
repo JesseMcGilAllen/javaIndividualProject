@@ -150,3 +150,9 @@ After the multiple times that I have moved my project and the inconveniences tha
 The other item I want to make a priority this week is the database elements.  I would like to create all the table I think I need at this time for the project and work on the DAOs needed for them.  I would like to make at the very least substantial progress towards the DAOs (with testing) by the end of the week.
 
 This means that I am pushing deployment to OpenShift off again.  I did not have much trouble deploying the sample application and have experienced deploying various things before.  I also would like to wait until I have more of the application done before deploying.  
+
+After talking things over with Matt on Slack, I decided that Gradle was the way I wanted to go.  Well, I sent 9 hours trying to implement Gradle to no avail.  The major issue I found was my project wasn't setup the way a Gradle project is expecting.  It seems that Gradle expects everything in the src directory and then seperated from there.  Code goes in src/main/java with resources in src/main/resources.  Tests seem to go into src/main/test.  It has not been a pleasant experience at all.
+
+I thought I found a way around the namespace issue only for none of my dependencies to load.  It was an incredibly frustating experience.  Gradle seems like it might be an option with new projects but adding it to trying to add it to my project has not been simple.
+
+I think I will try Maven tomorrow.  Considering what a pain it was to reset my project to its state before trying to add Gradle, I will try and be sure of the exact steps needed before proceeding with Maven.

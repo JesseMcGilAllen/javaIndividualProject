@@ -33,3 +33,4 @@
 | 2/23/16 | Debugging broken links due to recent file system move | 1 | |
 | 2/24/16 | Fixing Tomee configuration issue due to file system move | .5 | |
 | 2/24/16 | Adding JSPs | 2 | |
+| 3/1/16 | Attempting Gradle Implementation | 9 | |
