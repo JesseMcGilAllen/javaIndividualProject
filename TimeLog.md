@@ -34,3 +34,4 @@
 | 2/24/16 | Fixing Tomee configuration issue due to file system move | .5 | |
 | 2/24/16 | Adding JSPs | 2 | |
 | 3/1/16 | Attempting Gradle Implementation | 9 | |
+| 3/1/16 | Implementing Gradle | 3 | |

@@ -38,9 +38,9 @@
 - [X] Creating Testing Database 
 
 ### Week 6
-- [ ] Weekly Journal Entry
-- [ ] Research Maven/Gradle
-- [ ] Implement Maven/Gradle
+- [X] Weekly Journal Entry
+- [X] Research Maven/Gradle
+- [X] Implement Maven/Gradle
 - [ ] Work on creating Known Tables
 - [ ] Work on a creating DAOs
 - [ ] Work on Presentation
