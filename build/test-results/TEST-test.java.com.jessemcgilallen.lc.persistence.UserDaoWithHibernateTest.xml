@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-03-02T15:39:44" hostname="Haskell" time="1.852">
+<testsuite name="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-03-02T22:55:59" hostname="Haskell" time="2.101">
   <properties/>
-  <testcase name="testAddUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="1.749"/>
-  <testcase name="testGetAllUsers" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.027"/>
-  <testcase name="testUpdateUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.026"/>
-  <testcase name="testDeleteNullUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.016"/>
-  <testcase name="testDeleteUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.017"/>
-  <testcase name="testUpdateNullUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.013"/>
+  <testcase name="testAddUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="1.897"/>
+  <testcase name="testGetAllUsers" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.062"/>
+  <testcase name="testUpdateUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.037"/>
+  <testcase name="testDeleteNullUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.037"/>
+  <testcase name="testDeleteUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.034"/>
+  <testcase name="testUpdateNullUser" classname="test.java.com.jessemcgilallen.lc.persistence.UserDaoWithHibernateTest" time="0.028"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
-Mar 02, 2016 9:39:44 AM org.hibernate.annotations.common.Version <clinit>
+Mar 02, 2016 4:55:59 PM org.hibernate.annotations.common.Version <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
-Mar 02, 2016 9:39:44 AM org.hibernate.Version logVersion
+Mar 02, 2016 4:55:59 PM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {4.2.2.Final}
-Mar 02, 2016 9:39:44 AM org.hibernate.cfg.Environment <clinit>
+Mar 02, 2016 4:55:59 PM org.hibernate.cfg.Environment <clinit>
 INFO: HHH000206: hibernate.properties not found
-Mar 02, 2016 9:39:44 AM org.hibernate.cfg.Environment buildBytecodeProvider
+Mar 02, 2016 4:55:59 PM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-Mar 02, 2016 9:39:44 AM org.hibernate.cfg.Configuration configure
+Mar 02, 2016 4:55:59 PM org.hibernate.cfg.Configuration configure
 INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-Mar 02, 2016 9:39:44 AM org.hibernate.cfg.Configuration getConfigurationInputStream
+Mar 02, 2016 4:55:59 PM org.hibernate.cfg.Configuration getConfigurationInputStream
 INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-Mar 02, 2016 9:39:44 AM org.hibernate.cfg.Configuration addResource
+Mar 02, 2016 4:55:59 PM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: User.hbm.xml
-Mar 02, 2016 9:39:44 AM org.hibernate.cfg.Configuration doConfigure
+Mar 02, 2016 4:55:59 PM org.hibernate.cfg.Configuration doConfigure
 INFO: HHH000041: Configured SessionFactory: null
-Mar 02, 2016 9:39:44 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 02, 2016 4:55:59 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-Mar 02, 2016 9:39:45 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 02, 2016 4:55:59 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 20
-Mar 02, 2016 9:39:45 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 02, 2016 4:55:59 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000006: Autocommit mode: false
-Mar 02, 2016 9:39:45 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 02, 2016 4:56:00 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/test_programming_review]
-Mar 02, 2016 9:39:45 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 02, 2016 4:56:00 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000046: Connection properties: {user=jesse, password=****}
-Mar 02, 2016 9:39:45 AM org.hibernate.dialect.Dialect <init>
+Mar 02, 2016 4:56:00 PM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-Mar 02, 2016 9:39:45 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+Mar 02, 2016 4:56:00 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
 INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-Mar 02, 2016 9:39:45 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+Mar 02, 2016 4:56:00 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
 INFO: HHH000397: Using ASTQueryTranslatorFactory
-Mar 02, 2016 9:39:46 AM org.hibernate.event.internal.DefaultDeleteEventListener deleteTransientEntity
+Mar 02, 2016 4:56:01 PM org.hibernate.event.internal.DefaultDeleteEventListener deleteTransientEntity
 INFO: HHH000114: Handling transient entity in delete processing
 ]]></system-err>
 </testsuite>
