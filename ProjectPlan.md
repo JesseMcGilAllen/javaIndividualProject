@@ -29,7 +29,6 @@
 - [X] Code review
 - [X] Weekly journal entry
 - [X] Start on creating JSPs
-- [ ] Try implementing User Authentication before class
 
 ### Week 5
 - [X] Weekly journal entry
@@ -41,17 +40,17 @@
 - [X] Weekly Journal Entry
 - [X] Research Maven/Gradle
 - [X] Implement Maven/Gradle
-- [ ] Work on creating Known Tables
-- [ ] Work on a creating DAOs
-- [ ] Work on Presentation
 
 ### Week 7
 - [ ] Weekly journal entry
+- [ ] Work on creating Known Tables
+- [ ] Work on a creating DAOs
 - [ ] Work on Presentation
-- [ ] Deploy to OpenShift
+- [ ] Work on Screen Scraping Weather Data For Team Project
 
 ### Week 8
 - [ ] Code review
+- [ ] Deploy to OpenShift
 - [ ] Weekly journal entry
 
 ### Week 9

@@ -17,7 +17,7 @@ I have been having trouble finding a job.  One area I seem to particularly strug
 
 ### Design
 - [Screen Design](ScreenDesign.md)
-- [Database Design](DatabaseDesign.md)
+- **UPDATED**[Database Design](images/JavaDatabaseDesign.png)
 
 ### [Project Plan](ProjectPlan.md)
 
