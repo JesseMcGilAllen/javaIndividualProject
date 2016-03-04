@@ -35,3 +35,4 @@
 | 2/24/16 | Adding JSPs | 2 | |
 | 3/1/16 | Attempting Gradle Implementation | 9 | |
 | 3/1/16 | Implementing Gradle | 3 | |
+| 3/3/16 | Updating Database Design | 1 | |
