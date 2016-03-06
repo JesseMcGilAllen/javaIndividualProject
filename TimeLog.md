@@ -36,3 +36,7 @@
 | 3/1/16 | Attempting Gradle Implementation | 9 | |
 | 3/1/16 | Implementing Gradle | 3 | |
 | 3/3/16 | Updating Database Design | 1 | |
+| 3/4/16 | Working on Presentation | 1 | |
+| 3/5/16 | Working on Presentation | 3 | |
+| 3/4/16 | Working on Presentation | 1 | |
+| 3/5/16 | Working on Presentation | 3 | |
