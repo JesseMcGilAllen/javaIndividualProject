@@ -38,5 +38,5 @@
 | 3/3/16 | Updating Database Design | 1 | |
 | 3/4/16 | Working on Presentation | 1 | |
 | 3/5/16 | Working on Presentation | 3 | |
-| 3/4/16 | Working on Presentation | 1 | |
-| 3/5/16 | Working on Presentation | 3 | |
+| 3/6/16 | Working on Presentation | 3 | |
+| 3/7/16 | Working on Presentation | .5 | |
