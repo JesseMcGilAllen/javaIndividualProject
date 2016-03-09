@@ -147,6 +147,7 @@ I was working on the expanded site's database design yesterday and noticed that 
 
 Completed:
     Implemented Gradle
+
 ---
 
 After the multiple times that I have moved my project and the inconveniences that it has caused, I have decided after a discussion with Paula that I need to implement a dependency manager such as Maven.  I have decided to research Maven and its competitors this week.  After my research has been done I will try to implement my choice.  I decided to make this a priority because I am sure to move things again and I would prefer that they do not break when I do.
@@ -162,3 +163,12 @@ I thought I found a way around the namespace issue only for none of my dependenc
 I think I will try Maven tomorrow.  Considering what a pain it was to reset my project to its state before trying to add Gradle, I will try and be sure of the exact steps needed before proceeding with Maven.
 
 I decided to try again with Gradle and finally got it!  I had to reorganize my project into the src directory.  I got hung up for quite a while dealing with a HibernateMappingException.  I googled and found nothing that worked.  I finally realized while looking at the hibernate.cfg.xml file that I should probably include MySQL into the dependencies.  And voila, the tests pass again.  Implementing gradle has been a long and frustating process.  I struggled with IntelliJ trying to include a Gradle module or restructure the namespaces.  When I got past those issues then their was some issues with different versions of the jar files then I was used to.  For instance, I specified a newer version of Log4J which changes the namespace and utilizes LogManager instead of Logger.  There is still work to do, I need to interface with Tomee with Gradle and clean up jars that I no longer need.  But at the very least, progress has been made.
+
+## Week 7
+
+03/03/2016
+
+Completed:
+    Updating Database Design Document
+
+This week I have been spending a lot of working on my presentation for class.  I initially wanted to give a broad overview of the new stuff in Java 8.  After putting some work in and discussing things with Paula, I decided to cover Lambdas and the related concepts with this presentation.  With the next presentation, I could possibly cover Optionals and Streams.  I was positive I did not want to cover Lambdas and Streams in the same short presentation.  I couldn't see a way to cover two topics of that scale adequately in 10-15 minutes.

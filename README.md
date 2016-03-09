@@ -12,8 +12,8 @@ I have been having trouble finding a job.  One area I seem to particularly strug
 - Jenkins for Continous Integration
 - Unit Testing
 - Independent Research Topic
-  - Maven/Gradle
-  - Spring
+  - Gradle
+  - Spring??
 
 ### Design
 - [Screen Design](ScreenDesign.md)
