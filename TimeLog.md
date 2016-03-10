@@ -41,3 +41,5 @@
 | 3/6/16 | Working on Presentation | 3 | |
 | 3/7/16 | Working on Presentation | .5 | |
 | 3/8/16 | Working on Presentation | 2 | |
+| 3/9/16 | Practicing and Tightening up Presentation | 1 | |
+| 3/9/16 | Creating Database Table | 1.5 | |
