@@ -42,14 +42,14 @@
 - [X] Implement Maven/Gradle
 
 ### Week 7
-- [ ] Weekly journal entry
-- [ ] Work on creating Known Tables
-- [ ] Work on a creating DAOs
-- [ ] Work on Presentation
-- [ ] Work on Screen Scraping Weather Data For Team Project
+- [X] Weekly journal entry
+- [X] Work on creating Known Tables
+- [X] Work on Presentation
+- [X] Work on Screen Scraping Weather Data For Team Project
 
 ### Week 8
 - [ ] Code review
+- [ ] Work on a creating DAOs
 - [ ] Deploy to OpenShift
 - [ ] Weekly journal entry
 
