@@ -10,7 +10,7 @@
 <c:import url="../jsp/doctype.jsp" />
 
 <html>
-<c:set var="pageTitle" value="Add Algorithm | Programming Review" scope="request" />
+<c:set var="pageTitle" value="Add Algorithm" scope="request" />
 <c:import url="../jsp/header-tag.jsp" />
 <body>
 <c:import url="../jsp/navigation-bar.jsp" />
