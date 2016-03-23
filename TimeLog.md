@@ -43,3 +43,5 @@
 | 3/8/16 | Working on Presentation | 2 | |
 | 3/9/16 | Practicing and Tightening up Presentation | 1 | |
 | 3/9/16 | Creating Database Table | 1.5 | |
+| 3/9/16 | Adding logic to page titles | 2 |
+| 3/22/16 | Working on screen scraping for team project | 3 |

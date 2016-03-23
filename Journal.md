@@ -179,3 +179,12 @@ Completed:
 This week I have been spending a lot of working on my presentation for class.  I initially wanted to give a broad overview of the new stuff in Java 8.  After putting some work in and discussing things with Paula, I decided to cover Lambdas and the related concepts with this presentation.  With the next presentation, I could possibly cover Optionals and Streams.  I was positive I did not want to cover Lambdas and Streams in the same short presentation.  I couldn't see a way to cover two topics of that scale adequately in 10-15 minutes.
 
 I was able to create most of the Database Tables today.  I was using the IntelliJ Database tools.  I ended up having trouble with Foreign Keys with the tool.  With Paula's help, I was able to fix it.  Next time I think I will use the Terminal interface for MySQL.
+
+## Week 8
+
+03/09/2016
+
+Completed:
+    Figured out how to use logic to set page titles
+
+I was sick over Spring Break, so unfortunately I didn't get much done as far as my project goes.  After I recovered, I spent some time working on the team project.
