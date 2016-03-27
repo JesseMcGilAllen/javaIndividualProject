@@ -23,7 +23,28 @@ public class LanguageDaoWithHibernate implements LanguageDao {
 
     @Override
     public int addLanguage(Language language) {
-        return 0;
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        Integer languageId = null;
+
+        try {
+            transaction = session.beginTransaction();
+            languageId = (Integer) session.save(language);
+            transaction.commit();
+
+        } catch (HibernateException exception) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            logger.error(exception);
+
+        } finally {
+            session.close();
+
+        }
+
+        return languageId;
     }
 
     @Override
