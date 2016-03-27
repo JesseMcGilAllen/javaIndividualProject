@@ -54,7 +54,8 @@
 ### Week 9
 - [X] Deploy to OpenShift
 - [ ] Add Databases to OpenShift
-- [ ] Work on a creating DAOs
+- [ ] Work on Language DAOs
+- [ ] Work on Language Servlets
 - [ ] Weekly journal entry
 
 ### Week 10

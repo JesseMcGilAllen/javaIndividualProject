@@ -45,3 +45,5 @@
 | 3/9/16 | Creating Database Table | 1.5 | |
 | 3/9/16 | Adding logic to page titles | 2 |
 | 3/22/16 | Working on screen scraping for team project | 3 |
+| 3/27/16 | Renaming war output and adding last test database | 1 |
+| 3/27/16 | Working on Language DAO and fixing left over packaging issues from Gradle implementation | 1 |

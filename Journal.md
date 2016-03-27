@@ -188,3 +188,17 @@ Completed:
     Figured out how to use logic to set page titles
 
 I was sick over Spring Break, so unfortunately I didn't get much done as far as my project goes.  After I recovered, I spent some time working on the team project.
+
+## Week 9
+
+03/23/2016
+
+Completed:
+    Deployed to OpenShift
+
+03/27/2016
+
+Completed:
+    Created last test database table needed
+
+With the help from Matt and Paula I was able to deploy to Openshift.  It was heavily complicated by my Gradle implementation.  I was having trouble getting a good war for deployment.  It was an issue that I believe was created by adding Gradle in the middle of the project.  Another issue that arose was Gradle not finding the IntelliJ instance of Tomee.  I had to point Gradle to the main instance that runs on my machine.  I had no idea that there was a difference.  I found out the hard way.
