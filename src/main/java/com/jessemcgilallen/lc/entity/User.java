@@ -1,4 +1,4 @@
-package main.java.com.jessemcgilallen.lc.entity;
+package com.jessemcgilallen.lc.entity;
 
 /**
  * Represents a user in the language/kata comparison application
@@ -7,7 +7,7 @@ package main.java.com.jessemcgilallen.lc.entity;
  */
 public class User {
 
-    private  int id;
+    private int id;
     private String username;
     private String emailAddress;
     private String password;
