@@ -1,8 +1,15 @@
 package com.jessemcgilallen.lc.persistence;
 
 import com.jessemcgilallen.lc.entity.Language;
-import com.jessemcgilallen.lc.persistence.LanguageDao;
 
+import org.apache.log4j.Logger;
+
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,6 +19,8 @@ import java.util.List;
  */
 public class LanguageDaoWithHibernate implements LanguageDao {
 
+    private Logger logger = Logger.getLogger(this.getClass());
+
     @Override
     public int addLanguage(Language language) {
         return 0;
@@ -19,7 +28,28 @@ public class LanguageDaoWithHibernate implements LanguageDao {
 
     @Override
     public List<Language> getAllLanguages() {
-        return null;
+        List<Language> languages = new ArrayList<Language>();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            Criteria criteria = session.createCriteria(Language.class);
+            languages = criteria.list();
+
+        } catch (HibernateException exception) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            logger.error(exception);
+
+        } finally {
+            session.close();
+
+        }
+
+        return languages;
     }
 
     @Override
