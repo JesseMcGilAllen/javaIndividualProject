@@ -15,6 +15,11 @@ repositories {
 
 }
 
+task deployToTomcat(type: Copy) {
+    from war.archivePath
+    into "/Users/jessemcgilallen/java/tomee/apache-tomee-plus-1.7.3/webapps"
+}
+
 
 dependencies {
 

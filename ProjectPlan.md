@@ -48,12 +48,13 @@
 - [X] Work on Screen Scraping Weather Data For Team Project
 
 ### Week 8
-- [ ] Code review
-- [ ] Work on a creating DAOs
-- [ ] Deploy to OpenShift
-- [ ] Weekly journal entry
+- [X] Code review
+- [X] Weekly journal entry
 
 ### Week 9
+- [X] Deploy to OpenShift
+- [ ] Add Databases to OpenShift
+- [ ] Work on a creating DAOs
 - [ ] Weekly journal entry
 
 ### Week 10
