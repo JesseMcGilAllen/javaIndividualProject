@@ -104,7 +104,25 @@ public class LanguageDaoWithHibernate implements LanguageDao {
 
     @Override
     public void deleteLanguage(Language language) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
 
+        try {
+            transaction = session.beginTransaction();
+            session.delete(language);
+            transaction.commit();
+
+        } catch (HibernateException exception) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            logger.error(exception);
+
+        } finally {
+            session.close();
+
+        }
     }
 
 
