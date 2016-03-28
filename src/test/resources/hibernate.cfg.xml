@@ -21,6 +21,9 @@
         </property>
         <mapping resource="User.hbm.xml" />
         <mapping class="com.jessemcgilallen.lc.entity.User" />
+
+        <mapping resource="Language.hbm.xml" />
+        <mapping class="com.jessemcgilallen.lc.entity.Language" />
     </session-factory>
 
 </hibernate-configuration>
