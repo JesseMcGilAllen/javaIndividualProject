@@ -41,6 +41,14 @@ public class LanguageDaoWithHibernate implements LanguageDao {
 
             logger.error(exception);
 
+        } catch (NullPointerException nullPointerException) {
+        if (transaction != null) {
+            transaction.rollback();
+        }
+
+        logger.error(nullPointerException);
+
+
         } finally {
             session.close();
 
