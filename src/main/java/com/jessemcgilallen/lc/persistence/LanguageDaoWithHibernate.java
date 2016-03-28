@@ -8,9 +8,11 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * implements LanguageDao interface
@@ -75,7 +77,29 @@ public class LanguageDaoWithHibernate implements LanguageDao {
 
     @Override
     public Language getLanguageWithId(int id) {
-        return null;
+        Language language = new Language();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            Criteria criteria = session.createCriteria(Language.class)
+                    .add(Restrictions.eq("languageId", id));
+            language = (Language)criteria.list().get(0);
+
+
+        } catch (HibernateException exception) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            logger.error(exception);
+
+        } finally {
+            session.close();
+
+        }
+        return language;
     }
 
     @Override
