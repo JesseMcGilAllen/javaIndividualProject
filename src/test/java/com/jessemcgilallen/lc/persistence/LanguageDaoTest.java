@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  * Created by jessemcgilallen on 3/28/16.
  */
 
-public class LanguageGenericDaoWithHibernateTest {
+public class LanguageDaoTest {
 
-    private LanguageGenericDaoWithHibernate dao = new LanguageGenericDaoWithHibernate();
+    private LanguageDao dao = new LanguageDao();
 
     @After
     public void tearDown() throws Exception {

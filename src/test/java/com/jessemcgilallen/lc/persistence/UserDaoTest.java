@@ -13,9 +13,9 @@ import static org.junit.Assert.*;
 /**
  * Created by jessemcgilallen on 2/9/16.
  */
-public class UserDaoWithHibernateTest {
+public class UserDaoTest {
 
-   private UserDaoWithHibernate dao = new UserDaoWithHibernate();
+   private UserDao dao = new UserDao();
     @Before
     public void setUp() throws Exception {
         User user = new User();

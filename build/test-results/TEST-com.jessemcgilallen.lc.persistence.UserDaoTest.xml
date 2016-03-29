@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jessemcgilallen.lc.persistence.UserDaoTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-03-29T23:21:21" hostname="Haskell" time="0.11">
+  <properties/>
+  <testcase name="testAddUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.026"/>
+  <testcase name="testGetAllUsers" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.016"/>
+  <testcase name="testUpdateUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.019"/>
+  <testcase name="testDeleteNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.016"/>
+  <testcase name="testDeleteUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.019"/>
+  <testcase name="testUpdateNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Mar 29, 2016 6:21:21 PM org.hibernate.event.internal.DefaultDeleteEventListener deleteTransientEntity
+INFO: HHH000114: Handling transient entity in delete processing
+]]></system-err>
+</testsuite>

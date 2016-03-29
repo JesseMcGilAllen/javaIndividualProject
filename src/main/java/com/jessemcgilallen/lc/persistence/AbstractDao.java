@@ -16,16 +16,16 @@ import java.util.List;
  * @author jessemcgilallen
  * @version 1.0 on 3/28/16.
  */
-public abstract class GenericDaoWithHibernate<T> {
+public abstract class AbstractDao<T> {
 
     private final Logger logger = Logger.getLogger(this.getClass());
 
     private Class<T> typeParameterClass;
 
-    public GenericDaoWithHibernate() {
+    public AbstractDao() {
     }
 
-    public GenericDaoWithHibernate(Class<T> typeParameterClass) {
+    public AbstractDao(Class<T> typeParameterClass) {
         this.typeParameterClass = typeParameterClass;
     }
 
