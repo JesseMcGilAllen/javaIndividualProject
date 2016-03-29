@@ -30,10 +30,4 @@ public class LanguageGenericDaoWithHibernate extends GenericDaoWithHibernate {
 
         return language;
     }
-
-
-
-
-
-
 }

@@ -1,7 +1,6 @@
 package com.jessemcgilallen.lc.persistence;
 
 import com.jessemcgilallen.lc.entity.User;
-import com.jessemcgilallen.lc.persistence.UserDaoWithHibernate;
 
 import org.junit.After;
 import org.junit.Before;

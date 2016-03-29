@@ -1,7 +1,6 @@
 package com.jessemcgilallen.lc.persistence;
 
 import com.jessemcgilallen.lc.entity.Language;
-import com.jessemcgilallen.lc.persistence.LanguageGenericDaoWithHibernate;
 
 import java.util.List;
 
