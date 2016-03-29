@@ -1,6 +1,7 @@
 package com.jessemcgilallen.lc.persistence;
 
 import org.apache.log4j.Logger;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by jessemcgilallen on 3/28/16.
+ * @author jessemcgilallen
+ * @version 1.0 on 3/28/16.
  */
 public abstract class GenericDaoWithHibernate<T> {
 
@@ -30,7 +32,6 @@ public abstract class GenericDaoWithHibernate<T> {
     }
 
     public List<T> findAll() {
-
         List<T> list = new ArrayList<T>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -38,6 +39,30 @@ public abstract class GenericDaoWithHibernate<T> {
         try {
             transaction = session.beginTransaction();
             Criteria criteria = session.createCriteria(getTypeParameterClass());
+            list = criteria.list();
+
+        } catch (HibernateException exception) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            logger.error(exception);
+
+        } finally {
+            session.close();
+
+        }
+
+        return list;
+    }
+
+    public List<T> findByCriteria(Criteria criteria) {
+        List<T> list = new ArrayList<T>();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
             list = criteria.list();
 
         } catch (HibernateException exception) {
