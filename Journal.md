@@ -201,4 +201,14 @@ Completed:
 Completed:
     Created last test database table needed
 
+03/28/2016
+
+Completed:
+    Fixing Primary Key database issue
+    Researched using an abstract DAO class
+
 With the help from Matt and Paula I was able to deploy to Openshift.  It was heavily complicated by my Gradle implementation.  I was having trouble getting a good war for deployment.  It was an issue that I believe was created by adding Gradle in the middle of the project.  Another issue that arose was Gradle not finding the IntelliJ instance of Tomee.  I had to point Gradle to the main instance that runs on my machine.  I had no idea that there was a difference.  I found out the hard way.
+
+I started work on my Language DAO but ran into a number of issues.  First, I missed making every Primary Key Auto-Increment which might I had to go and delete all my foreign keys to make the change.  Hopefully, I remember all my foreign keys when I readded them.
+
+The second issue that arose concerned my DAOs.  They felt extremely dirty.  Every new DAO I create it seems that I am copying and pasting the entirety of the previous DAO.  I talked to Paula to see if there was a way to abstract that logic and she suggested looking at abstract classes.  It took a while but I think I am making some progress.  If this ends up working correctly, I will be writing a lot less code in the future.
