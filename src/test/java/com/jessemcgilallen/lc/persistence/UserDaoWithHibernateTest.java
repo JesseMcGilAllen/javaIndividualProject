@@ -34,17 +34,17 @@ public class UserDaoWithHibernateTest {
         userThree.setEmailAddress("dana@example.com");
         userThree.setPassword("password");
 
-        dao.addUser(user);
-        dao.addUser(userTwo);
-        dao.addUser(userThree);
+        dao.create(user);
+        dao.create(userTwo);
+        dao.create(userThree);
     }
 
     @After
     public void tearDown() throws Exception {
-        List<User> users = dao.getAllUsers();
+        List<User> users = dao.findAll();
 
         for (User user : users) {
-            dao.deleteUser(user);
+            dao.delete(user);
 
         }
     }
@@ -52,7 +52,7 @@ public class UserDaoWithHibernateTest {
 
     @Test
     public void testAddUser() throws Exception {
-        int userCount = dao.getAllUsers().size();
+        int userCount = dao.findAll().size();
         int newUserCount = 0;
 
         User user = new User();
@@ -60,30 +60,30 @@ public class UserDaoWithHibernateTest {
         user.setEmailAddress("bob@example.com");
         user.setPassword("password");
 
-        dao.addUser(user);
-        newUserCount = dao.getAllUsers().size();
+        dao.create(user);
+        newUserCount = dao.findAll().size();
 
         assertTrue("User wasn't added", newUserCount > userCount);
-        dao.deleteUser(user);
+        dao.delete(user);
     }
 
     @Test
     public void testGetAllUsers() throws Exception {
-        List<User> users = dao.getAllUsers();
+        List<User> users = dao.findAll();
 
         assertTrue("Users not received " + users.size(), users.size() > 0);
     }
 
     @Test
     public void testUpdateUser() throws Exception {
-        List<User> users = dao.getAllUsers();
+        List<User> users = dao.findAll();
         User userToModify = users.get(0);
         String name = userToModify.getUsername();
 
         userToModify.setUsername("Zeke");
-        dao.updateUser(userToModify);
+        dao.update(userToModify);
 
-        User modifiedUser = dao.getAllUsers().get(0);
+        User modifiedUser = (User) dao.findAll().get(0);
 
         boolean sameNames = modifiedUser.getUsername().equals(name);
         boolean sameIds = modifiedUser.getId() == userToModify.getId();
@@ -97,18 +97,18 @@ public class UserDaoWithHibernateTest {
     public void testUpdateNullUser() throws Exception {
        User user = null;
 
-        dao.updateUser(user);
+        dao.update(user);
         fail("Expect Illegal Argument Exception");
 
     }
 
     @Test
     public void testDeleteUser() throws Exception {
-        List<User> users = dao.getAllUsers();
+        List<User> users = dao.findAll();
         int userCount = users.size();
         User userToDelete = users.get(0);
-        dao.deleteUser(userToDelete);
-        int newUserCount = dao.getAllUsers().size();
+        dao.delete(userToDelete);
+        int newUserCount = dao.findAll().size();
 
         assertTrue("User was not deleted", userCount - 1 == newUserCount);
     }
@@ -116,7 +116,7 @@ public class UserDaoWithHibernateTest {
     @Test(expected = AssertionError.class)
     public void testDeleteNullUser() throws Exception {
         User userToDelete = new User();
-        dao.deleteUser(userToDelete);
+        dao.delete(userToDelete);
 
         fail("Expected Assertion Error");
     }

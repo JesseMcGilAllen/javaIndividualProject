@@ -28,8 +28,6 @@ public class LanguageGenericDaoWithHibernate extends GenericDaoWithHibernate {
                 .add(Restrictions.eq("name", name));
         Language language = (Language)super.findByCriteria(criteria).get(0);
 
-        session.close();
-
         return language;
     }
 

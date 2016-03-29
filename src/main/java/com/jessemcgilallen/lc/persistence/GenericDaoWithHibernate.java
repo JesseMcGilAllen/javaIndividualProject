@@ -65,13 +65,14 @@ public abstract class GenericDaoWithHibernate<T> {
                 .add(Restrictions.eq("id", id));
         List<T> results = findByCriteria(criteria);
 
-        session.close();
+        logger.debug("Size: " + results.size());
+        System.out.println("Size: " + results.size());
 
         return results.get(0);
     }
 
     public List<T> findByCriteria(Criteria criteria) {
-        List<T> list = new ArrayList<T>();
+        List<T> list = new ArrayList<>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
 
@@ -125,6 +126,28 @@ public abstract class GenericDaoWithHibernate<T> {
         }
 
         return id;
+    }
+
+    public void update(T entity) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            session.update(entity);
+            transaction.commit();
+
+        } catch (HibernateException exception) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            logger.error(exception);
+
+        } finally {
+            session.close();
+
+        }
     }
 
     public void delete(T entity) {

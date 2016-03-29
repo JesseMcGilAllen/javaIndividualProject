@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jessemcgilallen.lc.persistence.LanguageGenericDaoWithHibernateTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-03-29T21:10:56" hostname="Haskell" time="1.694">
+<testsuite name="com.jessemcgilallen.lc.persistence.LanguageGenericDaoWithHibernateTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-03-29T22:38:03" hostname="Haskell" time="1.493">
   <properties/>
-  <testcase name="findById" classname="com.jessemcgilallen.lc.persistence.LanguageGenericDaoWithHibernateTest" time="1.694"/>
-  <system-out><![CDATA[java id:30
+  <testcase name="testFindAll" classname="com.jessemcgilallen.lc.persistence.LanguageGenericDaoWithHibernateTest" time="1.428"/>
+  <testcase name="findById" classname="com.jessemcgilallen.lc.persistence.LanguageGenericDaoWithHibernateTest" time="0.025"/>
+  <testcase name="findByName" classname="com.jessemcgilallen.lc.persistence.LanguageGenericDaoWithHibernateTest" time="0.024"/>
+  <testcase name="testCreate" classname="com.jessemcgilallen.lc.persistence.LanguageGenericDaoWithHibernateTest" time="0.01"/>
+  <system-out><![CDATA[Size: 1
 ]]></system-out>
   <system-err><![CDATA[ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
-Mar 29, 2016 4:10:57 PM org.hibernate.annotations.common.Version <clinit>
+Mar 29, 2016 5:38:04 PM org.hibernate.annotations.common.Version <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
-Mar 29, 2016 4:10:57 PM org.hibernate.Version logVersion
+Mar 29, 2016 5:38:04 PM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {4.2.2.Final}
-Mar 29, 2016 4:10:57 PM org.hibernate.cfg.Environment <clinit>
+Mar 29, 2016 5:38:04 PM org.hibernate.cfg.Environment <clinit>
 INFO: HHH000206: hibernate.properties not found
-Mar 29, 2016 4:10:57 PM org.hibernate.cfg.Environment buildBytecodeProvider
+Mar 29, 2016 5:38:04 PM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-Mar 29, 2016 4:10:57 PM org.hibernate.cfg.Configuration configure
+Mar 29, 2016 5:38:04 PM org.hibernate.cfg.Configuration configure
 INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-Mar 29, 2016 4:10:57 PM org.hibernate.cfg.Configuration getConfigurationInputStream
+Mar 29, 2016 5:38:04 PM org.hibernate.cfg.Configuration getConfigurationInputStream
 INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-Mar 29, 2016 4:10:57 PM org.hibernate.cfg.Configuration addResource
+Mar 29, 2016 5:38:04 PM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: User.hbm.xml
-Mar 29, 2016 4:10:57 PM org.hibernate.cfg.Configuration addResource
+Mar 29, 2016 5:38:04 PM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: Language.hbm.xml
-Mar 29, 2016 4:10:57 PM org.hibernate.cfg.Configuration doConfigure
+Mar 29, 2016 5:38:04 PM org.hibernate.cfg.Configuration doConfigure
 INFO: HHH000041: Configured SessionFactory: null
-Mar 29, 2016 4:10:57 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 29, 2016 5:38:04 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-Mar 29, 2016 4:10:57 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 29, 2016 5:38:04 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 20
-Mar 29, 2016 4:10:57 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 29, 2016 5:38:04 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000006: Autocommit mode: false
-Mar 29, 2016 4:10:57 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 29, 2016 5:38:04 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/test_programming_review]
-Mar 29, 2016 4:10:57 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 29, 2016 5:38:04 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000046: Connection properties: {user=jesse, password=****}
-Mar 29, 2016 4:10:58 PM org.hibernate.dialect.Dialect <init>
+Mar 29, 2016 5:38:04 PM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-Mar 29, 2016 4:10:58 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+Mar 29, 2016 5:38:04 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
 INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-Mar 29, 2016 4:10:58 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+Mar 29, 2016 5:38:04 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
 INFO: HHH000397: Using ASTQueryTranslatorFactory
 ]]></system-err>
 </testsuite>

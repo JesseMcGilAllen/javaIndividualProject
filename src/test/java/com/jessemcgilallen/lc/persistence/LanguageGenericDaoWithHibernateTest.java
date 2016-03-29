@@ -4,34 +4,34 @@ import com.jessemcgilallen.lc.entity.Language;
 import com.jessemcgilallen.lc.persistence.LanguageGenericDaoWithHibernate;
 
 import java.util.List;
+
+import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  * Created by jessemcgilallen on 3/28/16.
  */
+
 public class LanguageGenericDaoWithHibernateTest {
 
     private LanguageGenericDaoWithHibernate dao = new LanguageGenericDaoWithHibernate();
 
+    @After
+    public void tearDown() throws Exception {
+        List<Language> languages = dao.findAll();
+
+        for (Language language : languages) {
+            dao.delete(language);
+
+        }
+    }
 
     private void addLanguagesForTestingFindAll() {
 
         dao.create(new Language("Ruby"));
         dao.create(new Language("Swift"));
         dao.create(new Language("Haskell"));
-    }
-
-    private void deleteLanguagesForTestingFindAll() {
-
-        Language ruby = dao.findByName("Ruby");
-        Language swift = dao.findByName("Swift");
-        Language haskell = dao.findByName("Haskell");
-
-        dao.delete(ruby);
-        dao.delete(swift);
-        dao.delete(haskell);
-
     }
 
     @Test
@@ -41,8 +41,6 @@ public class LanguageGenericDaoWithHibernateTest {
         List<Language> languages = dao.findAll();
 
         assertTrue("Languages not received", languages.size() > 0);
-
-        deleteLanguagesForTestingFindAll();
 
     }
 
@@ -59,35 +57,33 @@ public class LanguageGenericDaoWithHibernateTest {
     }
 
     @Test
+
     public void findById() throws Exception {
-        Language java = new Language("Java");
-        dao.create(java);
+        Language python = new Language("python");
+        dao.create(python);
 
-        int javaId = java.getId();
+        int pythonId = python.getId();
 
-        System.out.println("java id:" + javaId);
+        python = dao.findById(pythonId);
+        int findByIdPython = python.getId();
 
-        Language javaById = dao.findById(javaId);
+        assertTrue("Found Wrong Object", findByIdPython == pythonId);
 
-        assertTrue("Found Wrong Object", java.getId() == javaById.getId());
-
-        dao.delete(java);
+        dao.delete(python);
 
     }
 
     @Test
     public void findByName() throws Exception {
-        Language java = new Language("Java");
-        dao.create(java);
+        Language perl = new Language("Perl");
+        dao.create(perl);
 
-        int javaId = java.getId();
+        String perlName = perl.getName();
 
-        System.out.println("java id:" + javaId);
+        Language perlByName = dao.findByName(perl.getName());
 
-        Language javaByName = dao.findByName(java.getName());
+        assertTrue("Found Wrong Object", perlName.equals(perlByName.getName()));
 
-        assertTrue("Found Wrong Object", java.getName().equals(javaByName.getName()));
-
-        dao.delete(java);
+        dao.delete(perl);
     }
 }
