@@ -15,13 +15,8 @@ public class LanguageGenericDaoWithHibernate extends GenericDaoWithHibernate {
     }
 
     public Language findById(int id) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
-        Criteria criteria = session.createCriteria(Language.class)
-                .add(Restrictions.eq("id", id));
-       Language language = (Language)super.findByCriteria(criteria).get(0);
-
-        session.close();
+       Language language = (Language)super.findById(id);
 
         return language;
     }

@@ -1,11 +1,13 @@
 package com.jessemcgilallen.lc.persistence;
 
+import com.jessemcgilallen.lc.entity.Language;
 import org.apache.log4j.Logger;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +56,18 @@ public abstract class GenericDaoWithHibernate<T> {
         }
 
         return list;
+    }
+
+    public T findById(int id) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        Criteria criteria = session.createCriteria(Language.class)
+                .add(Restrictions.eq("id", id));
+        List<T> results = findByCriteria(criteria);
+
+        session.close();
+
+        return results.get(0);
     }
 
     public List<T> findByCriteria(Criteria criteria) {
