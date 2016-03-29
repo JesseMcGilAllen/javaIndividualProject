@@ -12,6 +12,7 @@ public class LanguageDaoWithHibernateTest {
 
     private LanguageDaoWithHibernate dao = new LanguageDaoWithHibernate();
 
+
     @Test
     public void addLanguage() throws Exception {
         int languageCount = dao.getAllLanguages().size();

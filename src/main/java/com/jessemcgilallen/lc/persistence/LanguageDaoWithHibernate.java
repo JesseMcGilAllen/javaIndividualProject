@@ -92,7 +92,7 @@ public class LanguageDaoWithHibernate implements LanguageDao {
         try {
             transaction = session.beginTransaction();
             Criteria criteria = session.createCriteria(Language.class)
-                    .add(Restrictions.eq("languageId", id));
+                    .add(Restrictions.eq("language_id", id));
             language = (Language)criteria.list().get(0);
 
 
