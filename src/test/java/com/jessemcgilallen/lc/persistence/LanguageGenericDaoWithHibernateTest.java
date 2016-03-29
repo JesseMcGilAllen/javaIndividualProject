@@ -60,6 +60,18 @@ public class LanguageGenericDaoWithHibernateTest {
 
     @Test
     public void findById() throws Exception {
+        Language java = new Language("Java");
+        dao.create(java);
+
+        int javaId = java.getId();
+
+        System.out.println("java id:" + javaId);
+
+        Language javaById = dao.findById(javaId);
+
+        assertTrue("Found Wrong Object", java.getId() == javaById.getId());
+
+        dao.delete(java);
 
     }
 
