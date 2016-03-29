@@ -24,11 +24,13 @@ public class LanguageGenericDaoWithHibernateTest {
 
     private void deleteLanguagesForTestingFindAll() {
 
-        List<Language> languages = dao.findAll();
+        Language ruby = dao.findByName("Ruby");
+        Language swift = dao.findByName("Swift");
+        Language haskell = dao.findByName("Haskell");
 
-        for (Language language:languages) {
-            dao.delete(language);
-        }
+        dao.delete(ruby);
+        dao.delete(swift);
+        dao.delete(haskell);
 
     }
 
@@ -54,5 +56,15 @@ public class LanguageGenericDaoWithHibernateTest {
 
         newLanguageCount = dao.findAll().size();
         assertTrue("Language wasn't added", newLanguageCount > languageCount);
+    }
+
+    @Test
+    public void findById() throws Exception {
+
+    }
+
+    @Test
+    public void findByName() throws Exception {
+
     }
 }
