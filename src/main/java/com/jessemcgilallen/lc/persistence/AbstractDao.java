@@ -61,13 +61,14 @@ public abstract class AbstractDao<T> {
     public T findById(int id) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
-        Criteria criteria = session.createCriteria(Language.class)
+        Criteria criteria = session.createCriteria(getTypeParameterClass())
                 .add(Restrictions.eq("id", id));
         List<T> results = findByCriteria(criteria);
 
-        logger.debug("Size: " + results.size());
-        logger.debug("Id: " + id);
-        System.out.println("Id: " + id);
+        logger.fatal("Id: " + id);
+        logger.fatal("Results: " + results);
+        session.close();
+
         return results.get(0);
     }
 

@@ -2,6 +2,7 @@ package com.jessemcgilallen.lc.persistence;
 
 import com.jessemcgilallen.lc.entity.User;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +17,7 @@ import static org.junit.Assert.*;
 public class UserDaoTest {
 
    private UserDao dao = new UserDao();
-
+    private final Logger logger = Logger.getLogger(this.getClass());
     @Before
     public void setUp() throws Exception {
         User user = new User();
@@ -69,27 +70,18 @@ public class UserDaoTest {
 
     @Test
     public void testFindById() throws Exception {
-        User user = new User();
-        user.setUsername("Sara");
-        user.setEmailAddress("sara@example.com");
-        user.setPassword("password");
-        dao.create(user);
+        User user = (User)dao.findAll().get(0);
 
-        int userId = user.getId();
+        User savedUser = dao.findById(user.getId());
 
-        user = dao.findByUsername(user.getUsername());
-        int  savedUserId = user.getId();
+        int  savedUserId = savedUser.getId();
 
-        assertTrue("Found Wrong User", userId == savedUserId);
+        assertTrue("Found Wrong User", user.getId() == savedUserId);
     }
 
     @Test
     public void testFindByUsername() throws Exception {
-        User user = new User();
-        user.setUsername("Sara");
-        user.setEmailAddress("sara@example.com");
-        user.setPassword("password");
-        dao.create(user);
+        User user = (User)dao.findAll().get(0);
 
         String username = user.getUsername();
 

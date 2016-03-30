@@ -63,6 +63,7 @@ public class LanguageDaoTest {
         int pythonId = python.getId();
 
         python = dao.findById(pythonId);
+        System.out.println("Python Id:" + pythonId);
         int findByIdPython = python.getId();
 
         assertTrue("Found Wrong Object", findByIdPython == pythonId);
