@@ -26,7 +26,7 @@ public class LanguageDaoTest {
         }
     }
 
-    private void addLanguagesForTestingFindAll() {
+    private void addLanguagesForTesting() {
 
         dao.create(new Language("Ruby"));
         dao.create(new Language("Swift"));
@@ -48,7 +48,7 @@ public class LanguageDaoTest {
     @Test
     public void testFindAll() throws Exception {
 
-        addLanguagesForTestingFindAll();
+        addLanguagesForTesting();
         List<Language> languages = dao.findAll();
 
         assertTrue("Languages not received", languages.size() > 0);
@@ -103,5 +103,24 @@ public class LanguageDaoTest {
 
         assertFalse("Names should be different", sameNames);
         assertTrue("Ids should be the same", sameIds);
+    }
+
+    @Test
+    public void testDelete() throws Exception {
+        addLanguagesForTesting();
+
+        List<Language> languages = dao.findAll();
+        int languagesCount = languages.size();
+
+        Language languageToDelete = languages.get(0);
+        dao.delete(languageToDelete);
+
+        List<Language> updatedLanguages = dao.findAll();
+       int updatedLanguagesCount = updatedLanguages.size();
+
+        assertTrue("User not deleted", (languagesCount - 1) == updatedLanguagesCount);
+
+
+
     }
 }
