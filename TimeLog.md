@@ -49,3 +49,4 @@
 | 3/27/16 | Working on Language DAO and fixing left over packaging issues from Gradle implementation | 1.5 |
 | 3/28/16 | Fixing Primary Key Database issues and starting testing on Language DAO | 1 | 
 | 3/28/16 | Researching and starting implementation on generic DAO design pattern| 3 |
+| 3/29/16 | Consolidating DAOs and debugging DAO tests | 4 |
