@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
 public class UserDaoTest {
 
    private UserDao dao = new UserDao();
+
     @Before
     public void setUp() throws Exception {
         User user = new User();
@@ -52,7 +53,7 @@ public class UserDaoTest {
     @Test
     public void testAddUser() throws Exception {
         int userCount = dao.findAll().size();
-        int newUserCount = 0;
+        int newUserCount;
 
         User user = new User();
         user.setUsername("Bob");
@@ -64,6 +65,38 @@ public class UserDaoTest {
 
         assertTrue("User wasn't added", newUserCount > userCount);
         dao.delete(user);
+    }
+
+    @Test
+    public void testFindById() throws Exception {
+        User user = new User();
+        user.setUsername("Sara");
+        user.setEmailAddress("sara@example.com");
+        user.setPassword("password");
+        dao.create(user);
+
+        int userId = user.getId();
+
+        user = dao.findByUsername(user.getUsername());
+        int  savedUserId = user.getId();
+
+        assertTrue("Found Wrong User", userId == savedUserId);
+    }
+
+    @Test
+    public void testFindByUsername() throws Exception {
+        User user = new User();
+        user.setUsername("Sara");
+        user.setEmailAddress("sara@example.com");
+        user.setPassword("password");
+        dao.create(user);
+
+        String username = user.getUsername();
+
+        user = dao.findByUsername(username);
+        String  savedUsername = user.getUsername();
+
+        assertTrue("Found Wrong User", username.equals(savedUsername));
     }
 
     @Test

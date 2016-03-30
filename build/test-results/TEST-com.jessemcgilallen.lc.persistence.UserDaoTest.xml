@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jessemcgilallen.lc.persistence.UserDaoTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-03-30T03:15:02" hostname="Haskell" time="0.142">
+<testsuite name="com.jessemcgilallen.lc.persistence.UserDaoTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-03-30T04:07:27" hostname="Haskell" time="0.167">
   <properties/>
-  <testcase name="testAddUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.022"/>
-  <testcase name="testGetAllUsers" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.037"/>
-  <testcase name="testUpdateUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.027"/>
-  <testcase name="testDeleteNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.018"/>
-  <testcase name="testDeleteUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.018"/>
-  <testcase name="testUpdateNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.018"/>
+  <testcase name="testAddUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.028"/>
+  <testcase name="testGetAllUsers" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.022"/>
+  <testcase name="testUpdateUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.02"/>
+  <testcase name="testDeleteNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.017"/>
+  <testcase name="testFindById" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.024"/>
+  <testcase name="testFindByUsername" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.026"/>
+  <testcase name="testDeleteUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.015"/>
+  <testcase name="testUpdateNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.012"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Mar 29, 2016 10:15:02 PM org.hibernate.event.internal.DefaultDeleteEventListener deleteTransientEntity
+  <system-err><![CDATA[Mar 29, 2016 11:07:28 PM org.hibernate.event.internal.DefaultDeleteEventListener deleteTransientEntity
 INFO: HHH000114: Handling transient entity in delete processing
 ]]></system-err>
 </testsuite>

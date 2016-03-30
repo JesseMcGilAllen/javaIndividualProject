@@ -66,8 +66,8 @@ public abstract class AbstractDao<T> {
         List<T> results = findByCriteria(criteria);
 
         logger.debug("Size: " + results.size());
-        System.out.println("Size: " + results.size());
-
+        logger.debug("Id: " + id);
+        System.out.println("Id: " + id);
         return results.get(0);
     }
 
