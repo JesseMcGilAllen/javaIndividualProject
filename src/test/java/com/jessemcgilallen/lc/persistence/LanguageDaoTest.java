@@ -56,8 +56,7 @@ public class LanguageDaoTest {
     }
 
     @Test
-
-    public void findById() throws Exception {
+    public void testFindById() throws Exception {
         Language python = new Language("python");
         dao.create(python);
 
@@ -73,7 +72,7 @@ public class LanguageDaoTest {
     }
 
     @Test
-    public void findByName() throws Exception {
+    public void testFindByName() throws Exception {
         Language perl = new Language("Perl");
         dao.create(perl);
 
