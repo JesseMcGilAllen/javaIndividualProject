@@ -34,16 +34,6 @@ public class LanguageDaoTest {
     }
 
     @Test
-    public void testFindAll() throws Exception {
-
-        addLanguagesForTestingFindAll();
-        List<Language> languages = dao.findAll();
-
-        assertTrue("Languages not received", languages.size() > 0);
-
-    }
-
-    @Test
     public void testCreate() throws Exception {
         int languageCount = dao.findAll().size();
         int newLanguageCount;
@@ -53,6 +43,16 @@ public class LanguageDaoTest {
 
         newLanguageCount = dao.findAll().size();
         assertTrue("Language wasn't added", newLanguageCount > languageCount);
+    }
+
+    @Test
+    public void testFindAll() throws Exception {
+
+        addLanguagesForTestingFindAll();
+        List<Language> languages = dao.findAll();
+
+        assertTrue("Languages not received", languages.size() > 0);
+
     }
 
     @Test
@@ -83,5 +83,25 @@ public class LanguageDaoTest {
         assertTrue("Found Wrong Object", perlName.equals(perlByName.getName()));
 
         dao.delete(perl);
+    }
+
+    @Test
+    public void testUpdate() throws Exception {
+        Language language = new Language("Java");
+
+        dao.create(language);
+
+        Language modifiedLanguage = dao.findById(language.getId());
+        modifiedLanguage.setName("Swift");
+
+        dao.update(modifiedLanguage);
+
+
+
+        boolean sameNames = language.getName().equals(modifiedLanguage.getName());
+        boolean sameIds = language.getId() == modifiedLanguage.getId();
+
+        assertFalse("Names should be different", sameNames);
+        assertTrue("Ids should be the same", sameIds);
     }
 }
