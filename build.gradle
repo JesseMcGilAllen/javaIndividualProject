@@ -15,7 +15,7 @@ repositories {
 
 }
 
-war.archiveName "programming-review.war"
+war.archiveName "pr.war"
 
 task deployToTomcat(type: Copy) {
     from war.archivePath

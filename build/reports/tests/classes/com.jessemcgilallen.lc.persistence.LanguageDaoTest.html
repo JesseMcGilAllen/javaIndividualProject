@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.435s</div>
+<div class="counter">2.015s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,32 +82,32 @@
 </thead>
 <tr>
 <td class="success">testCreate</td>
-<td>0.014s</td>
+<td>0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testDelete</td>
-<td>0.019s</td>
+<td>0.027s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindAll</td>
-<td>1.352s</td>
+<td>1.928s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindById</td>
-<td>0.022s</td>
+<td>0.014s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindByName</td>
-<td>0.016s</td>
+<td>0.019s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUpdate</td>
-<td>0.012s</td>
+<td>0.015s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -115,11 +115,7 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>00:23:48.077 [Test worker] FATAL com.jessemcgilallen.lc.persistence.LanguageDao - Id: 463
-00:23:48.078 [Test worker] FATAL com.jessemcgilallen.lc.persistence.LanguageDao - Results: [Language{id=463, name='python'}]
-Python Id:463
-00:23:48.122 [Test worker] FATAL com.jessemcgilallen.lc.persistence.LanguageDao - Id: 468
-00:23:48.123 [Test worker] FATAL com.jessemcgilallen.lc.persistence.LanguageDao - Results: [Language{id=468, name='Java'}]
+<pre>Python Id:483
 </pre>
 </span>
 </div>
@@ -127,39 +123,39 @@ Python Id:463
 <h2>Standard error</h2>
 <span class="code">
 <pre>ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
-Mar 30, 2016 12:23:46 AM org.hibernate.annotations.common.Version &lt;clinit&gt;
+Mar 30, 2016 3:50:51 PM org.hibernate.annotations.common.Version &lt;clinit&gt;
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
-Mar 30, 2016 12:23:46 AM org.hibernate.Version logVersion
+Mar 30, 2016 3:50:51 PM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {4.2.2.Final}
-Mar 30, 2016 12:23:46 AM org.hibernate.cfg.Environment &lt;clinit&gt;
+Mar 30, 2016 3:50:51 PM org.hibernate.cfg.Environment &lt;clinit&gt;
 INFO: HHH000206: hibernate.properties not found
-Mar 30, 2016 12:23:46 AM org.hibernate.cfg.Environment buildBytecodeProvider
+Mar 30, 2016 3:50:51 PM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-Mar 30, 2016 12:23:46 AM org.hibernate.cfg.Configuration configure
+Mar 30, 2016 3:50:51 PM org.hibernate.cfg.Configuration configure
 INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-Mar 30, 2016 12:23:46 AM org.hibernate.cfg.Configuration getConfigurationInputStream
+Mar 30, 2016 3:50:51 PM org.hibernate.cfg.Configuration getConfigurationInputStream
 INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-Mar 30, 2016 12:23:46 AM org.hibernate.cfg.Configuration addResource
+Mar 30, 2016 3:50:51 PM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: User.hbm.xml
-Mar 30, 2016 12:23:47 AM org.hibernate.cfg.Configuration addResource
+Mar 30, 2016 3:50:51 PM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: Language.hbm.xml
-Mar 30, 2016 12:23:47 AM org.hibernate.cfg.Configuration doConfigure
+Mar 30, 2016 3:50:51 PM org.hibernate.cfg.Configuration doConfigure
 INFO: HHH000041: Configured SessionFactory: null
-Mar 30, 2016 12:23:47 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 30, 2016 3:50:51 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-Mar 30, 2016 12:23:47 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 30, 2016 3:50:51 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 20
-Mar 30, 2016 12:23:47 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 30, 2016 3:50:51 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000006: Autocommit mode: false
-Mar 30, 2016 12:23:47 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 30, 2016 3:50:51 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/test_programming_review]
-Mar 30, 2016 12:23:47 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Mar 30, 2016 3:50:51 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000046: Connection properties: {user=jesse, password=****}
-Mar 30, 2016 12:23:47 AM org.hibernate.dialect.Dialect &lt;init&gt;
+Mar 30, 2016 3:50:52 PM org.hibernate.dialect.Dialect &lt;init&gt;
 INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-Mar 30, 2016 12:23:47 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+Mar 30, 2016 3:50:52 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
 INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-Mar 30, 2016 12:23:47 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
+Mar 30, 2016 3:50:52 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
 INFO: HHH000397: Using ASTQueryTranslatorFactory
 </pre>
 </span>
@@ -172,7 +168,7 @@ INFO: HHH000397: Using ASTQueryTranslatorFactory
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 2.9</a> at Mar 30, 2016 12:23:48 AM</p>
+<a href="http://www.gradle.org">Gradle 2.9</a> at Mar 30, 2016 3:50:53 PM</p>
 </div>
 </div>
 </body>
