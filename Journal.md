@@ -214,6 +214,11 @@ Completed:
   Converted UserDAO to use Abstract DAO
   Created LanguageDAO that implements Abstract DAO
 
+03/30/2016
+
+Completed:
+   Deployed to openshift with authorization
+
 With the help from Matt and Paula I was able to deploy to Openshift.  It was heavily complicated by my Gradle implementation.  I was having trouble getting a good war for deployment.  It was an issue that I believe was created by adding Gradle in the middle of the project.  Another issue that arose was Gradle not finding the IntelliJ instance of Tomee.  I had to point Gradle to the main instance that runs on my machine.  I had no idea that there was a difference.  I found out the hard way.
 
 I started work on my Language DAO but ran into a number of issues.  First, I missed making every Primary Key Auto-Increment which might I had to go and delete all my foreign keys to make the change.  Hopefully, I remember all my foreign keys when I readded them.
@@ -221,3 +226,7 @@ I started work on my Language DAO but ran into a number of issues.  First, I mis
 The second issue that arose concerned my DAOs.  They felt extremely dirty.  Every new DAO I create it seems that I am copying and pasting the entirety of the previous DAO.  I talked to Paula to see if there was a way to abstract that logic and she suggested looking at abstract classes.  It took a while but I think I am making some progress.  If this ends up working correctly, I will be writing a lot less code in the future.
 
 I converted my UserDAO from the seperate interface/implementation pattern to one that uses the AbstractDAO pattern.  I had an issue debugging findById tests.  It ended up being a problem where I copied the implementation from the LanguageDao, which was my initial guinea pig.  It was a facepalm moment as it took quite some time to debug.  After setting up the LanguageDao and converting the UserDao, I am liking the new pattern so far.  I find it much cleaner and a lot less code to have to write.
+
+I had quite the time porting my MySQL databases to the OpenShift.  I tried DDL dumping the commands into PHPMyAdmin.  That didn't work at all. Finally, I gave up and sshed into the OpenShift instance.  After that I had no problems whatsoever.
+
+I finally was able to deploy to Openshift with Authorization working.  It turns out I needed to add a Realm to the server.xml.  It wasn't that simple as it required adding a Context to the Host section of the xml file.  In addition, I had to change my war file to be a subdomain of Root.  I was still struggling and it turns out I lacked a mysql connector jar in my tomcat server instance.  I thought since I included it in my build.gradle I was good to go.  After that the authorization was finally working.

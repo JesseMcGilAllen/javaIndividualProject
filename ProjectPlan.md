@@ -53,12 +53,14 @@
 
 ### Week 9
 - [X] Deploy to OpenShift
-- [ ] Add Databases to OpenShift
-- [ ] Work on Language DAOs
-- [ ] Work on Language Servlets
-- [ ] Weekly journal entry
+- [X] Add Databases to OpenShift
+- [X] Work on Language DAOs
+- [X] Weekly journal entry
 
 ### Week 10
+- [ ] Work on Language Servlets
+- [ ] Working on Convert coordinates String to YetiLoc object for Team project
+- [ ] Work on Maven implementation for team project
 - [ ] Weekly journal entry
 
 ### Week 11
