@@ -51,3 +51,6 @@
 | 3/28/16 | Researching and starting implementation on generic DAO design pattern| 3 |
 | 3/29/16 | Consolidating DAOs and debugging DAO tests | 4 |
 | 3/30/16 | Deploying Databases to OpenShift | 3 |
+| 4/5/16 | Working on Team Project | 2.5 |
+| 4/6/16 | Working on Team Project | .5 |
+| 4/6/16 | Hitting my head on javax.servlet.annotation package | 2 |

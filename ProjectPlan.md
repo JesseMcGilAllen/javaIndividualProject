@@ -58,12 +58,12 @@
 - [X] Weekly journal entry
 
 ### Week 10
-- [ ] Work on Language Servlets
-- [ ] Working on Convert coordinates String to YetiLoc object for Team project
-- [ ] Work on Maven implementation for team project
+- [X] Working on Convert coordinates String to YetiLoc object for Team project
+- [X] Work on Maven implementation for team project
 - [ ] Weekly journal entry
 
 ### Week 11
+- [ ] Work on Language Servlets
 - [ ] Weekly journal entry
 
 ### Week 12
