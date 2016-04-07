@@ -27,13 +27,11 @@ public class ShowLanguages extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        logger.warn("Testing");
         LanguageDao dao = new LanguageDao();
         request.setAttribute("languages", dao.findAll());
         logger.debug("Sending the languages...");
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/pr/read/languages" + ".jsp");
-
-
+        RequestDispatcher dispatcher = request.getRequestDispatcher("read/languages" + ".jsp");
     }
 
 

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jessemcgilallen.lc.persistence.UserDaoTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-04-06T22:22:06" hostname="Haskell" time="0.148">
+<testsuite name="com.jessemcgilallen.lc.persistence.UserDaoTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-04-07T01:54:44" hostname="Haskell" time="0.272">
   <properties/>
-  <testcase name="testAddUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.022"/>
-  <testcase name="testGetAllUsers" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.023"/>
-  <testcase name="testUpdateUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.018"/>
-  <testcase name="testDeleteNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.015"/>
-  <testcase name="testFindById" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.019"/>
-  <testcase name="testFindByUsername" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.02"/>
-  <testcase name="testDeleteUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.015"/>
-  <testcase name="testUpdateNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.012"/>
+  <testcase name="testAddUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.064"/>
+  <testcase name="testGetAllUsers" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.04"/>
+  <testcase name="testUpdateUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.032"/>
+  <testcase name="testDeleteNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.03"/>
+  <testcase name="testFindById" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.024"/>
+  <testcase name="testFindByUsername" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.021"/>
+  <testcase name="testDeleteUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.024"/>
+  <testcase name="testUpdateNullUser" classname="com.jessemcgilallen.lc.persistence.UserDaoTest" time="0.025"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Apr 06, 2016 5:22:06 PM org.hibernate.event.internal.DefaultDeleteEventListener deleteTransientEntity
+  <system-err><![CDATA[Apr 06, 2016 8:54:44 PM org.hibernate.event.internal.DefaultDeleteEventListener deleteTransientEntity
 INFO: HHH000114: Handling transient entity in delete processing
 ]]></system-err>
 </testsuite>
