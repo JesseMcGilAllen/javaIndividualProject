@@ -230,3 +230,28 @@ I converted my UserDAO from the seperate interface/implementation pattern to one
 I had quite the time porting my MySQL databases to the OpenShift.  I tried DDL dumping the commands into PHPMyAdmin.  That didn't work at all. Finally, I gave up and sshed into the OpenShift instance.  After that I had no problems whatsoever.
 
 I finally was able to deploy to Openshift with Authorization working.  It turns out I needed to add a Realm to the server.xml.  It wasn't that simple as it required adding a Context to the Host section of the xml file.  In addition, I had to change my war file to be a subdomain of Root.  I was still struggling and it turns out I lacked a mysql connector jar in my tomcat server instance.  I thought since I included it in my build.gradle I was good to go.  After that the authorization was finally working.
+
+## Week 10
+
+Worked mostly on Team project.
+
+## Week 11
+
+04/06/16
+
+Completed: 
+    - fixed broken log4j configuration
+
+I started on the languages servlet and started debugging an log4j issue.  It seems that when I added Gradle I changed log4j versions from 1.2 to 2.5.  That version change seemed to break log4j and I just didn't notice.  I know I can revert back to version 1.x but I want to get 2.x working.  
+
+After some research, I found that I need a new log4j configuration file.  the configurations for version 2 is slightly different from version 1.  I added the new file and it still is not functioning.  I found out it was because I needed to different the log4j.properties from the 1.x version.  Now it works as expected.
+
+## Week 12
+
+04/14/16
+
+Completed:
+    Connected languages servlet
+
+I was finally about to display a list of languages in the languages jsp.  I was having quite the trouble and found it was a mysql issue.  The IntelliJ version was not adding records when I tried using the Database console view.  I was able to add one using my Terminal instance.
+

@@ -54,3 +54,5 @@
 | 4/5/16 | Working on Team Project | 2.5 |
 | 4/6/16 | Working on Team Project | .5 |
 | 4/6/16 | Hitting my head on javax.servlet.annotation package | 2 |
+| 4/7/16 | Fixing log4j configuration | 2 |
+| 4/14/16 | Displaying languages using servlet | 2 |
