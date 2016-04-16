@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.660s</div>
+<div class="counter">1.381s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,27 +82,27 @@
 </thead>
 <tr>
 <td class="success">testCreate</td>
-<td>0.014s</td>
+<td>0.013s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testDelete</td>
-<td>0.020s</td>
+<td>0.022s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindAll</td>
-<td>1.548s</td>
+<td>1.284s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindById</td>
-<td>0.027s</td>
+<td>0.015s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testFindByName</td>
-<td>0.039s</td>
+<td>0.035s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -115,47 +115,47 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>Python Id:65
+<pre>2016-04-16 15:49:59,556 Test worker ERROR Unable to locate appender &quot;Programming Review&quot; for logger config &quot;org.apache.log4j.xml&quot;
+Python Id:15
 </pre>
 </span>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
-Apr 06, 2016 8:54:43 PM org.hibernate.annotations.common.Version &lt;clinit&gt;
+<pre>Apr 16, 2016 3:49:59 PM org.hibernate.annotations.common.Version &lt;clinit&gt;
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
-Apr 06, 2016 8:54:43 PM org.hibernate.Version logVersion
+Apr 16, 2016 3:49:59 PM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {4.2.2.Final}
-Apr 06, 2016 8:54:43 PM org.hibernate.cfg.Environment &lt;clinit&gt;
+Apr 16, 2016 3:49:59 PM org.hibernate.cfg.Environment &lt;clinit&gt;
 INFO: HHH000206: hibernate.properties not found
-Apr 06, 2016 8:54:43 PM org.hibernate.cfg.Environment buildBytecodeProvider
+Apr 16, 2016 3:49:59 PM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-Apr 06, 2016 8:54:43 PM org.hibernate.cfg.Configuration configure
+Apr 16, 2016 3:49:59 PM org.hibernate.cfg.Configuration configure
 INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-Apr 06, 2016 8:54:43 PM org.hibernate.cfg.Configuration getConfigurationInputStream
+Apr 16, 2016 3:49:59 PM org.hibernate.cfg.Configuration getConfigurationInputStream
 INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-Apr 06, 2016 8:54:43 PM org.hibernate.cfg.Configuration addResource
+Apr 16, 2016 3:49:59 PM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: User.hbm.xml
-Apr 06, 2016 8:54:43 PM org.hibernate.cfg.Configuration addResource
+Apr 16, 2016 3:49:59 PM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: Language.hbm.xml
-Apr 06, 2016 8:54:43 PM org.hibernate.cfg.Configuration doConfigure
+Apr 16, 2016 3:49:59 PM org.hibernate.cfg.Configuration doConfigure
 INFO: HHH000041: Configured SessionFactory: null
-Apr 06, 2016 8:54:43 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Apr 16, 2016 3:50:00 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-Apr 06, 2016 8:54:43 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Apr 16, 2016 3:50:00 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 20
-Apr 06, 2016 8:54:43 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Apr 16, 2016 3:50:00 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000006: Autocommit mode: false
-Apr 06, 2016 8:54:43 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Apr 16, 2016 3:50:00 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/test_programming_review]
-Apr 06, 2016 8:54:43 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+Apr 16, 2016 3:50:00 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000046: Connection properties: {user=jesse, password=****}
-Apr 06, 2016 8:54:43 PM org.hibernate.dialect.Dialect &lt;init&gt;
+Apr 16, 2016 3:50:00 PM org.hibernate.dialect.Dialect &lt;init&gt;
 INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-Apr 06, 2016 8:54:43 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+Apr 16, 2016 3:50:00 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
 INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-Apr 06, 2016 8:54:43 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
+Apr 16, 2016 3:50:00 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
 INFO: HHH000397: Using ASTQueryTranslatorFactory
 </pre>
 </span>
@@ -168,7 +168,7 @@ INFO: HHH000397: Using ASTQueryTranslatorFactory
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 2.9</a> at Apr 6, 2016 8:54:44 PM</p>
+<a href="http://www.gradle.org">Gradle 2.9</a> at Apr 16, 2016 3:50:01 PM</p>
 </div>
 </div>
 </body>

@@ -30,7 +30,10 @@
 <h1>Languages</h1>
 <c:forEach items="${languages}" var="language">
 
-    <h3><a href="">${language.name}</a></h3>
+    <h3>
+        <c:set value="${language.name}" var="name" scope="request" />
+        <a href="language?name=${language.name}">${language.name}</a>
+    </h3>
 </c:forEach>
 
 

@@ -31,6 +31,7 @@ public class ShowLanguages extends HttpServlet {
             throws ServletException, IOException {
 
         logger.warn("Testing");
+
         LanguageDao dao = new LanguageDao();
         List<Language> languages = dao.findAll();
         logger.debug("Size: " + languages.size());
