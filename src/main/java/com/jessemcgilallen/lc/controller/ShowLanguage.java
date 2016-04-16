@@ -29,7 +29,7 @@ public class ShowLanguage {
 
 
             logger.warn("Testing");
-            response.getWriter().write();
+           // response.getWriter().write();
             LanguageDao dao = new LanguageDao();
             Language language = dao.findByName("");
             request.setAttribute("language", language);
@@ -40,5 +40,5 @@ public class ShowLanguage {
             dispatcher.forward(request, response);
         }
 
-
+    }
 }
