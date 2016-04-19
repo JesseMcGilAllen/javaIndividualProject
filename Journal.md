@@ -253,5 +253,17 @@ After some research, I found that I need a new log4j configuration file.  the co
 Completed:
     Connected languages servlet
 
+04/16/16
+
+Completed:
+    Got Show Language servlet working
+
+04/19/16
+
+Completed:
+    Got add Languages servlet working
+
 I was finally about to display a list of languages in the languages jsp.  I was having quite the trouble and found it was a mysql issue.  The IntelliJ version was not adding records when I tried using the Database console view.  I was able to add one using my Terminal instance.
+
+I still extremely dislike the routes given for each jsp.  I spent some time researching alternatives and may look at web frameworks a bit more in depth at some point in the next week or two.  My limited research has lead me to believe that Spring MVC, Play, or Spark may provide me with the routing mechanism I want.  Another option was uncovered after talking with Paula: To throw a lot of complications in the web.xml file.  I could set the jsp path as best I could staticly in the project and then configure the Realm accordingly or I could look into servlet url-mapping which may also hold a solution to my problems.
 

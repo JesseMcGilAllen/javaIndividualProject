@@ -67,7 +67,7 @@
 
 ### Week 12
 - [X] Work on Language Servlets
-- [ ] Weekly journal entry
+- [X] Weekly journal entry
 
 ### Week 13
 - [ ] Weekly journal entry

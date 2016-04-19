@@ -56,3 +56,5 @@
 | 4/6/16 | Hitting my head on javax.servlet.annotation package | 2 |
 | 4/7/16 | Fixing log4j configuration | 2 |
 | 4/14/16 | Displaying languages using servlet | 2 |
+| 4/16/16 | Researching Restful Routes and working on Languages servlet | 2 |
+| 4/19/16 | Working on Languages Servlet | 1 |
