@@ -15,5 +15,14 @@
 <body>
 <c:import url="../jsp/navigation-bar.jsp" />
 <h1>Add Language</h1>
+
+<form action="/pr/languages/add" method="post">
+    <div class="form-group">
+        <label for="nameInput">Name</label>
+        <input type="text" class="form-control" id="nameInput" name="nameInput" placeholder="Name">
+    </div>
+    <button type="submit" class="btn btn-default">Add Language</button>
+</form>
+
 </body>
 </html>

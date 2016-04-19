@@ -20,7 +20,7 @@
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
 
     <div class="list-group list-group-horizontal">
-        <a href="../create/new-language.jsp" class="list-group-item">Add Language</a>
+        <a href="create/new-language.jsp" class="list-group-item">Add Language</a>
 
     </div>
 

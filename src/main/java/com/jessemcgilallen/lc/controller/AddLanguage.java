@@ -23,15 +23,16 @@ public class AddLanguage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String name = request.getParameter("name");
+        String name = request.getParameter("nameInput");
         LanguageDao dao = new LanguageDao();
         Language language = new Language();
         language.setName(name);
         int id = dao.create(language);
+        logger.debug("Id: " + id);
 
         request.setAttribute("language", dao.findById(id));
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/show-language" + ".jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("../read/show-language" + ".jsp");
 
         dispatcher.forward(request, response);
     }
