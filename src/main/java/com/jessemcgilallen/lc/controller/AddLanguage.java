@@ -12,31 +12,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
 /**
- * Created by jessemcgilallen on 4/16/16.
+ * Created by jessemcgilallen on 4/19/16.
  */
+@WebServlet(name = "Add Language", urlPatterns = { "/languages/add"} )
 
-@WebServlet(name = "Show Language", urlPatterns = { "/language"} )
-
-public class ShowLanguage extends HttpServlet {
+public class AddLanguage extends HttpServlet {
     private final Logger logger = Logger.getLogger(this.getClass());
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-        logger.warn("Testing");
         String name = request.getParameter("name");
-
         LanguageDao dao = new LanguageDao();
-        Language language = dao.findByName(name);
-        request.setAttribute("language", language);
-        logger.debug("Sending " + language);
+        Language language = new Language();
+        language.setName(name);
+        int id = dao.create(language);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("read/show-language" + ".jsp");
-        logger.debug("Language: " + request);
+        request.setAttribute("language", dao.findById(id));
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/show-language" + ".jsp");
+
         dispatcher.forward(request, response);
     }
 }
