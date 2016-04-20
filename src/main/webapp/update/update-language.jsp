@@ -16,5 +16,17 @@
 <c:import url="../jsp/navigation-bar.jsp" />
 
 <h1>Update Language</h1>
+
+<form action="/pr/languages/update" method="post">
+    <div>
+        <input type="hidden" id="idField" name="idField" value="${language.id}"
+    </div>
+    <div class="form-group">
+        <label for="nameField">Name</label>
+        <input type="text" class="form-control" id="nameField" name="nameField"
+               placeholder="Name" value="${language.name}">
+    </div>
+    <button type="submit" class="btn btn-default">Update</button>
+</form>
 </body>
 </html>
