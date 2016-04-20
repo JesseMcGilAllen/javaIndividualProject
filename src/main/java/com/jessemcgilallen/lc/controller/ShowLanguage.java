@@ -29,9 +29,18 @@ public class ShowLanguage extends HttpServlet {
 
         logger.warn("Testing");
         String name = request.getParameter("name");
+        logger.debug("Parameter Name: " + name);
 
         LanguageDao dao = new LanguageDao();
         Language language = dao.findByName(name);
+
+        if (name.contains("+")) {
+            String parameterName = name.replaceAll("\\+", "%2B");
+            request.setAttribute("altName", parameterName);
+            logger.debug("Alt Name: " + parameterName);
+        }
+
+        logger.debug("Sending " + language);
         request.setAttribute("language", language);
         logger.debug("Sending " + language);
 

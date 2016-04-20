@@ -32,7 +32,16 @@
 
     <h3>
         <c:set value="${language.name}" var="name" scope="request" />
-        <a href="language?name=${language.name}">${language.name}</a>
+        <c:set value="${altName}" var="altName" scope="request" />
+        <c:choose>
+            <c:when test="${altName != null}">
+                <a href="language?name=${altName}">${language.name}</a>
+            </c:when>
+            <c:otherwise>
+                <a href="language?name=${language.name}">${language.name}</a>
+            </c:otherwise>
+        </c:choose>
+
     </h3>
 </c:forEach>
 

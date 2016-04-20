@@ -37,8 +37,14 @@ public class ShowLanguages extends HttpServlet {
         logger.debug("Size: " + languages.size());
         request.setAttribute("languages", languages);
         for (Language language: languages) {
-            logger.debug(" Language: " + language.getName());
+            String name = language.getName();
+            if (name.contains("+")) {
+                String parameterName = name.replaceAll("\\+", "%2B");
+                request.setAttribute("altName", parameterName);
+                logger.debug("Alt Name: " + parameterName);
+            }
         }
+
         logger.debug("Sending the languages...");
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("read/languages" + ".jsp");
