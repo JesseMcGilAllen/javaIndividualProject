@@ -35,13 +35,13 @@
         <c:set value="${altName}" var="altName" scope="request" />
         <c:choose>
             <c:when test="${altName != null}">
-                <a href="language?name=${altName}">${language.name}</a>
+                <c:set value="languages/update?name=${altName}"  var="url" scope="request" />
             </c:when>
             <c:otherwise>
-                <a href="language?name=${language.name}">${language.name}</a>
+                <c:set value="languages/update?name=${name}"  var="url" scope="request" />
             </c:otherwise>
         </c:choose>
-
+        <a href="${url}">${name}</a>
     </h3>
 </c:forEach>
 
