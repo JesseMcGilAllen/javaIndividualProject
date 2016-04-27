@@ -35,10 +35,10 @@
         <c:set value="${altName}" var="altName" scope="request" />
         <c:choose>
             <c:when test="${altName != null}">
-                <c:set value="languages/update?name=${altName}"  var="url" scope="request" />
+                <c:set value="language?name=${altName}"  var="url" scope="request" />
             </c:when>
             <c:otherwise>
-                <c:set value="languages/update?name=${name}"  var="url" scope="request" />
+                <c:set value="language?name=${name}"  var="url" scope="request" />
             </c:otherwise>
         </c:choose>
         <a href="${url}">${name}</a>
