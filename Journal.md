@@ -267,3 +267,27 @@ I was finally about to display a list of languages in the languages jsp.  I was 
 
 I still extremely dislike the routes given for each jsp.  I spent some time researching alternatives and may look at web frameworks a bit more in depth at some point in the next week or two.  My limited research has lead me to believe that Spring MVC, Play, or Spark may provide me with the routing mechanism I want.  Another option was uncovered after talking with Paula: To throw a lot of complications in the web.xml file.  I could set the jsp path as best I could staticly in the project and then configure the Realm accordingly or I could look into servlet url-mapping which may also hold a solution to my problems.
 
+## Week 13
+
+04/20/16
+
+Completed:
+    MATC Challenge Course
+
+04/26/16
+
+Completed:
+    Delete Servlet for Languages
+    Refactored Logic dealing with URL Special Characters
+
+I was able to complete the challenge course.  I was a bit surprised.  I learned that it was better to focus on the next step.  There was no point in looking at the goal as it was not useful to what I needed to do in this instance.  I took a couple bumps and got a little sunburnt but otherwise a good day.  
+
+I ended up spending most of my time this week working on one of my iOS projects.  Eric announced the presentation date for those and it does not bode well for themy Java project.  It is two days before and with the nature of the event, I feel I will have to spend the majority of the weekend before on those two projects.  I have decided my solution to this problem is to move my Java presentation forward a week.  My hope is that it will motivate me to get as much done for the presentation as possible over the next week.
+
+I finally got the Languages delete servlet for hooked up and in the process was talking to Michael Tackes about my parameter special character issue.  He led me down the path to a much better (in my eyes) solution.  Instead, of requiring logic in the jsp & servlet class, all I need to do is add 
+```
+<c:url value="language" var="url">
+    <c:param name="name" value="${language.name}" />
+</c:url>
+```
+and it takes care of the rest!

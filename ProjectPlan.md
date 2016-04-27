@@ -70,11 +70,18 @@
 - [X] Weekly journal entry
 
 ### Week 13
-- [ ] Weekly journal entry
+- [X] Finish Language Servlets
+- [ ] Work on Types Dao
+- [X] Work on Presentation
+- [X] Weekly journal entry
 
 ### Week 14
+- [ ] Work on remaining Servlets
+- [ ] Work on remaining Daos
+- [ ] implement Web Service
+- [ ] Give Presentation
 - [ ] Weekly journal entry
 
 ### Week 15
-- [ ] Final Presentation
+- [ ] Put finishing touches on Servlet
 - [ ] Weekly journal entry

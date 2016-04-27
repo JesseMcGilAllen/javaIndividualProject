@@ -36,14 +36,6 @@ public class ShowLanguages extends HttpServlet {
         List<Language> languages = dao.findAll();
         logger.debug("Size: " + languages.size());
         request.setAttribute("languages", languages);
-        for (Language language: languages) {
-            String name = language.getName();
-            if (name.contains("+")) {
-                String parameterName = name.replaceAll("\\+", "%2B");
-                request.setAttribute("altName", parameterName);
-                logger.debug("Alt Name: " + parameterName);
-            }
-        }
 
         logger.debug("Sending the languages...");
 

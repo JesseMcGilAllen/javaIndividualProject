@@ -58,3 +58,6 @@
 | 4/14/16 | Displaying languages using servlet | 2 |
 | 4/16/16 | Researching Restful Routes and working on Languages servlet | 2 |
 | 4/19/16 | Working on Languages Servlet | 1 |
+| 4/26/16 | Working on Presentation | 2 |
+| 4/26/16 | Working on Languages Servlet - Delete functionality | 1 |
+| 4/26/16 | Reworking url encoding for html special characters | .5 |
