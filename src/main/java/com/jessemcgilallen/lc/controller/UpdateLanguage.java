@@ -50,7 +50,7 @@ public class UpdateLanguage extends HttpServlet {
         dao.update(language);
         logger.debug("Id: " + id);
         request.setAttribute("language", language);
-        //response.sendRedirect("../language");
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("../read/show-language" + ".jsp");
 
         dispatcher.forward(request, response);

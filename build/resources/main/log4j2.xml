@@ -12,7 +12,7 @@
         <Logger name="org.apache.log4j.xml" level="debug">
             <AppenderRef ref="Log"/>
         </Logger>
-        <Root level="debug">
+        <Root level="warn">
             <AppenderRef ref="STDOUT"/>
             <AppenderRef ref="Log" />
         </Root>

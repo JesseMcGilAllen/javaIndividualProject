@@ -15,24 +15,24 @@
 <body>
 
 <c:import url="/jsp/navigation-bar.jsp" />
+
 <h1>Languages</h1>
 
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+<div class="text-center">
 
     <div class="list-group list-group-horizontal">
-        <a href="create/new-language.jsp" class="list-group-item">Add Language</a>
+        <a href="../pr/create/new-language.jsp" class="list-group-item">Add Language</a>
 
     </div>
 
 </div>
 
 
-<h1>Languages</h1>
 <c:forEach items="${languages}" var="language">
 
     <h3>
         <c:set value="${language.name}" var="name" scope="request" />
-        <c:url value="language" var="url">
+        <c:url value="/language" var="url">
             <c:param name="name" value="${language.name}" />
         </c:url>
         <a href="${url}">${name}</a>
