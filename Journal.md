@@ -297,4 +297,7 @@ and it takes care of the rest!
 Completed:
     Fixed Path issue I was facing
 
+Completed:
+    Types DAO
+
 I finally figured out what was going on in my paths.  In the JSPs I was going to languages instead of /languages and so on. :facepalm:

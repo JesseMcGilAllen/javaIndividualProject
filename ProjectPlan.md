@@ -75,7 +75,7 @@
 - [X] Weekly journal entry
 
 ### Week 14
-- [ ] Work on Types Dao
+- [X] Work on Types Dao
 - [ ] Work on remaining Servlets
 - [ ] Work on remaining Daos
 - [ ] implement Web Service
