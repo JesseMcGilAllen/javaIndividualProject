@@ -61,3 +61,4 @@
 | 4/26/16 | Working on Presentation | 2 |
 | 4/26/16 | Working on Languages Servlet - Delete functionality | 1 |
 | 4/26/16 | Reworking url encoding for html special characters | .5 |
+| 4/28/16 | Fixing path issue of second trip around | 1 |

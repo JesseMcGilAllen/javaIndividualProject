@@ -291,3 +291,10 @@ I finally got the Languages delete servlet for hooked up and in the process was 
 </c:url>
 ```
 and it takes care of the rest!
+
+## Week 14
+
+Completed:
+    Fixed Path issue I was facing
+
+I finally figured out what was going on in my paths.  In the JSPs I was going to languages instead of /languages and so on. :facepalm:
