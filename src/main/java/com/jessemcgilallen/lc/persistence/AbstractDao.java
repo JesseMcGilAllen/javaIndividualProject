@@ -65,9 +65,11 @@ public abstract class AbstractDao<T> {
                 .add(Restrictions.eq("id", id));
         List<T> results = findByCriteria(criteria);
 
+        T result = results.get(0);
+
         session.close();
 
-        return results.get(0);
+        return result;
     }
 
     public List<T> findByCriteria(Criteria criteria) {
