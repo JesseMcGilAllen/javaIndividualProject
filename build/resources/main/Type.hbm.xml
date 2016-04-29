@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="com.jessemcgilallen.lc.entity.Type" table="types">
         <meta attribute="class-description">
-            This class contains the user detail.
+            This class contains the type detail.
         </meta>
         <id name="id" type="int" column="type_id">
             <generator class="native"/>

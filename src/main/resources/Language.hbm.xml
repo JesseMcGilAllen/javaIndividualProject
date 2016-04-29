@@ -6,7 +6,7 @@
 <hibernate-mapping>
     <class name="com.jessemcgilallen.lc.entity.Language" table="languages">
         <meta attribute="class-description">
-            This class contains the user detail.
+            This class contains the language detail.
         </meta>
         <id name="id" type="int" column="language_id">
             <generator class="native"/>

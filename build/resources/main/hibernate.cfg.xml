@@ -27,6 +27,9 @@
 
         <mapping resource="Type.hbm.xml" />
         <mapping class="com.jessemcgilallen.lc.entity.Type" />
+
+        <mapping resource="Topic.hbm.xml" />
+        <mapping class="com.jessemcgilallen.lc.entity.Topic" />
     </session-factory>
 
 </hibernate-configuration>

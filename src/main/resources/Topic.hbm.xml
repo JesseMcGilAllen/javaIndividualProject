@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.jessemcgilallen.lc.entity.Topic" table="topics">
+        <meta attribute="class-description">
+            This class contains the topic detail.
+        </meta>
+        <id name="id" type="int" column="topic_id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name" type="string" />
+        <property name="description" column="description" type="string" />
+        <property name="videoUrl" column="video_url" type="string" />
+        
+        <many-to-one name="Language" class="com.jessemcgilallen.lc.entity.Language"
+                     column="language_id" unique="true" not-null="true" cascade="all" />
+
+        <many-to-one name="Type" class="com.jessemcgilallen.lc.entity.Type"
+                     column="type_id" unique="true" not-null="true" cascade="all" />
+    </class>
+</hibernate-mapping>
