@@ -8,9 +8,9 @@ import org.hibernate.criterion.Restrictions;
 /**
  * Created by jessemcgilallen on 4/29/16.
  */
-public class TypesDao extends AbstractDao {
+public class TypeDao extends AbstractDao {
 
-    public TypesDao() {
+    public TypeDao() {
         super(Type.class);
     }
 

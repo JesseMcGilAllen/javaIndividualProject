@@ -63,3 +63,4 @@
 | 4/26/16 | Reworking url encoding for html special characters | .5 |
 | 4/28/16 | Fixing path issue of second trip around | 1 |
 | 4/29/16 | Adding Types to database and working on TypesDao | 1.25 |
+| 4/29/16 | Working on TopicsDao and relationships | 2.5 |
