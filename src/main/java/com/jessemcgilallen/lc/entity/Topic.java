@@ -12,8 +12,10 @@ public class Topic {
     private String name;
     private String description;
     private String videoURL;
-    private Set<Language> languages;
     private Type type;
+    private Set<Language> languages;
+    private Set<Example> examples;
+
 
     public int getId() {
         return id;
@@ -47,6 +49,14 @@ public class Topic {
         this.videoURL = videoURL;
     }
 
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
     public Set<Language> getLanguages() {
         return languages;
     }
@@ -55,11 +65,11 @@ public class Topic {
         this.languages = languages;
     }
 
-    public Type getType() {
-        return type;
+    public Set<Example> getExamples() {
+        return examples;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setExamples(Set<Example> examples) {
+        this.examples = examples;
     }
 }
