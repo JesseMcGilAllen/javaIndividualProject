@@ -30,6 +30,9 @@
 
         <mapping resource="Topic.hbm.xml" />
         <mapping class="com.jessemcgilallen.lc.entity.Topic" />
+
+        <mapping resource="Example.hbm.xml" />
+        <mapping class="com.jessemcgilallen.lc.entity.Example" />
     </session-factory>
 
 </hibernate-configuration>
