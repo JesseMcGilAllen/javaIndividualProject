@@ -65,6 +65,10 @@ public class Topic {
         this.languages = languages;
     }
 
+    public void addLanguage(Language language) {
+        languages.add(language);
+    }
+
     public Set<Example> getExamples() {
         return examples;
     }
