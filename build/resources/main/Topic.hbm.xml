@@ -10,12 +10,14 @@
         <id name="id" type="int" column="topic_id">
             <generator class="native"/>
         </id>
+
+        <set name="languages" cascade="save-update" table="language_topic" inverse="false">
+            <key column="topic_id"/>
+            <many-to-many column="language_id" class="com.jessemcgilallen.lc.entity.Language"  />
+        </set>
         <property name="name" column="name" type="string" />
         <property name="description" column="description" type="string" />
-        <property name="videoUrl" column="video_url" type="string" />
-        
-        <many-to-one name="Language" class="com.jessemcgilallen.lc.entity.Language"
-                     column="language_id" unique="true" not-null="true" cascade="all" />
+        <property name="videoURL" column="video_url" type="string" />
 
         <many-to-one name="Type" class="com.jessemcgilallen.lc.entity.Type"
                      column="type_id" unique="true" not-null="true" cascade="all" />

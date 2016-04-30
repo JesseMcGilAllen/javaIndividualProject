@@ -1,5 +1,7 @@
 package com.jessemcgilallen.lc.entity;
 
+import java.util.Set;
+
 /**
  * Created by jessemcgilallen on 3/27/16.
  */
@@ -7,6 +9,7 @@ public class Language {
 
     private int id;
     private String name;
+    private Set<Topic> topics;
 
     public Language() {
 
@@ -27,11 +30,17 @@ public class Language {
         return name;
     }
 
-    /**
-     * @param name
-     */
     public void setName(String name) {
         this.name = name;
+    }
+
+
+    public Set<Topic> getTopics() {
+        return topics;
+    }
+
+    public void setTopics(Set<Topic> topics) {
+        this.topics = topics;
     }
 
     @Override

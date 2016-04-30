@@ -11,6 +11,10 @@
         <id name="id" type="int" column="language_id">
             <generator class="native"/>
         </id>
+        <set name="topics" cascade="save-update" table="language_topic" inverse="true">
+            <key column="language_id" />
+            <many-to-many column="topic_id" class="com.jessemcgilallen.lc.entity.Topic" />
+        </set>
         <property name="name" column="name" type="string"/>
     </class>
 </hibernate-mapping>

@@ -1,5 +1,7 @@
 package com.jessemcgilallen.lc.entity;
 
+import java.util.Set;
+
 /**
  * Created by jessemcgilallen on 4/29/16.
  */
@@ -10,7 +12,7 @@ public class Topic {
     private String name;
     private String description;
     private String videoURL;
-    private Language language;
+    private Set<Language> languages;
     private Type type;
 
     public int getId() {
@@ -19,6 +21,14 @@ public class Topic {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -37,12 +47,12 @@ public class Topic {
         this.videoURL = videoURL;
     }
 
-    public Language getLanguage() {
-        return language;
+    public Set<Language> getLanguages() {
+        return languages;
     }
 
-    public void setLanguage(Language language) {
-        this.language = language;
+    public void setLanguages(Set<Language> languages) {
+        this.languages = languages;
     }
 
     public Type getType() {
