@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class TopicService {
 
-    public static HttpServletRequest getWithLanguage(HttpServletRequest request) {
+    public static HttpServletRequest getNewWithLanguage(HttpServletRequest request) {
         Logger logger = LogManager.getRootLogger();
 
         LanguageDao languageDao = new LanguageDao();
@@ -31,7 +31,7 @@ public class TopicService {
         return request;
     }
 
-    public static HttpServletRequest postWithLanguageAndTypeName(HttpServletRequest request,
+    public static HttpServletRequest postNewWithLanguageAndTypeName(HttpServletRequest request,
                                                                 String typeName) {
         Logger logger = LogManager.getRootLogger();
 
@@ -59,9 +59,11 @@ public class TopicService {
         id = topicDao.create(topic);
 
         request.setAttribute("id", id);
-        request.setAttribute("language", language);
+        request.setAttribute("language", language.getName());
 
         return request;
     }
+
+
 
 }

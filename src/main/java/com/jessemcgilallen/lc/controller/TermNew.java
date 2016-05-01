@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URI;
 
 /**
  * Created by jessemcgilallen on 5/1/16.
@@ -17,7 +18,7 @@ public class TermNew extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "../../create/new-term.jsp";
-        request = TopicService.getWithLanguage(request);
+        request = TopicService.getNewWithLanguage(request);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 
@@ -26,13 +27,15 @@ public class TermNew extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request = TopicService.postWithLanguageAndTypeName(request, "term");
+        request = TopicService.postNewWithLanguageAndTypeName(request, "term");
+
         RequestDispatcher dispatcher;
 
         int id = (Integer)request.getAttribute("id");
 
         if (id > 0) {
-            dispatcher = request.getRequestDispatcher("../../read/show-language" + ".jsp");
+            String languageName = (String) request.getAttribute("language");
+            dispatcher = request.getRequestDispatcher("../../language?name=" + languageName);
         } else {
             dispatcher = request.getRequestDispatcher("../../create/new-term" + ".jsp");
         }

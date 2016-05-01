@@ -1,12 +1,5 @@
 package com.jessemcgilallen.lc.controller;
 
-import com.jessemcgilallen.lc.entity.Language;
-import com.jessemcgilallen.lc.entity.Topic;
-import com.jessemcgilallen.lc.entity.Type;
-import com.jessemcgilallen.lc.persistence.LanguageDao;
-import com.jessemcgilallen.lc.persistence.TopicDao;
-import com.jessemcgilallen.lc.persistence.TypeDao;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -28,7 +21,7 @@ public class ConceptNew extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "../../create/new-concept.jsp";
-        request = TopicService.getWithLanguage(request);
+        request = TopicService.getNewWithLanguage(request);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 
@@ -37,13 +30,15 @@ public class ConceptNew extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request = TopicService.postWithLanguageAndTypeName(request, "concept");
+        request = TopicService.postNewWithLanguageAndTypeName(request, "concept");
+
         RequestDispatcher dispatcher;
 
         int id = (Integer)request.getAttribute("id");
 
         if (id > 0) {
-            dispatcher = request.getRequestDispatcher("../../read/show-language" + ".jsp");
+            String languageName = (String) request.getAttribute("language");
+            dispatcher = request.getRequestDispatcher("../../language?name=" + languageName);
         } else {
             dispatcher = request.getRequestDispatcher("../../create/new-concept" + ".jsp");
         }

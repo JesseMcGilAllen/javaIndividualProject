@@ -46,6 +46,8 @@ public class ShowLanguages extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-
-
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
 }
