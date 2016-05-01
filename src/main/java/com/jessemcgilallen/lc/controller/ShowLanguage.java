@@ -30,8 +30,12 @@ public class ShowLanguage extends HttpServlet {
         String name = request.getParameter("name");
         logger.debug("Parameter Name: " + name);
 
+
         LanguageDao dao = new LanguageDao();
+        dao.openSession();
+
         Language language = dao.findByName(name);
+        dao.closeSession();
 
         logger.debug("Sending " + language);
         request.setAttribute("language", language);

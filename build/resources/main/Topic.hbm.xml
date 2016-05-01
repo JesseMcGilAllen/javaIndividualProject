@@ -11,12 +11,12 @@
             <generator class="native"/>
         </id>
 
-        <set name="languages" cascade="save-update" table="language_topic" inverse="false">
+        <set name="languages"  table="language_topic" inverse="false">
             <key column="topic_id"/>
-            <many-to-many column="language_id" class="com.jessemcgilallen.lc.entity.Language"  />
+            <many-to-many column="language_id" class="com.jessemcgilallen.lc.entity.Language" not-found="ignore" />
         </set>
 
-        <set name="examples" cascade="save-update" table="topic_example" inverse="false">
+        <set name="examples" table="topic_example" inverse="false">
             <key column="topic_id"/>
             <many-to-many column="example_id" class="com.jessemcgilallen.lc.entity.Example"  />
         </set>
@@ -24,7 +24,9 @@
         <property name="description" column="description" type="string" />
         <property name="videoURL" column="video_url" type="string" />
 
-        <many-to-one name="Type" class="com.jessemcgilallen.lc.entity.Type"
-                     column="type_id" unique="true" not-null="true" cascade="all" />
+        <many-to-one name="type" class="com.jessemcgilallen.lc.entity.Type"
+                     column="type_id" unique="false" not-null="true" cascade="all" />
+
+
     </class>
 </hibernate-mapping>

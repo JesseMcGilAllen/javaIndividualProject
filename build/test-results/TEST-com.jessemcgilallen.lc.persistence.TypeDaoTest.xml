@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jessemcgilallen.lc.persistence.TypeDaoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-04-30T20:12:28" hostname="Haskell" time="0.018">
+  <properties/>
+  <testcase name="testFindAllTypes" classname="com.jessemcgilallen.lc.persistence.TypeDaoTest" time="0.003"/>
+  <testcase name="testFindByName" classname="com.jessemcgilallen.lc.persistence.TypeDaoTest" time="0.002"/>
+  <testcase name="testFindByWrongName" classname="com.jessemcgilallen.lc.persistence.TypeDaoTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

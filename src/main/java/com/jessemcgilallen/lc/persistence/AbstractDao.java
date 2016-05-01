@@ -1,12 +1,10 @@
 package com.jessemcgilallen.lc.persistence;
 
 import com.jessemcgilallen.lc.entity.Language;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
@@ -19,7 +17,7 @@ import java.util.List;
 public abstract class AbstractDao<T> {
 
     private final Logger logger = Logger.getLogger(this.getClass());
-
+    private Session session;
     private Class<T> typeParameterClass;
 
     public AbstractDao() {
@@ -35,7 +33,6 @@ public abstract class AbstractDao<T> {
 
     public List<T> findAll() {
         List<T> list = new ArrayList<T>();
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
 
         try {
@@ -50,31 +47,36 @@ public abstract class AbstractDao<T> {
 
             logger.error(exception);
 
-        } finally {
-            session.close();
-
         }
 
         return list;
     }
 
     public T findById(int id) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-
         Criteria criteria = session.createCriteria(getTypeParameterClass())
                 .add(Restrictions.eq("id", id));
         List<T> results = findByCriteria(criteria);
 
-        T result = results.get(0);
-
-        session.close();
+         T result = results.get(0);
 
         return result;
     }
 
+    public T findByName(String name) {
+        Criteria criteria = session.createCriteria(getTypeParameterClass())
+                .add(Restrictions.eq("name", name));
+        List<T> results = findByCriteria(criteria);
+
+        T instance = results.get(0);
+
+        logger.setLevel(Level.DEBUG);
+        logger.debug("Instance: " + instance);
+
+        return instance;
+    }
+
     public List<T> findByCriteria(Criteria criteria) {
         List<T> list = new ArrayList<>();
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
 
         try {
@@ -88,16 +90,12 @@ public abstract class AbstractDao<T> {
 
             logger.error(exception);
 
-        } finally {
-            session.close();
-
         }
 
         return list;
     }
 
     public int create(T entity) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         Integer id = null;
 
@@ -119,18 +117,13 @@ public abstract class AbstractDao<T> {
             }
 
             logger.error(nullPointerException);
-
-
-        } finally {
-            session.close();
-
         }
 
         return id;
     }
 
     public void update(T entity) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
         Transaction transaction = null;
 
         try {
@@ -144,15 +137,11 @@ public abstract class AbstractDao<T> {
             }
 
             logger.error(exception);
-
-        } finally {
-            session.close();
-
         }
     }
 
     public void delete(T entity) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
         Transaction transaction = null;
 
         try {
@@ -167,11 +156,21 @@ public abstract class AbstractDao<T> {
 
             logger.error(exception);
 
-        } finally {
-            session.close();
-
         }
     }
 
+    public void openSession() {
+        session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
+        if (session != null) {
+            session.close();
+        }
+
+        session = SessionFactoryProvider.getSessionFactory().openSession();
+    }
+
+    public void closeSession() {
+        session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
+        session.close();
+    }
 
 }

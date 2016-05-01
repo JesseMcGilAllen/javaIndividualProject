@@ -23,11 +23,8 @@ public class LanguageDao extends AbstractDao {
     }
 
     public Language findByName(String name) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
-        Criteria criteria = session.createCriteria(Language.class)
-                .add(Restrictions.eq("name", name));
-        Language language = (Language)super.findByCriteria(criteria).get(0);
+        Language language = (Language)super.findByName(name);
 
         return language;
     }

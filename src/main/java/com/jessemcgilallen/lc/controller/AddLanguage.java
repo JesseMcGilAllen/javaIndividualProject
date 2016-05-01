@@ -25,10 +25,12 @@ public class AddLanguage extends HttpServlet {
 
         String name = request.getParameter("nameInput");
         LanguageDao dao = new LanguageDao();
+        dao.openSession();
         Language language = new Language();
         language.setName(name);
         int id = dao.create(language);
         logger.debug("Id: " + id);
+        dao.closeSession();
 
         request.setAttribute("language", dao.findById(id));
 

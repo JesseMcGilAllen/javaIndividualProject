@@ -27,11 +27,11 @@ public class UpdateLanguage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String name = request.getParameter("name");
-
+        dao.openSession();
         Language language = dao.findByName(name);
         request.setAttribute("language", language);
         logger.debug("Sending " + language);
-
+        dao.closeSession();
         RequestDispatcher dispatcher = request.getRequestDispatcher("../update/update-language" + ".jsp");
 
         dispatcher.forward(request, response);
@@ -41,6 +41,7 @@ public class UpdateLanguage extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("idField"));
         String name = request.getParameter("nameField");
+        dao.openSession();
         Language language = dao.findById(id);
 
         if (name.length() > 0) {
@@ -48,6 +49,7 @@ public class UpdateLanguage extends HttpServlet {
         }
 
         dao.update(language);
+        dao.closeSession();
         logger.debug("Id: " + id);
         request.setAttribute("language", language);
 

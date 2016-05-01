@@ -26,4 +26,5 @@ public class Type {
     public void setName(String name) {
         this.name = name;
     }
+
 }

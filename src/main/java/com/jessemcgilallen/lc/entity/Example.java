@@ -8,6 +8,7 @@ public class Example {
     private int id;
     private String code;
     private Language language;
+    private Topic topic;
 
     public int getId() {
         return id;
@@ -31,5 +32,13 @@ public class Example {
 
     public void setLanguage(Language language) {
         this.language = language;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
 }

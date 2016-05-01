@@ -1,5 +1,7 @@
 package com.jessemcgilallen.lc.entity;
 
+
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -66,6 +68,14 @@ public class Topic {
     }
 
     public void addLanguage(Language language) {
+        if (languages == null) {
+            languages = new HashSet<Language>();
+        }
+
+        if (languages.contains(language)) {
+            return;
+        }
+
         languages.add(language);
     }
 
