@@ -41,7 +41,7 @@ public class UpdateLanguage extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("idField"));
         String name = request.getParameter("nameField");
-        dao.openSession();
+
         Language language = dao.findById(id);
 
         if (name.length() > 0) {
@@ -49,7 +49,7 @@ public class UpdateLanguage extends HttpServlet {
         }
 
         dao.update(language);
-        dao.closeSession();
+
         logger.debug("Id: " + id);
         request.setAttribute("language", language);
 

@@ -32,10 +32,10 @@ public class ShowLanguage extends HttpServlet {
 
 
         LanguageDao dao = new LanguageDao();
-        dao.openSession();
+
 
         Language language = dao.findByName(name);
-        dao.closeSession();
+
 
         logger.debug("Sending " + language);
         request.setAttribute("language", language);

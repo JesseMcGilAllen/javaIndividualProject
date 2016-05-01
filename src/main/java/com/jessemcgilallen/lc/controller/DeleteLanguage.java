@@ -26,12 +26,11 @@ public class DeleteLanguage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name  = request.getParameter("name");
-        dao.openSession();
         Language language = dao.findByName(name);
         dao.delete(language);
 
         List<Language> languages = dao.findAll();
-        dao.closeSession();
+
         request.setAttribute("languages", languages);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("../read/languages" + ".jsp");

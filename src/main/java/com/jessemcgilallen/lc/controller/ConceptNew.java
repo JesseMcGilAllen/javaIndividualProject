@@ -49,18 +49,14 @@ public class ConceptNew extends HttpServlet {
         TypeDao typeDao = new TypeDao();
         TopicDao topicDao = new TopicDao();
 
-        typeDao.openSession();
         Type type = typeDao.findByName("concept");
-        typeDao.closeSession();
 
         String name = request.getParameter("nameField");
         String description = request.getParameter("descriptionField");
         String languageName = request.getParameter("language");
 
-
-        languageDao.openSession();
         Language language = languageDao.findByName(languageName);
-        languageDao.closeSession();
+
         Topic topic = new Topic();
 
         topic.setName(name);
@@ -68,9 +64,7 @@ public class ConceptNew extends HttpServlet {
         topic.setDescription(description);
         topic.setType(type);
 
-        topicDao.openSession();
         id = topicDao.create(topic);
-        topicDao.closeSession();
 
         logger.debug("Id: " + id);
 
