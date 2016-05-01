@@ -39,28 +39,35 @@ public class ShowLanguage extends HttpServlet {
 
         String name = request.getParameter("name");
 
-        LanguageDao dao = new LanguageDao();
-        Language language = dao.findByName(name);
+        Language language = languageForName(name);
+
+        List<Topic> concepts = topicsWithLanguageAndTypeName(language, "concept");
+        List<Topic> terms = topicsWithLanguageAndTypeName(language, "term");
+
         request.setAttribute("language", language);
-
-        TypeDao typeDao = new TypeDao();
-        Type conceptType = typeDao.findByName("concept");
-
-        HashMap<String, Object> restrictions = new HashMap<>();
-
-        restrictions.put("languages.id", (Integer) language.getId());
-        restrictions.put("type.id", (Integer) conceptType.getId());
-
-        TopicDao topicDao = new TopicDao();
-        List<Topic> concepts = topicDao.topicsUsingsTopicCriteria(conceptType, language);
-        logger.setLevel(Level.DEBUG);
-        logger.debug(concepts);
-
         request.setAttribute("concepts", concepts);
+        request.setAttribute("terms", terms);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("read/show-language" + ".jsp");
 
         dispatcher.forward(request, response);
+    }
+
+    private Language languageForName(String name) {
+        LanguageDao dao = new LanguageDao();
+        Language language = dao.findByName(name);
+
+        return language;
+    }
+
+    private List<Topic> topicsWithLanguageAndTypeName(Language language, String typeName ) {
+        TypeDao typeDao = new TypeDao();
+        TopicDao topicDao = new TopicDao();
+
+        Type type = typeDao.findByName(typeName);
+        List<Topic> topics = topicDao.topicsUsingsTopicCriteria(type, language);
+
+        return topics;
     }
 
 }

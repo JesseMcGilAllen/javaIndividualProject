@@ -64,4 +64,5 @@
 | 4/28/16 | Fixing path issue of second trip around | 1 |
 | 4/29/16 | Adding Types to database and working on TypesDao | 1.25 |
 | 4/29/16 | Working on TopicsDao and relationships | 2.5 |
-| 4/29/16 | Working on databases and hooking up add Concept servlet | 7 |
+| 4/30/16 | Working on databases and hooking up add Concept servlet | 7 |
+| 5/1/16 | Working on displaying concepts on language page | 2 |
