@@ -27,48 +27,20 @@ public class ConceptNew extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        LanguageDao languageDao = new LanguageDao();
-        String name = request.getParameter("name");
-        languageDao.openSession();
-        Language language = languageDao.findByName(name);
-        request.setAttribute("language", language);
-        logger.debug("Sending " + language);
-        languageDao.closeSession();
-        RequestDispatcher dispatcher = request.getRequestDispatcher("../../create/new-concept" + ".jsp");
+        String url = "../../create/new-concept.jsp";
+        request = TopicService.getWithLanguage(request);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 
         dispatcher.forward(request, response);
     }
-
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id;
-        logger.setLevel(Level.DEBUG);
+        request = TopicService.postWithLanguageAndTypeName(request, "concept");
         RequestDispatcher dispatcher;
-        LanguageDao languageDao = new LanguageDao();
-        TypeDao typeDao = new TypeDao();
-        TopicDao topicDao = new TopicDao();
 
-        Type type = typeDao.findByName("concept");
-
-        String name = request.getParameter("nameField");
-        String description = request.getParameter("descriptionField");
-        String languageName = request.getParameter("language");
-
-        Language language = languageDao.findByName(languageName);
-
-        Topic topic = new Topic();
-
-        topic.setName(name);
-        topic.addLanguage(language);
-        topic.setDescription(description);
-        topic.setType(type);
-
-        id = topicDao.create(topic);
-
-        logger.debug("Id: " + id);
-
-        request.setAttribute("language", language);
+        int id = (Integer)request.getAttribute("id");
 
         if (id > 0) {
             dispatcher = request.getRequestDispatcher("../../read/show-language" + ".jsp");
