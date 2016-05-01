@@ -24,8 +24,7 @@
     <div class="form-group">
         <label for="descriptionField">Description</label>
         <textarea class="form-control" id="descriptionField"
-                  name="descriptionField" rows="5">
-        </textarea>
+                  name="descriptionField" rows="5"></textarea>
     </div>
     <input type="hidden" id="language" name="language" value="${language.name}" />
     <button type="submit" class="btn btn-default">Add Concept</button>
