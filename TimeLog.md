@@ -67,4 +67,4 @@
 | 4/30/16 | Working on databases and hooking up add Concept servlet | 7 |
 | 5/1/16 | Working on displaying concepts on language page | 2 |
 | 5/1/16 | Creating a TopicService Class to move some repetitive elements to utility class | 1 |
-
+| 5/1/16 | Creating new term servlet and debugging forward url | 2 |
