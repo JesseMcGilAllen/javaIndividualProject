@@ -24,7 +24,7 @@
         <property name="description" column="description" type="string" />
         <property name="videoURL" column="video_url" type="string" />
 
-        <many-to-one name="type" class="com.jessemcgilallen.lc.entity.Type"
+        <many-to-one name="type" class="com.jessemcgilallen.lc.entity.Type" foreign-key="type_id"
                      column="type_id" unique="false" not-null="true" cascade="all" />
 
 

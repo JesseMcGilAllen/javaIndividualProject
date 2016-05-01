@@ -12,6 +12,7 @@ import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author jessemcgilallen
@@ -71,9 +72,10 @@ public abstract class AbstractDao<T> {
 
     public T findByName(String name) {
         session = SessionFactoryProvider.getSessionFactory().openSession();
+
         Criteria criteria = session.createCriteria(getTypeParameterClass())
                 .add(Restrictions.eq("name", name));
-        
+
         List<T> results = findByCriteria(criteria);
 
         T instance = results.get(0);
@@ -82,6 +84,20 @@ public abstract class AbstractDao<T> {
         logger.debug("Instance: " + instance);
 
         return instance;
+    }
+
+    public List<T> findByRestrictionsMap(Map<String, Object> restrictions) {
+        session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        Criteria criteria = session.createCriteria(getTypeParameterClass());
+        restrictions.forEach((key, value) ->
+                criteria.add(Restrictions.eq(key, value)));
+
+        List<T> results = findByCriteria(criteria);
+        logger.setLevel(Level.DEBUG);
+        logger.debug("Concepts: " + results);
+
+        return results;
     }
 
     public List<T> findByCriteria(Criteria criteria) {

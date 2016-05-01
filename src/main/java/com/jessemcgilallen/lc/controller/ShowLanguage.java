@@ -1,8 +1,17 @@
 package com.jessemcgilallen.lc.controller;
 
 import com.jessemcgilallen.lc.entity.Language;
+import com.jessemcgilallen.lc.entity.Type;
+import com.jessemcgilallen.lc.entity.Topic;
+
 import com.jessemcgilallen.lc.persistence.LanguageDao;
+import com.jessemcgilallen.lc.persistence.TopicDao;
+import com.jessemcgilallen.lc.persistence.TypeDao;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.sql.Alias;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +20,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -26,23 +37,30 @@ public class ShowLanguage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        logger.warn("Testing");
         String name = request.getParameter("name");
-        logger.debug("Parameter Name: " + name);
-
 
         LanguageDao dao = new LanguageDao();
-
-
         Language language = dao.findByName(name);
-
-
-        logger.debug("Sending " + language);
         request.setAttribute("language", language);
-        logger.debug("Sending " + language);
+
+        TypeDao typeDao = new TypeDao();
+        Type conceptType = typeDao.findByName("concept");
+
+        HashMap<String, Object> restrictions = new HashMap<>();
+
+        restrictions.put("languages.id", (Integer) language.getId());
+        restrictions.put("type.id", (Integer) conceptType.getId());
+
+        TopicDao topicDao = new TopicDao();
+        List<Topic> concepts = topicDao.topicsUsingsTopicCriteria(conceptType, language);
+        logger.setLevel(Level.DEBUG);
+        logger.debug(concepts);
+
+        request.setAttribute("concepts", concepts);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("read/show-language" + ".jsp");
-        logger.debug("Language: " + request);
+
         dispatcher.forward(request, response);
     }
+
 }
