@@ -20,5 +20,17 @@
 <h3><a href="../create/new-algorithm.jsp">Add Algorithm</a></h3>
 <h3><a href="../read/show-algorithm.jsp">Algorithm</a></h3>
 
+<c:forEach items="${algorithms}" var="algorithm">
+    <div>
+        <c:set value="${algorithm.name}" var="algorithmName" scope="page" />
+        <c:set value="${algorithm.description}" var="algorithmDescription" scope="page" />
+            <%--<c:url value="/language" var="url">--%>
+            <%--<c:param name="name" value="${language.name}" />--%>
+            <%--</c:url>--%>
+        <p>${algorithmName}</p>
+        <p>${algorithmDescription}</p>
+        <hr />
+    </div>
+</c:forEach>
 </body>
 </html>

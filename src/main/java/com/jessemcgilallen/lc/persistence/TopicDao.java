@@ -38,4 +38,17 @@ public class TopicDao extends AbstractDao {
         return topics;
     }
 
+    public List<Topic> topicWithType(Type type) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        Criteria criteria = session.createCriteria(Topic.class)
+                .add(Restrictions.eq("type.id", type.getId()));
+
+        List<Topic> topics = criteria.list();
+
+        session.close();
+
+        return topics;
+    }
+
 }

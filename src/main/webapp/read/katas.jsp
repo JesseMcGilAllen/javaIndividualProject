@@ -20,5 +20,18 @@
 <h3><a href="../create/new-kata.jsp">Add Kata</a></h3>
 <h3><a href="../read/show-kata.jsp">Kata</a></h3>
 
+<c:forEach items="${katas}" var="kata">
+    <div>
+        <c:set value="${kata.name}" var="kataName" scope="page" />
+        <c:set value="${kata.description}" var="kataDescription" scope="page" />
+        <%--<c:url value="/language" var="url">--%>
+        <%--<c:param name="name" value="${language.name}" />--%>
+        <%--</c:url>--%>
+        <p>${kataName}</p>
+        <p>${kataDescription}</p>
+        <hr />
+    </div>
+</c:forEach>
+
 </body>
 </html>

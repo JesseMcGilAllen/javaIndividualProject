@@ -21,8 +21,6 @@ import java.util.List;
  */
 
 @WebServlet(name = "Show Languages", urlPatterns = { "/languages"} )
-
-
 public class ShowLanguages extends HttpServlet {
     private final Logger logger = Logger.getLogger(this.getClass());
 

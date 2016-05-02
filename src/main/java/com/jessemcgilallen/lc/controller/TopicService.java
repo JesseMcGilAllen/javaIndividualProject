@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 /**
@@ -64,10 +65,20 @@ public class TopicService {
         return request;
     }
 
-    public static HttpServletRequest getAllTopicsForTypeId(
-            HttpServletRequest request, Integer typeId) {
+    public static HttpServletRequest getAllTopicsForTypeName(
+            HttpServletRequest request, String typeName) {
 
         Logger logger = LogManager.getRootLogger();
+        TopicDao topicDao = new TopicDao();
+        TypeDao typeDao = new TypeDao();
+
+        Type type = typeDao.findByName(typeName);
+
+        List<Topic> topics =  topicDao.topicWithType(type);
+
+        request.setAttribute("topics", topics);
+
+        return request;
     }
 
 

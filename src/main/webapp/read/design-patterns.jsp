@@ -20,5 +20,18 @@
 <h3><a href="../create/new-design-pattern.jsp">Add Design Pattern</a></h3>
 <h3><a href="../read/show-design-pattern.jsp">Design Pattern</a></h3>
 
+
+<c:forEach items="${designPatterns}" var="designPattern">
+    <div>
+        <c:set value="${designPattern.name}" var="designPatternName" scope="page" />
+        <c:set value="${designPattern.description}" var="designPatternDescription" scope="page" />
+            <%--<c:url value="/language" var="url">--%>
+            <%--<c:param name="name" value="${language.name}" />--%>
+            <%--</c:url>--%>
+        <p>${designPatternName}</p>
+        <p>${designPatternDescription}</p>
+        <hr />
+    </div>
+</c:forEach>
 </body>
 </html>
