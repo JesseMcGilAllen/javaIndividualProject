@@ -17,7 +17,7 @@
 <c:import url="/jsp/navigation-bar.jsp" />
 <h1>Algorithms</h1>
 
-<h3><a href="../create/new-algorithm.jsp">Add Algorithm</a></h3>
+<h3><a href="/pr/create/new-algorithm.jsp">Add Algorithm</a></h3>
 <h3><a href="../read/show-algorithm.jsp">Algorithm</a></h3>
 
 <c:forEach items="${algorithms}" var="algorithm">

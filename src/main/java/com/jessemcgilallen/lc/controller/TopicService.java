@@ -65,6 +65,33 @@ public class TopicService {
         return request;
     }
 
+    public static HttpServletRequest postNewWithTypeName(HttpServletRequest request, String typeName) {
+        Logger logger = LogManager.getRootLogger();
+
+        int id;
+        logger.setLevel(Level.DEBUG);
+
+        TypeDao typeDao = new TypeDao();
+        TopicDao topicDao = new TopicDao();
+
+        String name = request.getParameter("nameField");
+        String description = request.getParameter("descriptionField");
+
+        Type type = typeDao.findByName(typeName);
+
+        Topic topic = new Topic();
+
+        topic.setName(name);
+        topic.setDescription(description);
+        topic.setType(type);
+
+        id = topicDao.create(topic);
+
+        request.setAttribute("id", id);
+
+        return request;
+    }
+
     public static HttpServletRequest getAllTopicsForTypeName(
             HttpServletRequest request, String typeName) {
 
