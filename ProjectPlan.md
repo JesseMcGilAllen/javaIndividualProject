@@ -76,11 +76,11 @@
 
 ### Week 14
 - [X] Work on Types Dao
-- [ ] Work on remaining Servlets
+- [X] Work on remaining Servlets
 - [X] Work on remaining Daos
 - [ ] implement Web Service
 - [ ] Give Presentation
-- [ ] Weekly journal entry
+- [X] Weekly journal entry
 
 ### Week 15
 - [ ] Put finishing touches on Servlet

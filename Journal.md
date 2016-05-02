@@ -294,10 +294,34 @@ and it takes care of the rest!
 
 ## Week 14
 
+04/28/16
+
 Completed:
     Fixed Path issue I was facing
+
+04/29/16
 
 Completed:
     Types DAO
 
+04/30/16
+
+Completed:
+    Created New Concepts servlet
+
+05/01/16
+
+Completed:
+    Created New Terms servlet
+    Created Topic Servlet Utility Class
+    Hooked up Languages page to contain all Concepts and Terms
+    Created Show Algorithms Servlet
+    Figured out url issue when forwarding
+
 I finally figured out what was going on in my paths.  In the JSPs I was going to languages instead of /languages and so on. :facepalm:
+
+I embarked in quite the debugging session trying hook up the TopicsDao.  It took quite a while and a lot of searching, but I found what was causing my TopicsDao from returning any topics.  I had the cascade property set to all for some of the many-to-many relationships.  That setting was causing me quite the problem.
+
+I noticed that with the concepts and terms the only difference between the servlets end up being the type field.  I decided to pull it out into a utility class, where I could reuse methods as I see fit.
+
+After much searching I was also able to solve my servlet forward issue.  After creating a Concept or Term, I would like to forward to the showLanguage page.  After a lot of searching I fould that I could create a doPost method that calls the doGet from that servlet.  That seemed to solve my issues.

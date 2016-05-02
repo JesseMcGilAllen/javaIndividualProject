@@ -23,9 +23,9 @@
             <ul class="nav navbar-nav">
                 <li><a href="/pr/languages">Languages</a></li>
 
-                <li><a href="/pr/read/algorithms.jsp">Algorithms</a></li>
-                <li><a href="/pr/read/design-patterns.jsp">Design Patterns</a></li>
-                <li><a href="/pr/read/katas.jsp">Katas</a></li>
+                <li><a href="/pr/algorithms">Algorithms</a></li>
+                <li><a href="/pr/design-patterns">Design Patterns</a></li>
+                <li><a href="/pr/katas">Katas</a></li>
             </ul>
             </div>
         </div>
