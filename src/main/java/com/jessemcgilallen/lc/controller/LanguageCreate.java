@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 @WebServlet(name = "Add Language", urlPatterns = { "/languages/add"} )
 
-public class AddLanguage extends HttpServlet {
+public class LanguageCreate extends HttpServlet {
     private final Logger logger = Logger.getLogger(this.getClass());
 
     @Override

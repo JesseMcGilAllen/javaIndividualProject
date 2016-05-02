@@ -17,8 +17,8 @@ import java.util.List;
 /**
  * Created by jessemcgilallen on 4/20/16.
  */
-@WebServlet(name = "Delete Language", urlPatterns = { "/languages/delete" } )
-public class DeleteLanguage extends HttpServlet {
+@WebServlet(name = "languageDelete", urlPatterns = { "/languages/delete" } )
+public class LanguageDelete extends HttpServlet {
 
     private final Logger logger = Logger.getLogger(this.getClass());
     private final LanguageDao dao = new LanguageDao();

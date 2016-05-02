@@ -30,7 +30,7 @@ import java.util.List;
 
 @WebServlet(name = "Show Language", urlPatterns = { "/language"} )
 
-public class ShowLanguage extends HttpServlet {
+public class LanguageShow extends HttpServlet {
     private final Logger logger = Logger.getLogger(this.getClass());
 
     @Override
