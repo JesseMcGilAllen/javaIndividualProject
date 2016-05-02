@@ -23,7 +23,7 @@ public class TopicDao extends AbstractDao {
         return super.findByCriteria(criteria);
     }
 
-    public List<Topic> topicsUsingsTopicCriteria(Type type, Language language) {
+    public List<Topic> topicsUsingTopicCriteria(Type type, Language language) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
         Criteria criteria = session.createCriteria(Topic.class)

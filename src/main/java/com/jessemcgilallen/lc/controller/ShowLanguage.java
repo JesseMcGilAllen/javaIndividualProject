@@ -65,7 +65,7 @@ public class ShowLanguage extends HttpServlet {
         TopicDao topicDao = new TopicDao();
 
         Type type = typeDao.findByName(typeName);
-        List<Topic> topics = topicDao.topicsUsingsTopicCriteria(type, language);
+        List<Topic> topics = topicDao.topicsUsingTopicCriteria(type, language);
 
         return topics;
     }

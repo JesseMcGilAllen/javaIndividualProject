@@ -64,6 +64,12 @@ public class TopicService {
         return request;
     }
 
+    public static HttpServletRequest getAllTopicsForTypeId(
+            HttpServletRequest request, Integer typeId) {
+
+        Logger logger = LogManager.getRootLogger();
+    }
+
 
 
 }
