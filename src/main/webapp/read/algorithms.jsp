@@ -20,7 +20,7 @@
 <h3><a href="/pr/create/new-algorithm.jsp">Add Algorithm</a></h3>
 <h3><a href="../read/show-algorithm.jsp">Algorithm</a></h3>
 
-<c:forEach items="${algorithms}" var="algorithm">
+<c:forEach items="${topics}" var="algorithm">
     <div>
         <c:set value="${algorithm.name}" var="algorithmName" scope="page" />
         <c:set value="${algorithm.description}" var="algorithmDescription" scope="page" />

@@ -102,7 +102,7 @@ public class TopicService {
         Type type = typeDao.findByName(typeName);
 
         List<Topic> topics =  topicDao.topicWithType(type);
-
+        System.out.println("Topics" + topics);
         request.setAttribute("topics", topics);
 
         return request;
