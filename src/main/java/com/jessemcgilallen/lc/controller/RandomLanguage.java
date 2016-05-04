@@ -34,13 +34,9 @@ public class RandomLanguage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Language> languages = languages();
-        String baseUrl = "https://www.random.org/integers/";
         String requestUrl = "../read/show-language.jsp";
-
         int languagesCount = languages.size();
-        String parameters = parameterString(languagesCount - 1);
-        String url = baseUrl + parameters;
-
+        String url = formUrlWithMax(languagesCount - 1;)
         int randomNumber = randomNumberFromURL(url);
 
         Language language = languages.get(randomNumber);
@@ -65,6 +61,15 @@ public class RandomLanguage extends HttpServlet {
 
         return languages;
 
+    }
+
+    private String formUrlWithMax(int max) {
+        String baseUrl = "https://www.random.org/integers/";
+
+        String parameters = parameterStringWithMax(max);
+        String url = baseUrl + parameters;
+
+        return url;
     }
 
     private String parameterString(int max) {
