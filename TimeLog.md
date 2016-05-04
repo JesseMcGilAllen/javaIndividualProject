@@ -69,3 +69,5 @@
 | 5/1/16 | Creating a TopicService Class to move some repetitive elements to utility class | 1 |
 | 5/1/16 | Creating new term servlet and debugging forward url | 2 |
 | 5/1/16 | Working on Topic Show all action | 1 |
+| 5/2/16 | Working on new Algorithm action | 1 |
+| 5/3/16 | Working on show Algorithm action and debugging DAO | 5 |
