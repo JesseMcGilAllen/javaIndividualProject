@@ -125,6 +125,31 @@ public class TopicService {
         return request;
     }
 
+    public static HttpServletRequest updateTopicById(HttpServletRequest request) {
+        TopicDao topicDao = new TopicDao();
+        Logger logger = LogManager.getRootLogger();
+        logger.setLevel(Level.INFO);
+        int id = idFromRequest(request);
+        String name = request.getParameter("nameField");
+        String description = request.getParameter("descriptionField");
+
+        Topic topic = (Topic) topicDao.findById(id);
+
+        if (!name.equals(topic.getName()) && name.length() > 0) {
+            topic.setName(name);
+        }
+
+        if (!description.equals(topic.getDescription()) && description.length() > 0) {
+            topic.setDescription(description);
+        }
+
+        topicDao.update(topic);
+
+        request.setAttribute("topic", topic);
+
+        logger.debug("Id: " + id);
+    }
+
     public static void deleteTopicById(HttpServletRequest request) {
         TopicDao topicDao = new TopicDao();
         Logger logger = LogManager.getRootLogger();
