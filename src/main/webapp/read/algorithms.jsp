@@ -24,10 +24,10 @@
     <div>
         <c:set value="${algorithm.name}" var="algorithmName" scope="page" />
         <c:set value="${algorithm.description}" var="algorithmDescription" scope="page" />
-            <%--<c:url value="/language" var="url">--%>
-            <%--<c:param name="name" value="${language.name}" />--%>
-            <%--</c:url>--%>
-        <p>${algorithmName}</p>
+            <c:url value="/algorithm" var="url">
+            <c:param name="id" value="${algorithm.id}" />
+            </c:url>
+        <h3><a href="${url}" ${algorithmName}</h3>
         <p>${algorithmDescription}</p>
         <hr />
     </div>
