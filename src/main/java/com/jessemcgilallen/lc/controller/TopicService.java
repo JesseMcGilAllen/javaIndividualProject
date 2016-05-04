@@ -170,12 +170,16 @@ public class TopicService {
     private static Topic updateTopicWithRequest(Topic topic, HttpServletRequest request) {
         String name = request.getParameter("nameField");
         String description = request.getParameter("descriptionField");
+        Logger logger = LogManager.getRootLogger();
 
-        if (!name.equals(topic.getName()) && name.length() > 0) {
+
+
+        if (!(name.equals(topic.getName())) && name.length() > 0) {
+            logger.info("Name Change");
             topic.setName(name);
         }
 
-        if (!description.equals(topic.getDescription()) && description.length() > 0) {
+        if (!(description.equals(topic.getDescription())) && description.length() > 0) {
             topic.setDescription(description);
         }
 

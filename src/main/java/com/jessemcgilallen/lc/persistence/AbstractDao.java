@@ -163,7 +163,10 @@ public abstract class AbstractDao<T> {
     }
 
     public void update(T entity) {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+        if (!session.isOpen()) {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+        }
+        
         Transaction transaction = null;
 
         try {
