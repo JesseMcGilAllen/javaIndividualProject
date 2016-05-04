@@ -40,7 +40,7 @@ public class AlgorithmShow extends HttpServlet {
 
         request.setAttribute("topic", topic);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("../read/show-algorithm.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("read/show-algorithm.jsp");
 
         dispatcher.forward(request, response);
 
