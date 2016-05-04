@@ -17,11 +17,19 @@
 <c:import url="/jsp/navigation-bar.jsp" />
 
 <h1>Languages</h1>
+<ul class="nav nav-tabs">
+    <li><a href="../pr/create/new-language.jsp">Add Language</a></li>
 
+    <c:url value="/random/language" var="randomUrl">
+        <c:param name="languages" value="${languages}" />
+    </c:url>
+
+    <li><a href="${randomUrl}">Random Language</a></li>
+</ul>
 <div class="text-center">
 
     <div class="list-group list-group-horizontal">
-        <a href="../pr/create/new-language.jsp" class="list-group-item">Add Language</a>
+
 
     </div>
 
