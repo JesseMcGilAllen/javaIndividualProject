@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by jessemcgilallen on 5/4/16.
  */
-@WebServlet(name = "updateAlgorithm", urlPatterns = { "algorithms/update" } )
+@WebServlet(name = "updateAlgorithm", urlPatterns = { "/algorithms/update" } )
 public class AlgorithmUpdate extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
