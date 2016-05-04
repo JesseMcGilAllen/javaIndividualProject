@@ -16,7 +16,7 @@
 <body>
 <c:import url="../jsp/navigation-bar.jsp" />
 
-<h1>Update ${algorithm.name}</h1>
+<h1>Update Algorithm</h1>
 
 <form action="/pr/algorithms/update" method="post">
     <div>
@@ -31,7 +31,7 @@
         <textarea class="form-control" id="descriptionField"
                   name="descriptionField" rows="5">${algorithm.description}</textarea>
     </div>
-    <button type="submit" class="btn btn-default">Add Algorithm</button>
+    <button type="submit" class="btn btn-default">Update Algorithm</button>
 </form>
 </body>
 </html>

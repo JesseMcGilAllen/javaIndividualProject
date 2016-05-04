@@ -166,7 +166,7 @@ public abstract class AbstractDao<T> {
         if (!session.isOpen()) {
             session = SessionFactoryProvider.getSessionFactory().openSession();
         }
-        
+
         Transaction transaction = null;
 
         try {

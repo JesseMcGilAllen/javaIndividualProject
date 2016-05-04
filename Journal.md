@@ -329,6 +329,10 @@ Completed:
     Show Algorithms Servlet
     Fixed failing tests
 
+Completed:
+    Update Algorithm Servlet
+    Delete Algorithm Servlet
+
 I finally figured out what was going on in my paths.  In the JSPs I was going to languages instead of /languages and so on. :facepalm:
 
 I embarked in quite the debugging session trying hook up the TopicsDao.  It took quite a while and a lot of searching, but I found what was causing my TopicsDao from returning any topics.  I had the cascade property set to all for some of the many-to-many relationships.  That setting was causing me quite the problem.
@@ -338,3 +342,5 @@ I noticed that with the concepts and terms the only difference between the servl
 After much searching I was also able to solve my servlet forward issue.  After creating a Concept or Term, I would like to forward to the showLanguage page.  After a lot of searching I fould that I could create a doPost method that calls the doGet from that servlet.  That seemed to solve my issues.
 
 Well, today was highly frustating and educational.  My hibernate started blowing up and I reacted to rashly, which only made it worse.  On top of that I didn't commit before I started debugging.  After toying around with an overly complicated solution that made the problem worse, I checked out to my last commit before I noticed the blow up.  I redid the code that caused the blowup and was able to pinpoint that it was the findById method in my DAO.  I rewrote that and my problem was solved and my tests pass again.
+
+I completed the Update and Delete Algorithm actions.  They were not without their pains though.  I had Hibernate issues with each.  I had to replace the session.open with a check to see if an existing session is open first.  Otherwise, Hibernate throws a fit.
