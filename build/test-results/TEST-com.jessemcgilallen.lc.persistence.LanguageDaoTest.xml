@@ -1,169 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jessemcgilallen.lc.persistence.LanguageDaoTest" tests="6" skipped="0" failures="2" errors="0" timestamp="2016-05-04T02:37:34" hostname="Haskell" time="2.178">
+<testsuite name="com.jessemcgilallen.lc.persistence.LanguageDaoTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-05-04T05:13:02" hostname="Haskell" time="2.063">
   <properties/>
-  <testcase name="testFindAll" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="1.84"/>
-  <testcase name="testFindByName" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.049"/>
-  <testcase name="testFindById" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.017">
-    <failure message="org.hibernate.SessionException: Session is closed!" type="org.hibernate.SessionException">org.hibernate.SessionException: Session is closed!
-	at org.hibernate.internal.AbstractSessionImpl.errorIfClosed(AbstractSessionImpl.java:129)
-	at org.hibernate.internal.SessionImpl.createCriteria(SessionImpl.java:1588)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:352)
-	at com.sun.proxy.$Proxy26.createCriteria(Unknown Source)
-	at com.jessemcgilallen.lc.persistence.AbstractDao.findById(AbstractDao.java:64)
-	at com.jessemcgilallen.lc.persistence.LanguageDao.findById(LanguageDao.java:20)
-	at com.jessemcgilallen.lc.persistence.LanguageDaoTest.testFindById(LanguageDaoTest.java:65)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:105)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:56)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
-	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-</failure>
-  </testcase>
-  <testcase name="testCreate" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.018"/>
-  <testcase name="testDelete" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.222"/>
-  <testcase name="testUpdate" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.027">
-    <failure message="org.hibernate.SessionException: Session is closed!" type="org.hibernate.SessionException">org.hibernate.SessionException: Session is closed!
-	at org.hibernate.internal.AbstractSessionImpl.errorIfClosed(AbstractSessionImpl.java:129)
-	at org.hibernate.internal.SessionImpl.createCriteria(SessionImpl.java:1588)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:352)
-	at com.sun.proxy.$Proxy26.createCriteria(Unknown Source)
-	at com.jessemcgilallen.lc.persistence.AbstractDao.findById(AbstractDao.java:64)
-	at com.jessemcgilallen.lc.persistence.LanguageDao.findById(LanguageDao.java:20)
-	at com.jessemcgilallen.lc.persistence.LanguageDaoTest.testUpdate(LanguageDaoTest.java:95)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:105)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:56)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
-	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-</failure>
-  </testcase>
-  <system-out><![CDATA[2016-05-03 21:37:36,492 DEBUG [Test worker] persistence.AbstractDao (AbstractDao.java:84) - Instance: Language{id=221, name='Perl'}
+  <testcase name="testFindAll" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="1.862"/>
+  <testcase name="testFindByName" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.06"/>
+  <testcase name="testFindById" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.027"/>
+  <testcase name="testCreate" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.021"/>
+  <testcase name="testDelete" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.059"/>
+  <testcase name="testUpdate" classname="com.jessemcgilallen.lc.persistence.LanguageDaoTest" time="0.025"/>
+  <system-out><![CDATA[2016-05-04 00:13:04,289 DEBUG [Test worker] persistence.AbstractDao (AbstractDao.java:92) - Instance: Language{id=231, name='Perl'}
+Python Id:232
+2016-05-04 00:13:04,323 ERROR [Test worker] persistence.AbstractDao (AbstractDao.java:198) - org.hibernate.HibernateException: illegally attempted to associate a proxy with two open Sessions
+2016-05-04 00:13:04,432 ERROR [Test worker] persistence.AbstractDao (AbstractDao.java:178) - org.hibernate.HibernateException: illegally attempted to associate a proxy with two open Sessions
 ]]></system-out>
-  <system-err><![CDATA[May 03, 2016 9:37:34 PM org.hibernate.annotations.common.Version <clinit>
+  <system-err><![CDATA[May 04, 2016 12:13:02 AM org.hibernate.annotations.common.Version <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
-May 03, 2016 9:37:34 PM org.hibernate.Version logVersion
+May 04, 2016 12:13:02 AM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {4.2.2.Final}
-May 03, 2016 9:37:34 PM org.hibernate.cfg.Environment <clinit>
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Environment <clinit>
 INFO: HHH000206: hibernate.properties not found
-May 03, 2016 9:37:34 PM org.hibernate.cfg.Environment buildBytecodeProvider
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-May 03, 2016 9:37:34 PM org.hibernate.cfg.Configuration configure
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Configuration configure
 INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-May 03, 2016 9:37:34 PM org.hibernate.cfg.Configuration getConfigurationInputStream
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Configuration getConfigurationInputStream
 INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-May 03, 2016 9:37:34 PM org.hibernate.cfg.Configuration addResource
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: User.hbm.xml
-May 03, 2016 9:37:34 PM org.hibernate.cfg.Configuration addResource
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: Language.hbm.xml
-May 03, 2016 9:37:35 PM org.hibernate.cfg.Configuration addResource
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: Type.hbm.xml
-May 03, 2016 9:37:35 PM org.hibernate.cfg.Configuration addResource
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: Topic.hbm.xml
-May 03, 2016 9:37:35 PM org.hibernate.cfg.Configuration addResource
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: Example.hbm.xml
-May 03, 2016 9:37:35 PM org.hibernate.cfg.Configuration doConfigure
+May 04, 2016 12:13:02 AM org.hibernate.cfg.Configuration doConfigure
 INFO: HHH000041: Configured SessionFactory: null
-May 03, 2016 9:37:35 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+May 04, 2016 12:13:02 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-May 03, 2016 9:37:35 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+May 04, 2016 12:13:02 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 20
-May 03, 2016 9:37:35 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+May 04, 2016 12:13:02 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000006: Autocommit mode: false
-May 03, 2016 9:37:35 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+May 04, 2016 12:13:02 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/test_programming_review]
-May 03, 2016 9:37:35 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+May 04, 2016 12:13:02 AM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000046: Connection properties: {user=jesse, password=****}
-May 03, 2016 9:37:35 PM org.hibernate.dialect.Dialect <init>
+May 04, 2016 12:13:03 AM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-May 03, 2016 9:37:35 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+May 04, 2016 12:13:03 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
 INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-May 03, 2016 9:37:35 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+May 04, 2016 12:13:03 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
 INFO: HHH000397: Using ASTQueryTranslatorFactory
 ]]></system-err>
 </testsuite>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jessemcgilallen.lc.persistence.TypeDaoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-05-04T02:37:36" hostname="Haskell" time="0.036">
+<testsuite name="com.jessemcgilallen.lc.persistence.TypeDaoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-05-04T05:13:04" hostname="Haskell" time="0.035">
   <properties/>
-  <testcase name="testFindAllTypes" classname="com.jessemcgilallen.lc.persistence.TypeDaoTest" time="0.013"/>
-  <testcase name="testFindByName" classname="com.jessemcgilallen.lc.persistence.TypeDaoTest" time="0.012"/>
-  <testcase name="testFindByWrongName" classname="com.jessemcgilallen.lc.persistence.TypeDaoTest" time="0.008"/>
-  <system-out><![CDATA[2016-05-03 21:37:36,833 DEBUG [Test worker] persistence.AbstractDao (AbstractDao.java:84) - Instance: com.jessemcgilallen.lc.entity.Type@7bd96cfa
+  <testcase name="testFindAllTypes" classname="com.jessemcgilallen.lc.persistence.TypeDaoTest" time="0.009"/>
+  <testcase name="testFindByName" classname="com.jessemcgilallen.lc.persistence.TypeDaoTest" time="0.008"/>
+  <testcase name="testFindByWrongName" classname="com.jessemcgilallen.lc.persistence.TypeDaoTest" time="0.015"/>
+  <system-out><![CDATA[2016-05-04 00:13:04,466 DEBUG [Test worker] persistence.AbstractDao (AbstractDao.java:92) - Instance: com.jessemcgilallen.lc.entity.Type@272dff85
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

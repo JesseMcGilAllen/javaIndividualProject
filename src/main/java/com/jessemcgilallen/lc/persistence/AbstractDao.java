@@ -60,14 +60,22 @@ public abstract class AbstractDao<T> {
     }
 
     public T findById(int id) {
+        T instance = null;
 
-        Criteria criteria = session.createCriteria(getTypeParameterClass())
-                .add(Restrictions.eq("id", id));
-        List<T> results = findByCriteria(criteria);
+        try {
+           session = SessionFactoryProvider.getSessionFactory().openSession();
+            instance = (T) session.load(getTypeParameterClass(), id);
 
-         T result = results.get(0);
+        } catch (Exception exception) {
+            logger.error(exception);
+        }
+//        Criteria criteria = session.createCriteria(getTypeParameterClass())
+//
+//        List<T> results = findByCriteria(criteria);
+//
+//         T result = results.get(0);
 
-        return result;
+        return instance;
     }
 
     public T findByName(String name) {
