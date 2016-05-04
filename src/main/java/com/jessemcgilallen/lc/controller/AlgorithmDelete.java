@@ -1,5 +1,6 @@
 package com.jessemcgilallen.lc.controller;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +16,16 @@ public class AlgorithmDelete extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String url = "../read/algorithms.jsp";
+
+        TopicService.deleteTopicById(request);
+
+        request = TopicService.getAllTopicsForTypeName(request, "algorithm");
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+
+        dispatcher.forward(request, response);
+
 
     }
 }

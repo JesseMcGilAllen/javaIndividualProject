@@ -109,17 +109,11 @@ public class TopicService {
     }
 
     public static HttpServletRequest getTopicForId(HttpServletRequest request) {
-
-        Logger logger = LogManager.getRootLogger();
-
         TopicDao topicDao = new TopicDao();
-        String idString = request.getParameter("id");
-
+        Logger logger = LogManager.getRootLogger();
         logger.setLevel(Level.INFO);
 
-        logger.info("IdString: " + idString);
-
-        int id = Integer.parseInt(idString);
+        int id = idFromRequest(request);
         logger.info("Id: " + id);
 
         Topic topic = (Topic) topicDao.findById(id);
@@ -129,6 +123,36 @@ public class TopicService {
         request.setAttribute("topic", topic);
 
         return request;
+    }
+
+    public static void deleteTopicById(HttpServletRequest request) {
+        TopicDao topicDao = new TopicDao();
+        Logger logger = LogManager.getRootLogger();
+        logger.setLevel(Level.INFO);
+
+        int id = idFromRequest(request);
+        logger.info("Id: " + id);
+
+        Topic topic = (Topic) topicDao.findById(id);
+
+        topicDao.delete(topic);
+
+    }
+
+    public static int idFromRequest(HttpServletRequest request) {
+        Logger logger = LogManager.getRootLogger();
+
+        String idString = request.getParameter("id");
+
+        logger.setLevel(Level.INFO);
+
+        logger.info("IdString: " + idString);
+
+        int id = Integer.parseInt(idString);
+        logger.info("Id: " + id);
+
+        return id;
+
     }
 
 

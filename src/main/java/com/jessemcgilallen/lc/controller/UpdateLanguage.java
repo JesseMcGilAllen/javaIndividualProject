@@ -27,11 +27,11 @@ public class UpdateLanguage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String name = request.getParameter("name");
-        dao.openSession();
+
         Language language = dao.findByName(name);
         request.setAttribute("language", language);
         logger.debug("Sending " + language);
-        dao.closeSession();
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("../update/update-language" + ".jsp");
 
         dispatcher.forward(request, response);

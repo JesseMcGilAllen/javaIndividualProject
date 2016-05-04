@@ -21,7 +21,7 @@ import java.util.Map;
 public abstract class AbstractDao<T> {
 
     private final Logger logger = Logger.getLogger(this.getClass());
-    private Session session;
+    //private Session session;
     private Class<T> typeParameterClass;
 
     public AbstractDao() {
@@ -36,7 +36,7 @@ public abstract class AbstractDao<T> {
     }
 
     public List<T> findAll() {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
         List<T> list = new ArrayList<T>();
         Transaction transaction = null;
 
@@ -60,10 +60,12 @@ public abstract class AbstractDao<T> {
     }
 
     public T findById(int id) {
+        Session session = null;
         T instance = null;
 
         try {
-           session = SessionFactoryProvider.getSessionFactory().openSession();
+           //session = SessionFactoryProvider.getSessionFactory().openSession();
+            session = openSession();
             instance = (T) session.load(getTypeParameterClass(), id);
 
         } catch (Exception exception) {
@@ -79,7 +81,7 @@ public abstract class AbstractDao<T> {
     }
 
     public T findByName(String name) {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
         Criteria criteria = session.createCriteria(getTypeParameterClass())
                 .add(Restrictions.eq("name", name));
@@ -95,7 +97,7 @@ public abstract class AbstractDao<T> {
     }
 
     public List<T> findByRestrictionsMap(Map<String, Object> restrictions) {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
         Criteria criteria = session.createCriteria(getTypeParameterClass());
         restrictions.forEach((key, value) ->
@@ -109,7 +111,7 @@ public abstract class AbstractDao<T> {
     }
 
     public List<T> findByCriteria(Criteria criteria) {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+       Session session = SessionFactoryProvider.getSessionFactory().openSession();
         List<T> list = new ArrayList<>();
         Transaction transaction = null;
 
@@ -132,7 +134,7 @@ public abstract class AbstractDao<T> {
     }
 
     public int create(T entity) {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+       Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         Integer id = null;
 
@@ -155,14 +157,14 @@ public abstract class AbstractDao<T> {
 
             logger.error(nullPointerException);
         } finally {
-            closeSession();
+            session.close();
         }
 
         return id;
     }
 
     public void update(T entity) {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
 
         try {
@@ -182,10 +184,12 @@ public abstract class AbstractDao<T> {
     }
 
     public void delete(T entity) {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+        Session session = null;
+        // session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
 
         try {
+            session = openSession();
             transaction = session.beginTransaction();
             session.delete(entity);
             transaction.commit();
@@ -202,12 +206,18 @@ public abstract class AbstractDao<T> {
         }
     }
 
-    public void openSession() {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+    public Session openSession() {
+        Session session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
+
+        if (session == null) {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+        }
+
+        return session;
+
     }
 
-    public void closeSession() {
-        session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
+    public void closeSession(Session session) {
         session.close();
     }
 
