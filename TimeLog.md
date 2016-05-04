@@ -73,3 +73,4 @@
 | 5/3/16 | Working on show Algorithm action and debugging DAO | 5 |
 | 5/4/16 | Working on Topics Delete and debugging Hibernate | 1.5 |
 | 5/4/16 | Working on Topics Update | 1.5 |
+| 5/4/16 | Implemented random.org for the web service requirement | 1.5 |

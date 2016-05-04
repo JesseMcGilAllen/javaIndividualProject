@@ -78,7 +78,7 @@
 - [X] Work on Types Dao
 - [X] Work on remaining Servlets
 - [X] Work on remaining Daos
-- [ ] implement Web Service
+- [X] implement Web Service
 - [ ] Give Presentation
 - [X] Weekly journal entry
 
