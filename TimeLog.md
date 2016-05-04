@@ -71,3 +71,4 @@
 | 5/1/16 | Working on Topic Show all action | 1 |
 | 5/2/16 | Working on new Algorithm action | 1 |
 | 5/3/16 | Working on show Algorithm action and debugging DAO | 5 |
+| 5/4/16 | Working on Topics Delete and debugging Hibernate | 1.5 |
