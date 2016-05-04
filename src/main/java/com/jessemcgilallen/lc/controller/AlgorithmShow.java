@@ -24,24 +24,9 @@ public class AlgorithmShow extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        TopicDao topicDao = new TopicDao();
-        String idString = request.getParameter("id");
-
-        logger.setLevel(Level.INFO);
-
-        logger.info("IdString: " + idString);
-
-        int id = Integer.parseInt(idString);
-        logger.info("Id: " + id);
-
-        Topic topic = (Topic) topicDao.findById(id);
-
-        logger.info("Topic: " + topic.toString());
-
-        request.setAttribute("topic", topic);
+        request = TopicService.getTopicForId(request);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("read/show-algorithm.jsp");
-
         dispatcher.forward(request, response);
 
     }

@@ -108,6 +108,29 @@ public class TopicService {
         return request;
     }
 
+    public static HttpServletRequest getTopicForId(HttpServletRequest request) {
+
+        Logger logger = LogManager.getRootLogger();
+
+        TopicDao topicDao = new TopicDao();
+        String idString = request.getParameter("id");
+
+        logger.setLevel(Level.INFO);
+
+        logger.info("IdString: " + idString);
+
+        int id = Integer.parseInt(idString);
+        logger.info("Id: " + id);
+
+        Topic topic = (Topic) topicDao.findById(id);
+
+        logger.info("Topic: " + topic.toString());
+
+        request.setAttribute("topic", topic);
+
+        return request;
+    }
+
 
 
 }

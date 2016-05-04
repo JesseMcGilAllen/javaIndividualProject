@@ -27,7 +27,7 @@
             <c:url value="/algorithm" var="url">
             <c:param name="id" value="${algorithm.id}" />
             </c:url>
-        <h3><a href="${url}" ${algorithmName}</h3>
+        <h3><a href="${url}">${algorithmName}</a></h3>
         <p>${algorithmDescription}</p>
         <hr />
     </div>
