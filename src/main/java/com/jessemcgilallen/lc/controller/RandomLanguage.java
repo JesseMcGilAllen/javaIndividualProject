@@ -40,12 +40,11 @@ public class RandomLanguage extends HttpServlet {
         int randomNumber = randomNumberFromURL(url);
 
         Language language = languages.get(randomNumber);
-        List<Topic> concepts = topicsWithLanguageAndTypeName(language, "concept");
-        List<Topic> terms = topicsWithLanguageAndTypeName(language, "term");
+        List<Topic> concepts = TopicService.topicsWithLanguageAndTypeName(language, "concept");
+        List<Topic> terms = TopicService.topicsWithLanguageAndTypeName(language, "term");
 
         request.setAttribute("language", language);
         request.setAttribute("concepts", concepts);
-
         request.setAttribute("terms", terms);
 
 
@@ -72,7 +71,7 @@ public class RandomLanguage extends HttpServlet {
         return url;
     }
 
-    private String parameterString(int max) {
+    private String parameterStringWithMax(int max) {
         int num = 1;
         int min = 0;
         int base = 10;
@@ -84,6 +83,8 @@ public class RandomLanguage extends HttpServlet {
 
         return paramString;
     }
+
+
 
     private int randomNumberFromURL(String url) {
         URL urlObject;
@@ -115,15 +116,4 @@ public class RandomLanguage extends HttpServlet {
 
         return randomNumber;
     }
-
-    private List<Topic> topicsWithLanguageAndTypeName(Language language, String typeName ) {
-        TypeDao typeDao = new TypeDao();
-        TopicDao topicDao = new TopicDao();
-
-        Type type = typeDao.findByName(typeName);
-        List<Topic> topics = topicDao.topicsUsingTopicCriteria(type, language);
-
-        return topics;
-    }
-
 }

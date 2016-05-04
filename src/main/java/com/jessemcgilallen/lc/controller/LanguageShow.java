@@ -41,8 +41,8 @@ public class LanguageShow extends HttpServlet {
 
         Language language = languageForName(name);
 
-        List<Topic> concepts = topicsWithLanguageAndTypeName(language, "concept");
-        List<Topic> terms = topicsWithLanguageAndTypeName(language, "term");
+        List<Topic> concepts = TopicService.topicsWithLanguageAndTypeName(language, "concept");
+        List<Topic> terms = TopicService.topicsWithLanguageAndTypeName(language, "term");
 
         request.setAttribute("language", language);
         request.setAttribute("concepts", concepts);
@@ -58,16 +58,6 @@ public class LanguageShow extends HttpServlet {
         Language language = dao.findByName(name);
 
         return language;
-    }
-
-    private List<Topic> topicsWithLanguageAndTypeName(Language language, String typeName ) {
-        TypeDao typeDao = new TypeDao();
-        TopicDao topicDao = new TopicDao();
-
-        Type type = typeDao.findByName(typeName);
-        List<Topic> topics = topicDao.topicsUsingTopicCriteria(type, language);
-
-        return topics;
     }
 
     @Override
