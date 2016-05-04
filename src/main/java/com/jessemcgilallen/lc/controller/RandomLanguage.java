@@ -1,10 +1,15 @@
 package com.jessemcgilallen.lc.controller;
 
 import com.jessemcgilallen.lc.entity.Language;
+import com.jessemcgilallen.lc.entity.Topic;
+import com.jessemcgilallen.lc.entity.Type;
 import com.jessemcgilallen.lc.persistence.LanguageDao;
+import com.jessemcgilallen.lc.persistence.TopicDao;
+import com.jessemcgilallen.lc.persistence.TypeDao;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,12 +35,26 @@ public class RandomLanguage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Language> languages = languages();
         String baseUrl = "https://www.random.org/integers/";
+        String requestUrl = "../read/show-language.jsp";
 
         int languagesCount = languages.size();
         String parameters = parameterString(languagesCount - 1);
         String url = baseUrl + parameters;
 
         int randomNumber = randomNumberFromURL(url);
+
+        Language language = languages.get(randomNumber);
+        List<Topic> concepts = topicsWithLanguageAndTypeName(language, "concept");
+        List<Topic> terms = topicsWithLanguageAndTypeName(language, "term");
+
+        request.setAttribute("language", language);
+        request.setAttribute("concepts", concepts);
+
+        request.setAttribute("terms", terms);
+
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher(requestUrl);
+        dispatcher.forward(request, response);
     }
 
     private List<Language> languages() {
@@ -90,6 +109,16 @@ public class RandomLanguage extends HttpServlet {
         }
 
         return randomNumber;
+    }
+
+    private List<Topic> topicsWithLanguageAndTypeName(Language language, String typeName ) {
+        TypeDao typeDao = new TypeDao();
+        TopicDao topicDao = new TopicDao();
+
+        Type type = typeDao.findByName(typeName);
+        List<Topic> topics = topicDao.topicsUsingTopicCriteria(type, language);
+
+        return topics;
     }
 
 }
