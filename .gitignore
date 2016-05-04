@@ -15,6 +15,7 @@
 # .idea/dynamic.xml
 # .idea/uiDesigner.xml
 # Gradle:
+build/
 # .idea/gradle.xml
 # .idea/libraries
 # Mongo Explorer plugin:
