@@ -16,15 +16,16 @@ import java.io.IOException;
 public class AlgorithmUpdate extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String url = "../update/update-algorithm.jsp";
         request = TopicService.getTopicForId(request);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("read/show-algorithm.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "../read/show-algorithm.jsp";
+        String url = "../algorithms";
 
         request = TopicService.updateTopicById(request);
 
