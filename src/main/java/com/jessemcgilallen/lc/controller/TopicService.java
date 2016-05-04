@@ -127,27 +127,15 @@ public class TopicService {
 
     public static HttpServletRequest updateTopicById(HttpServletRequest request) {
         TopicDao topicDao = new TopicDao();
-        Logger logger = LogManager.getRootLogger();
-        logger.setLevel(Level.INFO);
         int id = idFromRequest(request);
-        String name = request.getParameter("nameField");
-        String description = request.getParameter("descriptionField");
-
         Topic topic = (Topic) topicDao.findById(id);
 
-        if (!name.equals(topic.getName()) && name.length() > 0) {
-            topic.setName(name);
-        }
-
-        if (!description.equals(topic.getDescription()) && description.length() > 0) {
-            topic.setDescription(description);
-        }
+        topic = updateTopicWithRequest(topic, request);
 
         topicDao.update(topic);
 
         request.setAttribute("topic", topic);
-
-        logger.debug("Id: " + id);
+        return request;
     }
 
     public static void deleteTopicById(HttpServletRequest request) {
@@ -164,7 +152,7 @@ public class TopicService {
 
     }
 
-    public static int idFromRequest(HttpServletRequest request) {
+    private static int idFromRequest(HttpServletRequest request) {
         Logger logger = LogManager.getRootLogger();
 
         String idString = request.getParameter("id");
@@ -177,7 +165,21 @@ public class TopicService {
         logger.info("Id: " + id);
 
         return id;
+    }
 
+    private static Topic updateTopicWithRequest(Topic topic, HttpServletRequest request) {
+        String name = request.getParameter("nameField");
+        String description = request.getParameter("descriptionField");
+
+        if (!name.equals(topic.getName()) && name.length() > 0) {
+            topic.setName(name);
+        }
+
+        if (!description.equals(topic.getDescription()) && description.length() > 0) {
+            topic.setDescription(description);
+        }
+
+        return topic;
     }
 
 
