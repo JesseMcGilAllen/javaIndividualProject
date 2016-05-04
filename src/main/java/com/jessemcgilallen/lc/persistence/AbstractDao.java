@@ -110,7 +110,10 @@ public abstract class AbstractDao<T> {
     }
 
     public List<T> findByCriteria(Criteria criteria) {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
+        if (!session.isOpen()) {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+        }
+      
         List<T> list = new ArrayList<>();
         Transaction transaction = null;
 
