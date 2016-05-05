@@ -1,6 +1,7 @@
 package com.jessemcgilallen.lc.controller;
 
 import com.jessemcgilallen.lc.entity.Topic;
+import com.jessemcgilallen.lc.utility.RandomNumber;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

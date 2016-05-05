@@ -18,7 +18,7 @@ import java.util.List;
  * Created by jessemcgilallen on 5/1/16.
  */
 public class TopicService {
-    private static Logger logger = Logger.getRootLogger());
+    private static Logger logger = Logger.getRootLogger();
 
     public static HttpServletRequest getNewWithLanguage(HttpServletRequest request) {
         LanguageDao languageDao = new LanguageDao();
@@ -161,7 +161,7 @@ public class TopicService {
     private static Topic updateTopicWithRequest(Topic topic, HttpServletRequest request) {
         String name = request.getParameter("nameField");
         String description = request.getParameter("descriptionField");
-        
+
         if (!(name.equals(topic.getName())) && name.length() > 0) {
             logger.info("Name Change");
             topic.setName(name);

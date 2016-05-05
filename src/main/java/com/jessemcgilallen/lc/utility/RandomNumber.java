@@ -1,4 +1,4 @@
-package com.jessemcgilallen.lc.controller;
+package com.jessemcgilallen.lc.utility;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;

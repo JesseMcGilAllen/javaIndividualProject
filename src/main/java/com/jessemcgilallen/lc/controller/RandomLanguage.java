@@ -2,11 +2,8 @@ package com.jessemcgilallen.lc.controller;
 
 import com.jessemcgilallen.lc.entity.Language;
 import com.jessemcgilallen.lc.entity.Topic;
-import com.jessemcgilallen.lc.entity.Type;
+import com.jessemcgilallen.lc.utility.RandomNumber;
 import com.jessemcgilallen.lc.persistence.LanguageDao;
-import com.jessemcgilallen.lc.persistence.TopicDao;
-import com.jessemcgilallen.lc.persistence.TypeDao;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 
@@ -17,11 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.HttpURLConnection;
 import java.util.List;
 import java.io.IOException;
 
