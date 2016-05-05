@@ -21,7 +21,6 @@ public class UserDao extends AbstractDao {
         super(User.class);
     }
 
-
     public User findByUsername(String username) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
