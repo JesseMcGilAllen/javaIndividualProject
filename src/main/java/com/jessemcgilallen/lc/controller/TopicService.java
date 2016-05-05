@@ -186,6 +186,17 @@ public class TopicService {
         return topic;
     }
 
+    public static List<Topic> topicsWithTypeName(String typeName) {
+        TypeDao typeDao = new TypeDao();
+        TopicDao topicDao = new TopicDao();
+
+        Type type = typeDao.findByName(typeName);
+        List<Topic> topics = topicDao.topicsWithType(type);
+
+        return topics;
+
+    }
+
     public static List<Topic> topicsWithLanguageAndTypeName(Language language, String typeName ) {
         TypeDao typeDao = new TypeDao();
         TopicDao topicDao = new TopicDao();

@@ -38,7 +38,7 @@ public class TopicDao extends AbstractDao {
         return topics;
     }
 
-    public List<Topic> topicWithType(Type type) {
+    public List<Topic> topicsWithType(Type type) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
         Criteria criteria = session.createCriteria(Topic.class)
