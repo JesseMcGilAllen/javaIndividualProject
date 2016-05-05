@@ -28,7 +28,7 @@ public class LanguageUpdate extends HttpServlet {
 
         String name = request.getParameter("name");
 
-        Language language = dao.findByName(name);
+        Language language = (Language) dao.findByName(name);
         request.setAttribute("language", language);
         logger.debug("Sending " + language);
 
@@ -42,7 +42,7 @@ public class LanguageUpdate extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("idField"));
         String name = request.getParameter("nameField");
 
-        Language language = dao.findById(id);
+        Language language = (Language) dao.findById(id);
 
         if (name.length() > 0) {
             language.setName(name);

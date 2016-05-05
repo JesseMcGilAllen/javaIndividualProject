@@ -15,17 +15,4 @@ public class LanguageDao extends AbstractDao {
         super(Language.class);
     }
 
-    public Language findById(int id) {
-
-       Language language = (Language)super.findById(id);
-
-        return language;
-    }
-
-    public Language findByName(String name) {
-
-        Language language = (Language)super.findByName(name);
-
-        return language;
-    }
 }

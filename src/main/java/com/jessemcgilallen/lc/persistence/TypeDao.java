@@ -15,19 +15,4 @@ public class TypeDao extends AbstractDao {
 
     }
 
-    public Type findById(int id) {
-
-        Type type = (Type)super.findById(id);
-
-        return type;
-    }
-
-    public Type findByName(String name) {
-
-        Type type = (Type)super.findByName(name);
-
-        return type;
-    }
-
-
 }

@@ -70,11 +70,6 @@ public abstract class AbstractDao<T> {
         } catch (Exception exception) {
             logger.error(exception);
         }
-//        Criteria criteria = session.createCriteria(getTypeParameterClass())
-//
-//        List<T> results = findByCriteria(criteria);
-//
-//         T result = results.get(0);
 
         return instance;
     }

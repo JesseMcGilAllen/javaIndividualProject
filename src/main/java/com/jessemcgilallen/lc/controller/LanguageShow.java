@@ -55,7 +55,7 @@ public class LanguageShow extends HttpServlet {
 
     private Language languageForName(String name) {
         LanguageDao dao = new LanguageDao();
-        Language language = dao.findByName(name);
+        Language language = (Language) dao.findByName(name);
 
         return language;
     }

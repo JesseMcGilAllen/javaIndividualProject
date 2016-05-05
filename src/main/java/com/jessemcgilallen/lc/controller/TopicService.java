@@ -6,6 +6,7 @@ import com.jessemcgilallen.lc.entity.Type;
 import com.jessemcgilallen.lc.persistence.LanguageDao;
 import com.jessemcgilallen.lc.persistence.TopicDao;
 import com.jessemcgilallen.lc.persistence.TypeDao;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -24,7 +25,7 @@ public class TopicService {
         LanguageDao languageDao = new LanguageDao();
         String name = request.getParameter("name");
 
-        Language language = languageDao.findByName(name);
+        Language language = (Language) languageDao.findByName(name);
         request.setAttribute("language", language);
         logger.debug("Sending " + language);
 
@@ -44,8 +45,8 @@ public class TopicService {
         String description = request.getParameter("descriptionField");
         String languageName = request.getParameter("language");
 
-        Language language = languageDao.findByName(languageName);
-        Type type = typeDao.findByName(typeName);
+        Language language = (Language) languageDao.findByName(languageName);
+        Type type = (Type) typeDao.findByName(typeName);
 
         Topic topic = new Topic();
 
@@ -72,7 +73,7 @@ public class TopicService {
         String name = request.getParameter("nameField");
         String description = request.getParameter("descriptionField");
 
-        Type type = typeDao.findByName(typeName);
+        Type type = (Type) typeDao.findByName(typeName);
 
         Topic topic = new Topic();
 
@@ -92,7 +93,7 @@ public class TopicService {
         TopicDao topicDao = new TopicDao();
         TypeDao typeDao = new TypeDao();
 
-        Type type = typeDao.findByName(typeName);
+        Type type = (Type) typeDao.findByName(typeName);
 
         List<Topic> topics =  topicDao.topicsWithType(type);
         System.out.println("Topics" + topics);
@@ -178,7 +179,7 @@ public class TopicService {
         TypeDao typeDao = new TypeDao();
         TopicDao topicDao = new TopicDao();
 
-        Type type = typeDao.findByName(typeName);
+        Type type = (Type) typeDao.findByName(typeName);
         List<Topic> topics = topicDao.topicsWithType(type);
 
         return topics;
@@ -189,7 +190,7 @@ public class TopicService {
         TypeDao typeDao = new TypeDao();
         TopicDao topicDao = new TopicDao();
 
-        Type type = typeDao.findByName(typeName);
+        Type type = (Type) typeDao.findByName(typeName);
         List<Topic> topics = topicDao.topicsUsingTopicCriteria(type, language);
 
         return topics;
