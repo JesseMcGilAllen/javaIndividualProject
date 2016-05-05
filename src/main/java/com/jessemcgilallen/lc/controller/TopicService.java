@@ -18,10 +18,9 @@ import java.util.List;
  * Created by jessemcgilallen on 5/1/16.
  */
 public class TopicService {
+    private static Logger logger = Logger.getRootLogger());
 
     public static HttpServletRequest getNewWithLanguage(HttpServletRequest request) {
-        Logger logger = LogManager.getRootLogger();
-
         LanguageDao languageDao = new LanguageDao();
         String name = request.getParameter("name");
 
@@ -34,8 +33,6 @@ public class TopicService {
 
     public static HttpServletRequest postNewWithLanguageAndTypeName(HttpServletRequest request,
                                                                 String typeName) {
-        Logger logger = LogManager.getRootLogger();
-
         int id;
         logger.setLevel(Level.DEBUG);
 
@@ -66,8 +63,6 @@ public class TopicService {
     }
 
     public static HttpServletRequest postNewWithTypeName(HttpServletRequest request, String typeName) {
-        Logger logger = LogManager.getRootLogger();
-
         int id;
         logger.setLevel(Level.DEBUG);
 
@@ -94,8 +89,6 @@ public class TopicService {
 
     public static HttpServletRequest getAllTopicsForTypeName(
             HttpServletRequest request, String typeName) {
-
-        Logger logger = LogManager.getRootLogger();
         TopicDao topicDao = new TopicDao();
         TypeDao typeDao = new TypeDao();
 
@@ -110,7 +103,6 @@ public class TopicService {
 
     public static HttpServletRequest getTopicForId(HttpServletRequest request) {
         TopicDao topicDao = new TopicDao();
-        Logger logger = LogManager.getRootLogger();
         logger.setLevel(Level.INFO);
 
         int id = idFromRequest(request);
@@ -140,7 +132,6 @@ public class TopicService {
 
     public static void deleteTopicById(HttpServletRequest request) {
         TopicDao topicDao = new TopicDao();
-        Logger logger = LogManager.getRootLogger();
         logger.setLevel(Level.INFO);
 
         int id = idFromRequest(request);
@@ -170,10 +161,7 @@ public class TopicService {
     private static Topic updateTopicWithRequest(Topic topic, HttpServletRequest request) {
         String name = request.getParameter("nameField");
         String description = request.getParameter("descriptionField");
-        Logger logger = LogManager.getRootLogger();
-
-
-
+        
         if (!(name.equals(topic.getName())) && name.length() > 0) {
             logger.info("Name Change");
             topic.setName(name);
