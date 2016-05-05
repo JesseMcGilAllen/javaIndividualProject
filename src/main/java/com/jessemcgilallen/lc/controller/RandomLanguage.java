@@ -37,12 +37,11 @@ public class RandomLanguage extends HttpServlet {
         List<Language> languages = languages();
         String requestUrl = "../read/show-language.jsp";
         int languagesCount = languages.size();
-        String url = formUrlWithMax(languagesCount - 1;)
-        int randomNumber = randomNumberFromURL(url);
+        String url = RandomNumber.formUrlWithMax(languagesCount - 1);
+        int randomNumber = RandomNumber.randomNumberFromURL(url);
         Language language = languages.get(randomNumber);
 
         request = assignAttributesOnRequestWithLanguage(request, language);
-
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(requestUrl);
         dispatcher.forward(request, response);
@@ -58,28 +57,6 @@ public class RandomLanguage extends HttpServlet {
 
     }
 
-    private String formUrlWithMax(int max) {
-        String baseUrl = "https://www.random.org/integers/";
-
-        String parameters = parameterStringWithMax(max);
-        String url = baseUrl + parameters;
-
-        return url;
-    }
-
-    private String parameterStringWithMax(int max) {
-        int num = 1;
-        int min = 0;
-        int base = 10;
-        int col = 1;
-        String format = "plain";
-        String random = "new";
-        String paramString = "?num=" + num + "&min=" + min + "&max=" + max + "&col="
-                + col + "&base=" + base + "&format=" + format + "&rnd=" + random;
-
-        return paramString;
-    }
-
     private HttpServletRequest assignAttributesOnRequestWithLanguage(HttpServletRequest request, Language language) {
 
 
@@ -93,34 +70,5 @@ public class RandomLanguage extends HttpServlet {
         return request;
     }
 
-    private int randomNumberFromURL(String url) {
-        URL urlObject;
-        HttpURLConnection connection;
-        BufferedReader reader;
-        int randomNumber = -1;
 
-        logger.setLevel(Level.INFO);
-        try {
-            urlObject = new URL(url);
-            connection = (HttpURLConnection) urlObject.openConnection();
-            connection.setRequestMethod("GET");
-
-            int responseCode = connection.getResponseCode();
-
-            logger.info("Response Code: " + responseCode);
-
-            reader = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
-
-            String response = reader.readLine();
-            randomNumber = Integer.parseInt(response);
-
-        } catch (MalformedURLException malformedException) {
-            logger.error(malformedException);
-        } catch (IOException ioException) {
-            logger.error(ioException);
-        }
-
-        return randomNumber;
-    }
 }
