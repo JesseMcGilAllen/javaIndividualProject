@@ -17,8 +17,17 @@
 <c:import url="/jsp/navigation-bar.jsp" />
 <h1>Algorithms</h1>
 
-<h3><a href="/pr/create/new-algorithm.jsp">Add Algorithm</a></h3>
-<h3><a href="../read/show-algorithm.jsp">Algorithm</a></h3>
+<ul class="nav nav-tabs">
+    <li><a href="/pr/create/new-algorithm.jsp">Add Algorithm</a></li>
+
+    <c:url value="/random/algorithm" var="randomUrl">
+        <c:param name="algorithms" value="${algorithms}" />
+    </c:url>
+
+    <li><a href="${randomUrl}">Random Algorithm</a></li>
+</ul>
+
+
 
 <c:forEach items="${topics}" var="algorithm">
     <div>
