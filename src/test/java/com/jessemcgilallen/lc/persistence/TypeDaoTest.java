@@ -15,14 +15,14 @@ public class TypeDaoTest {
 
     @Test
     public void testFindByName() throws Exception {
-        Type algorithm = typeDao.findByName("algorithm");
+        Type algorithm = (Type) typeDao.findByName("algorithm");
 
         assertTrue("Wrong type returned", algorithm != null);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void testFindByWrongName() throws Exception {
-        Type wrongType = typeDao.findByName("language");
+        Type wrongType = (Type) typeDao.findByName("language");
         fail("Expect Index Out of Bounds Exception");
 
     }

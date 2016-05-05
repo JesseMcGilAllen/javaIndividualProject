@@ -21,4 +21,14 @@ public class UserDao extends AbstractDao {
         super(User.class);
     }
 
+
+    public User findByUsername(String username) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        Criteria criteria = session.createCriteria(User.class)
+                .add(Restrictions.eq("username", username));
+        User user = (User)super.findByCriteria(criteria).get(0);
+
+        return user;
+    }
 }

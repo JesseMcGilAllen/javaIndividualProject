@@ -62,7 +62,7 @@ public class LanguageDaoTest {
 
         int pythonId = python.getId();
 
-        python = dao.findById(pythonId);
+        python = (Language) dao.findById(pythonId);
         System.out.println("Python Id:" + pythonId);
         int findByIdPython = python.getId();
 
@@ -79,7 +79,7 @@ public class LanguageDaoTest {
 
         String perlName = perl.getName();
 
-        Language perlByName = dao.findByName(perl.getName());
+        Language perlByName = (Language) dao.findByName(perl.getName());
 
         assertTrue("Found Wrong Object", perlName.equals(perlByName.getName()));
 
@@ -92,7 +92,7 @@ public class LanguageDaoTest {
 
         dao.create(language);
 
-        Language modifiedLanguage = dao.findById(language.getId());
+        Language modifiedLanguage = (Language) dao.findById(language.getId());
         modifiedLanguage.setName("Swift");
 
         dao.update(modifiedLanguage);

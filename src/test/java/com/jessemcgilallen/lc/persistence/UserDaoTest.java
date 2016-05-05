@@ -72,7 +72,7 @@ public class UserDaoTest {
     public void testFindById() throws Exception {
         User user = (User)dao.findAll().get(0);
 
-        User savedUser = dao.findById(user.getId());
+        User savedUser = (User) dao.findById(user.getId());
 
         int  savedUserId = savedUser.getId();
 
