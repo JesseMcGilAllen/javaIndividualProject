@@ -9,6 +9,7 @@ import com.jessemcgilallen.lc.persistence.TypeDao;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,14 +39,9 @@ public class RandomLanguage extends HttpServlet {
         int languagesCount = languages.size();
         String url = formUrlWithMax(languagesCount - 1;)
         int randomNumber = randomNumberFromURL(url);
-
         Language language = languages.get(randomNumber);
-        List<Topic> concepts = TopicService.topicsWithLanguageAndTypeName(language, "concept");
-        List<Topic> terms = TopicService.topicsWithLanguageAndTypeName(language, "term");
 
-        request.setAttribute("language", language);
-        request.setAttribute("concepts", concepts);
-        request.setAttribute("terms", terms);
+        request = assignAttributesOnRequestWithLanguage(request, language);
 
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(requestUrl);
@@ -84,7 +80,18 @@ public class RandomLanguage extends HttpServlet {
         return paramString;
     }
 
+    private HttpServletRequest assignAttributesOnRequestWithLanguage(HttpServletRequest request, Language language) {
 
+
+        List<Topic> concepts = TopicService.topicsWithLanguageAndTypeName(language, "concept");
+        List<Topic> terms = TopicService.topicsWithLanguageAndTypeName(language, "term");
+
+        request.setAttribute("language", language);
+        request.setAttribute("concepts", concepts);
+        request.setAttribute("terms", terms);
+
+        return request;
+    }
 
     private int randomNumberFromURL(String url) {
         URL urlObject;
