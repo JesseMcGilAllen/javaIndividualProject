@@ -329,6 +329,8 @@ Completed:
     Show Algorithms Servlet
     Fixed failing tests
 
+05/04/16
+
 Completed:
     Update Algorithm Servlet
     Delete Algorithm Servlet
@@ -345,3 +347,15 @@ After much searching I was also able to solve my servlet forward issue.  After c
 Well, today was highly frustating and educational.  My hibernate started blowing up and I reacted to rashly, which only made it worse.  On top of that I didn't commit before I started debugging.  After toying around with an overly complicated solution that made the problem worse, I checked out to my last commit before I noticed the blow up.  I redid the code that caused the blowup and was able to pinpoint that it was the findById method in my DAO.  I rewrote that and my problem was solved and my tests pass again.
 
 I completed the Update and Delete Algorithm actions.  They were not without their pains though.  I had Hibernate issues with each.  I had to replace the session.open with a check to see if an existing session is open first.  Otherwise, Hibernate throws a fit.
+
+## Week 15
+
+05/04/16
+
+Completed:
+    Gave Presentation
+    Implemented Web service on show Algorithm page
+
+I gave the presentation and only had a few hiccups.  I was able to fix the delete language bug.  I looking forward to see what feedback Paula provides in the code review.
+
+I set myself up for quite a bit to do in the next week.  I plan on starting with finishing the topic implementation as that should only take a couple of hours at most.  Hopefully, I will be able to find some time over the next couple of days to do that while I focus on iOS.

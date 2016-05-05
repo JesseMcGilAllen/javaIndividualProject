@@ -79,9 +79,16 @@
 - [X] Work on remaining Servlets
 - [X] Work on remaining Daos
 - [X] implement Web Service
-- [ ] Give Presentation
+- [X] Give Presentation
 - [X] Weekly journal entry
 
 ### Week 15
-- [ ] Put finishing touches on Servlet
+- [ ] Implement remaining Topic Servlets
+- [ ] Write Some Documentation
+- [ ] Write Tests where appropriate
+- [ ] Add some Javascript validation
+- [ ] Add simple code examples
+- [ ] Add content to index page
+- [ ] Update Openshift
 - [ ] Weekly journal entry
+- [ ] Turn in project 

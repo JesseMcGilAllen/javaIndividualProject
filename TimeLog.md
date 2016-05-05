@@ -74,3 +74,4 @@
 | 5/4/16 | Working on Topics Delete and debugging Hibernate | 1.5 |
 | 5/4/16 | Working on Topics Update | 1.5 |
 | 5/4/16 | Implemented random.org for the web service requirement | 1.5 |
+| 5/5/16 | Implemented web service on show Algorithm page and fixed Delete Language bug | 2 |
