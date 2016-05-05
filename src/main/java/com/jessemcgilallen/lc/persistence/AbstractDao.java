@@ -90,20 +90,6 @@ public abstract class AbstractDao<T> {
         return instance;
     }
 
-    public List<T> findByRestrictionsMap(Map<String, Object> restrictions) {
-        session = SessionFactoryProvider.getSessionFactory().openSession();
-
-        Criteria criteria = session.createCriteria(getTypeParameterClass());
-        restrictions.forEach((key, value) ->
-                criteria.add(Restrictions.eq(key, value)));
-
-        List<T> results = findByCriteria(criteria);
-        logger.setLevel(Level.DEBUG);
-        logger.debug("Concepts: " + results);
-
-        return results;
-    }
-
     public List<T> findByCriteria(Criteria criteria) {
         if (!session.isOpen()) {
             session = SessionFactoryProvider.getSessionFactory().openSession();
