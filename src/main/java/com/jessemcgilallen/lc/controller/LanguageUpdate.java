@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 
 @WebServlet(name = "Update Language", urlPatterns = { "/languages/update" } )
-public class UpdateLanguage extends HttpServlet {
+public class LanguageUpdate extends HttpServlet {
 
     private final Logger logger = Logger.getLogger(this.getClass());
     private final LanguageDao dao = new LanguageDao();
