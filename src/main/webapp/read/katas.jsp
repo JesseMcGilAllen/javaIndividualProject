@@ -17,21 +17,21 @@
 <c:import url="/jsp/navigation-bar.jsp" />
 <h1>Katas</h1>
 
-<h3><a href="../create/new-kata.jsp">Add Kata</a></h3>
-<h3><a href="../read/show-kata.jsp">Kata</a></h3>
+<ul class="nav nav-tabs">
+    <li><a href="/pr/create/new-kata.jsp">Add Kata</a></li>
+</ul>
 
-<c:forEach items="${katas}" var="kata">
+<c:forEach items="${topics}" var="kata">
     <div>
         <c:set value="${kata.name}" var="kataName" scope="page" />
         <c:set value="${kata.description}" var="kataDescription" scope="page" />
-        <%--<c:url value="/language" var="url">--%>
-        <%--<c:param name="name" value="${language.name}" />--%>
-        <%--</c:url>--%>
-        <p>${kataName}</p>
+        <c:url value="/katas/show" var="url">
+            <c:param name="id" value="${kata.id}" />
+        </c:url>
+        <h3><a href="${url}">${kataName}</a></h3>
         <p>${kataDescription}</p>
         <hr />
     </div>
 </c:forEach>
-
 </body>
 </html>
