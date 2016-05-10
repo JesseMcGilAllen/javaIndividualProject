@@ -21,10 +21,10 @@ public class Katas extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String servletPath = request.getServletPath();
+        String servletPath = request.getRequestURI();
         logger.setLevel(Level.DEBUG);
         logger.warn("Get Path: " + servletPath);
-        String baseURL = "/katas";
+        String baseURL = "/pr/katas";
 
         String showPatternURL = baseURL + "/show";
         String updatePatternURL = baseURL + "/update";
@@ -43,10 +43,10 @@ public class Katas extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String servletPath = request.getServletPath();
+        String servletPath = request.getRequestURI();
         logger.setLevel(Level.DEBUG);
         logger.warn("Get Path: " + servletPath);
-        String baseURL = "/katas";
+        String baseURL = "/pr/katas";
 
         String newPatternURL = baseURL + "/new";
         String updatePatternURL = baseURL + "/update";
@@ -58,6 +58,8 @@ public class Katas extends HttpServlet {
             showPattern(request, response);
         } else if (servletPath.equals(newPatternURL)) {
             createPattern(request, response);
+        } else if (servletPath.equals(baseURL)) {
+            showPatterns(request, response);
         }
 
         logger.setLevel(Level.WARN);

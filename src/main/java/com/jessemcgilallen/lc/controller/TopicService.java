@@ -142,7 +142,7 @@ public class TopicService {
 
         int id = Integer.parseInt(idString);
         logger.info("Id: " + id);
-
+        logger.setLevel(Level.WARN);
         return id;
     }
 

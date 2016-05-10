@@ -76,4 +76,5 @@
 | 5/4/16 | Implemented random.org for the web service requirement | 1.5 |
 | 5/5/16 | Implemented web service on show Algorithm page and fixed Delete Language bug | 2 |
 | 5/5/16 | Discussing Feedback and removingFindById and Name from Implemented DAOs | 1 |
-| 5/9/16 | Creating Language and Kata Servlets | 2.5 |
+| 5/9/16 | Creating Design-Patterns and Kata Servlets | 2.5 |
+| 5/10/16 | Hooking up Create and Showall Design Pattern | 1 | 

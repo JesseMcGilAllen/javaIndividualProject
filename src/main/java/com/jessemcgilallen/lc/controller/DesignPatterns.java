@@ -62,8 +62,6 @@ public class DesignPatterns extends HttpServlet {
             showPattern(request, response);
         } else if (servletPath.equals(newPatternURL)) {
             createPattern(request, response);
-        } else if (servletPath.equals(baseURL)) {
-            showPatterns(request, response);
         }
 
         logger.setLevel(Level.WARN);

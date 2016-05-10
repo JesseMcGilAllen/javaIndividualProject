@@ -27,8 +27,6 @@
     <li><a href="${randomUrl}">Random Algorithm</a></li>
 </ul>
 
-
-
 <c:forEach items="${topics}" var="algorithm">
     <div>
         <c:set value="${algorithm.name}" var="algorithmName" scope="page" />
