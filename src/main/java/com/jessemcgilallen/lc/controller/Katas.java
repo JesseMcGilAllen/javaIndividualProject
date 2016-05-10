@@ -1,5 +1,19 @@
 package com.jessemcgilallen.lc.controller;
 
+/**
+ * Created by jessemcgilallen on 5/9/16.
+ */
+
+import org.apache.log4j.Logger;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -14,14 +28,14 @@ import java.io.IOException;
  * Created by jessemcgilallen on 5/9/16.
  */
 
-@WebServlet(name = "designPattern", urlPatterns = { "/design-patterns", "/design-patterns/*" } )
-public class DesignPatterns extends HttpServlet {
+@WebServlet(name = "katas", urlPatterns = { "/katas", "/katas/*" } )
+public class Katas extends HttpServlet {
     private Logger logger = Logger.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String servletPath = request.getServletPath();
-        String baseURL = "/design-patterns";
+        String baseURL = "/katas";
 
         String showPatternURL = baseURL + "/show";
         String updatePatternURL = baseURL + "/update";
@@ -41,7 +55,7 @@ public class DesignPatterns extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String servletPath = request.getServletPath();
-        String baseURL = "/design-patterns";
+        String baseURL = "/katas";
 
         String updatePatternURL = baseURL + "/update";
         String showPatternURL = baseURL + "/show";
@@ -54,39 +68,39 @@ public class DesignPatterns extends HttpServlet {
     }
 
     private void showPatterns(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "read/design-patterns.jsp";
-        request = TopicService.getAllTopicsForTypeName(request, "design pattern");
+        String url = "read/katas.jsp";
+        request = TopicService.getAllTopicsForTypeName(request, "kata");
 
         forwardRequestToURL(request, response, url);
 
     }
 
     private void showPattern(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "../read/show-design-pattern.jsp";
+        String url = "../read/show-kata.jsp";
         request = TopicService.getTopicForId(request);
 
         forwardRequestToURL(request, response, url);
     }
 
     private void updatePatternGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "../update/update-design-pattern.jsp";
+        String url = "../update/update-kata.jsp";
         request = TopicService.getTopicForId(request);
 
         forwardRequestToURL(request, response, url);
     }
 
     private  void updatePatternPost(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
-        String url = "../design-patterns/show";
+        String url = "../katas/show";
         request = TopicService.updateTopicById(request);
 
         forwardRequestToURL(request, response, url);
     }
 
     private void deletePattern(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
-        String url = "../read/design-patterns.jsp";
+        String url = "../read/katas.jsp";
 
         TopicService.deleteTopicById(request);
-        request = TopicService.getAllTopicsForTypeName(request, "design pattern");
+        request = TopicService.getAllTopicsForTypeName(request, "kata");
 
         forwardRequestToURL(request, response, url);
     }
