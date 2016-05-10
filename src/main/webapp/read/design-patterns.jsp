@@ -27,7 +27,7 @@
     <%--<li><a href="${randomUrl}">Random Algorithm</a></li>--%>
 </ul>
 
-<c:forEach items="${designPatterns}" var="designPattern">
+<c:forEach items="${topics}" var="designPattern">
     <div>
         <c:set value="${designPattern.name}" var="designPatternName" scope="page" />
         <c:set value="${designPattern.description}" var="designPatternDescription" scope="page" />

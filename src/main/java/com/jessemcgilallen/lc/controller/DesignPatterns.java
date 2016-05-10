@@ -21,8 +21,11 @@ public class DesignPatterns extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String servletPath = request.getServletPath();
-        String baseURL = "/design-patterns";
+        String servletPath = request.getRequestURI();
+        logger.setLevel(Level.DEBUG);
+        logger.debug("Get Path: " + servletPath);
+
+        String baseURL = "/pr/design-patterns";
 
         String showPatternURL = baseURL + "/show";
         String updatePatternURL = baseURL + "/update";
@@ -37,14 +40,17 @@ public class DesignPatterns extends HttpServlet {
         } else if (servletPath.equals(deletePatternURL)) {
             deletePattern(request, response);
         }
+
+        logger.setLevel(Level.WARN);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String servletPath = request.getServletPath();
+        String servletPath = request.getRequestURI();
         logger.setLevel(Level.DEBUG);
-        logger.warn("Get Path: " + servletPath);
-        String baseURL = "/design-patterns";
+        logger.debug("Post Path: " + servletPath);
+
+        String baseURL = "/pr/design-patterns";
 
         String newPatternURL = baseURL + "/new";
         String updatePatternURL = baseURL + "/update";
@@ -56,6 +62,8 @@ public class DesignPatterns extends HttpServlet {
             showPattern(request, response);
         } else if (servletPath.equals(newPatternURL)) {
             createPattern(request, response);
+        } else if (servletPath.equals(baseURL)) {
+            showPatterns(request, response);
         }
 
         logger.setLevel(Level.WARN);
