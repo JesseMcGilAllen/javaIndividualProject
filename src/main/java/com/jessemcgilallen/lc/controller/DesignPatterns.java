@@ -21,14 +21,34 @@ public class DesignPatterns extends HttpServlet {
         String servletPath = request.getServletPath();
         String baseURL = "/design-patterns";
 
+        String showPatternURL = baseURL + "/show";
+        String updatePatternURL = baseURL + "/update";
+        String deletePatternURL = baseURL + "/delete";
+
         if (servletPath.equals(baseURL)) {
             showPatterns(request, response);
+        } else if (servletPath.equals(showPatternURL)) {
+            showPattern(request, response);
+        } else if (servletPath.equals(updatePatternURL)) {
+            updatePatternGet(request, response);
+        } else if (servletPath.equals(deletePatternURL)) {
+            deletePattern(request, response);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String servletPath = request.getServletPath();
+        String baseURL = "/design-patterns";
 
+        String updatePatternURL = baseURL + "/update";
+        String showPatternURL = baseURL + "/show";
+
+        if (servletPath.equals(updatePatternURL)) {
+            updatePatternPost(request, response);
+        } else if (servletPath.equals(showPatternURL)) {
+            showPattern(request, response);
+        }
     }
 
     private void showPatterns(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,6 +57,36 @@ public class DesignPatterns extends HttpServlet {
 
         forwardRequestToURL(request, response, url);
 
+    }
+
+    private void showPattern(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String url = "../read/show-design-pattern.jsp";
+        request = TopicService.getTopicForId(request);
+
+        forwardRequestToURL(request, response, url);
+    }
+
+    private void updatePatternGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String url = "../update/update-design-pattern.jsp";
+        request = TopicService.getTopicForId(request);
+
+        forwardRequestToURL(request, response, url);
+    }
+
+    private  void updatePatternPost(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
+        String url = "../design-patterns/show";
+        request = TopicService.updateTopicById(request);
+
+        forwardRequestToURL(request, response, url);
+    }
+
+    private void deletePattern(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
+        String url = "../read/design-patterns.jsp";
+
+        TopicService.deleteTopicById(request);
+        request = TopicService.getAllTopicsForTypeName(request, "design pattern");
+
+        forwardRequestToURL(request, response, url);
     }
 
     private void forwardRequestToURL(HttpServletRequest request,
