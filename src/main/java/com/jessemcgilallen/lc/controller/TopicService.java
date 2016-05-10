@@ -20,9 +20,11 @@ import java.util.List;
  */
 public class TopicService {
     private static Logger logger = Logger.getRootLogger();
+    private static TopicDao topicDao = new TopicDao();
+    private static LanguageDao languageDao = new LanguageDao();
+    private static TypeDao typeDao = new TypeDao();
 
     public static HttpServletRequest getNewWithLanguage(HttpServletRequest request) {
-        LanguageDao languageDao = new LanguageDao();
         String name = request.getParameter("name");
 
         Language language = (Language) languageDao.findByName(name);
@@ -34,12 +36,8 @@ public class TopicService {
 
     public static HttpServletRequest postNewWithLanguageAndTypeName(HttpServletRequest request,
                                                                 String typeName) {
-        int id;
         logger.setLevel(Level.DEBUG);
-
-        LanguageDao languageDao = new LanguageDao();
-        TypeDao typeDao = new TypeDao();
-        TopicDao topicDao = new TopicDao();
+        int id;
 
         String name = request.getParameter("nameField");
         String description = request.getParameter("descriptionField");
@@ -67,9 +65,6 @@ public class TopicService {
         int id;
         logger.setLevel(Level.DEBUG);
 
-        TypeDao typeDao = new TypeDao();
-        TopicDao topicDao = new TopicDao();
-
         String name = request.getParameter("nameField");
         String description = request.getParameter("descriptionField");
 
@@ -90,9 +85,6 @@ public class TopicService {
 
     public static HttpServletRequest getAllTopicsForTypeName(
             HttpServletRequest request, String typeName) {
-        TopicDao topicDao = new TopicDao();
-        TypeDao typeDao = new TypeDao();
-
         Type type = (Type) typeDao.findByName(typeName);
 
         List<Topic> topics =  topicDao.topicsWithType(type);
@@ -103,7 +95,6 @@ public class TopicService {
     }
 
     public static HttpServletRequest getTopicForId(HttpServletRequest request) {
-        TopicDao topicDao = new TopicDao();
         logger.setLevel(Level.INFO);
 
         int id = idFromRequest(request);
@@ -119,7 +110,6 @@ public class TopicService {
     }
 
     public static HttpServletRequest updateTopicById(HttpServletRequest request) {
-        TopicDao topicDao = new TopicDao();
         int id = idFromRequest(request);
         Topic topic = (Topic) topicDao.findById(id);
 
@@ -132,7 +122,6 @@ public class TopicService {
     }
 
     public static void deleteTopicById(HttpServletRequest request) {
-        TopicDao topicDao = new TopicDao();
         logger.setLevel(Level.INFO);
 
         int id = idFromRequest(request);
@@ -145,8 +134,6 @@ public class TopicService {
     }
 
     private static int idFromRequest(HttpServletRequest request) {
-        Logger logger = LogManager.getRootLogger();
-
         String idString = request.getParameter("id");
 
         logger.setLevel(Level.INFO);
@@ -176,9 +163,6 @@ public class TopicService {
     }
 
     public static List<Topic> topicsWithTypeName(String typeName) {
-        TypeDao typeDao = new TypeDao();
-        TopicDao topicDao = new TopicDao();
-
         Type type = (Type) typeDao.findByName(typeName);
         List<Topic> topics = topicDao.topicsWithType(type);
 
@@ -187,9 +171,6 @@ public class TopicService {
     }
 
     public static List<Topic> topicsWithLanguageAndTypeName(Language language, String typeName ) {
-        TypeDao typeDao = new TypeDao();
-        TopicDao topicDao = new TopicDao();
-
         Type type = (Type) typeDao.findByName(typeName);
         List<Topic> topics = topicDao.topicsUsingTopicCriteria(type, language);
 
