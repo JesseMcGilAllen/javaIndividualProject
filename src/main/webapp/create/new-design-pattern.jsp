@@ -15,5 +15,18 @@
 <body>
 <c:import url="../jsp/navigation-bar.jsp" />
 <h1>Add Design Pattern</h1>
+
+<form action="/pr/design-patterns/new" method="post">
+    <div class="form-group">
+        <label for="nameField">Name</label>
+        <input type="text" class="form-control" id="nameField" name="nameField" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="descriptionField">Description</label>
+        <textarea class="form-control" id="descriptionField"
+                  name="descriptionField" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Add Design Pattern</button>
+</form>
 </body>
 </html>

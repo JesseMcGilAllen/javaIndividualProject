@@ -1,5 +1,6 @@
 package com.jessemcgilallen.lc.controller;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -41,8 +42,11 @@ public class DesignPatterns extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String servletPath = request.getServletPath();
+        logger.setLevel(Level.DEBUG);
+        logger.warn("Get Path: " + servletPath);
         String baseURL = "/design-patterns";
 
+        String newPatternURL = baseURL + "/new";
         String updatePatternURL = baseURL + "/update";
         String showPatternURL = baseURL + "/show";
 
@@ -50,8 +54,28 @@ public class DesignPatterns extends HttpServlet {
             updatePatternPost(request, response);
         } else if (servletPath.equals(showPatternURL)) {
             showPattern(request, response);
+        } else if (servletPath.equals(newPatternURL)) {
+            createPattern(request, response);
         }
+
+        logger.setLevel(Level.WARN);
     }
+
+    private void createPattern(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String url;
+        request = TopicService.postNewWithTypeName(request, "design pattern");
+
+        int id = (Integer)request.getAttribute("id");
+
+        if (id > 0) {
+            url = "../design-patterns";
+        } else {
+           url = "../create/new-design-pattern.jsp";
+        }
+
+        forwardRequestToURL(request, response, url);
+    }
+
 
     private void showPatterns(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "read/design-patterns.jsp";

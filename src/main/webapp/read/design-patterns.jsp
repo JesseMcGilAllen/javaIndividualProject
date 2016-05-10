@@ -17,9 +17,15 @@
 <c:import url="/jsp/navigation-bar.jsp" />
 <h1>Design Patterns</h1>
 
-<h3><a href="../create/new-design-pattern.jsp">Add Design Pattern</a></h3>
-<h3><a href="../read/show-design-pattern.jsp">Design Pattern</a></h3>
+<ul class="nav nav-tabs">
+    <li><a href="/pr/create/new-design-pattern.jsp">Add Design Pattern</a></li>
 
+    <%--<c:url value="/random/algorithm" var="randomUrl">--%>
+        <%--<c:param name="algorithms" value="${algorithms}" />--%>
+    <%--</c:url>--%>
+
+    <%--<li><a href="${randomUrl}">Random Algorithm</a></li>--%>
+</ul>
 
 <c:forEach items="${designPatterns}" var="designPattern">
     <div>
