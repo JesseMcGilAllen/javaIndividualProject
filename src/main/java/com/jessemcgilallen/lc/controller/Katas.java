@@ -14,20 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
-/**
- * Created by jessemcgilallen on 5/9/16.
- */
-
 @WebServlet(name = "katas", urlPatterns = { "/katas", "/katas/*" } )
 public class Katas extends HttpServlet {
     private Logger logger = Logger.getLogger(this.getClass());
