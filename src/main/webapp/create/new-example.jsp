@@ -26,8 +26,8 @@
     </div>
 
     <div class="form-group">
-        <label for="gistInput">Gist URL</label>
-        <input type="text" class="form-control" id="gistInput" name="gistInput" placeholder="Gist URL">
+        <label for="gistField">Gist URL</label>
+        <input type="text" class="form-control" id="gistField" name="gistField" placeholder="Gist URL">
     </div>
     <input type="hidden" id="topicId" name="topicId" value="${topic.id}" />
     <button type="submit" class="btn btn-default">Add Example</button>

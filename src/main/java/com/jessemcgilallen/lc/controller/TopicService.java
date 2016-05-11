@@ -178,17 +178,4 @@ public class TopicService {
 
         return topics;
     }
-
-    public static Language languageForTopicId(int id) {
-        Topic topic = (Topic) topicDao.findById(id);
-
-        Set<Language> languages = topic.getLanguages();
-        logger.warn("Languages:" + languages);
-        Language language = languages.iterator().next();
-
-        return language;
-    }
-
-
-
 }

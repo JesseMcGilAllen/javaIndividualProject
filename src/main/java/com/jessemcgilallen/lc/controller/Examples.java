@@ -1,8 +1,13 @@
 package com.jessemcgilallen.lc.controller;
 
+import com.jessemcgilallen.lc.entity.*;
+import com.jessemcgilallen.lc.persistence.ExampleDao;
 import com.jessemcgilallen.lc.persistence.LanguageDao;
+import com.jessemcgilallen.lc.persistence.TopicDao;
+
 import com.jessemcgilallen.lc.entity.Language;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -21,6 +26,9 @@ import java.util.List;
 @WebServlet(name = "examplesServlet", urlPatterns = { "/examples/*" } )
 public class Examples extends HttpServlet {
     private Logger logger = Logger.getLogger(this.getClass());
+    private final ExampleDao exampleDao = new ExampleDao();
+    private final LanguageDao languageDao = new LanguageDao();
+    private  final TopicDao topicDao = new TopicDao();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -55,7 +63,7 @@ public class Examples extends HttpServlet {
 
     private void createExampleGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "../create/new-example.jsp";
-        LanguageDao languageDao = new LanguageDao();
+
 
         List<Language> languages = languageDao.findAll();
         String idString = request.getParameter("topicId");
@@ -69,14 +77,60 @@ public class Examples extends HttpServlet {
     private void deleteExample(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "../";
 
-        TopicService.deleteTopicById(request);
+        int id = Integer.parseInt(request.getParameter("id"));
+        Example example = (Example) exampleDao.findById(id);
+        exampleDao.delete(example);
+
         request = TopicService.getAllTopicsForTypeName(request, "kata");
 
         forwardRequestToURL(request, response, url);
     }
 
-    private void createExamplePost(HttpServletRequest request, HttpServletResponse response) {
+    private void createExamplePost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id;
+        String url;
 
+        logger.setLevel(Level.DEBUG);
+
+        id = createExample(request);
+
+        if (id > 0) {
+            url = backToTopicURL(request);
+        } else {
+            url = "../create/new-example.jsp";
+        }
+
+        forwardRequestToURL(request, response, url);
+    }
+
+    private int createExample(HttpServletRequest request) {
+        int topicId = Integer.parseInt(request.getParameter("topicField"));
+        int languageId = Integer.parseInt(request.getParameter("languageSelect"));
+
+        Language language = (Language) languageDao.findById(languageId);
+        Topic topic = (Topic) topicDao.findById(topicId);
+
+        String gistURL = request.getParameter("gistField");
+
+        Example example = new Example();
+
+        example.setCode(gistURL);
+        example.setLanguage(language);
+        example.setTopic(topic);
+
+        return exampleDao.create(example);
+    }
+
+    private String backToTopicURL(HttpServletRequest request) {
+        String url;
+
+        int topicId = Integer.parseInt(request.getParameter("topicField"));
+        Topic topic = (Topic) topicDao.findById(topicId);
+        Type type = topic.getType();
+
+        url = "../" + type.getName() + "s/show?id=" + topic.getId();
+
+        return url;
     }
 
     private void forwardRequestToURL(HttpServletRequest request,
