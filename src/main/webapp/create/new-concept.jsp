@@ -16,7 +16,7 @@
 <c:import url="../jsp/navigation-bar.jsp" />
 <h1>Add Concept</h1>
 
-<form action="/pr/languages/concepts/new" method="post">
+<form action="/pr/concepts/new" method="post">
     <div class="form-group">
         <label for="nameField">Name</label>
         <input type="text" class="form-control" id="nameField" name="nameField" placeholder="Name">
@@ -26,7 +26,7 @@
         <textarea class="form-control" id="descriptionField"
                   name="descriptionField" rows="5"></textarea>
     </div>
-    <input type="hidden" id="language" name="language" value="${language.name}" />
+    <input type="hidden" id="languageName" name="languageName" value="${language.name}" />
     <button type="submit" class="btn btn-default">Add Concept</button>
 </form>
 </body>

@@ -31,7 +31,7 @@
         <textarea class="form-control" id="descriptionField"
                   name="descriptionField" rows="5">${designPattern.description}</textarea>
     </div>
-    <button type="submit" class="btn btn-default">Update Algorithm</button>
+    <button type="submit" class="btn btn-default">Update Design Pattern</button>
 </form>
 </body>
 </html>

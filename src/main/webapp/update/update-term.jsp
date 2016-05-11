@@ -10,11 +10,29 @@
 <c:import url="../jsp/doctype.jsp" />
 
 <html>
-<c:set var="pageTitle" value="Update Term | Programming Review" scope="request" />
+<c:set var="term" value="${topic}" scope="request" />
+<c:set var="pageTitle" value="Update ${term.name} | Programming Review" scope="request" />
 <c:import url="../jsp/header-tag.jsp" />
 <body>
 <c:import url="../jsp/navigation-bar.jsp" />
 
-<h1>Update Term</h1>
+<h1>Term</h1>
+
+
+<form action="/pr/terms/update" method="post">
+    <div>
+        <input type="hidden" id="id" name="id" value="${term.id}"
+    </div>
+    <div class="form-group">
+        <label for="nameField">Name</label>
+        <input type="text" class="form-control" id="nameField" name="nameField" placeholder="Name" value="${term.name}">
+    </div>
+    <div class="form-group">
+        <label for="descriptionField">Description</label>
+        <textarea class="form-control" id="descriptionField"
+                  name="descriptionField" rows="5">${term.description}</textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Update Term</button>
+</form>
 </body>
 </html>

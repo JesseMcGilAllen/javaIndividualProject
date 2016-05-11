@@ -26,18 +26,18 @@ public class Katas extends HttpServlet {
         logger.warn("Get Path: " + servletPath);
         String baseURL = "/pr/katas";
 
-        String showPatternURL = baseURL + "/show";
-        String updatePatternURL = baseURL + "/update";
-        String deletePatternURL = baseURL + "/delete";
+        String showKataURL = baseURL + "/show";
+        String updateKataURL = baseURL + "/update";
+        String deleteKataURL = baseURL + "/delete";
 
         if (servletPath.equals(baseURL)) {
-            showPatterns(request, response);
-        } else if (servletPath.equals(showPatternURL)) {
-            showPattern(request, response);
-        } else if (servletPath.equals(updatePatternURL)) {
-            updatePatternGet(request, response);
-        } else if (servletPath.equals(deletePatternURL)) {
-            deletePattern(request, response);
+            showKatas(request, response);
+        } else if (servletPath.equals(showKataURL)) {
+            showKata(request, response);
+        } else if (servletPath.equals(updateKataURL)) {
+            updateKataGet(request, response);
+        } else if (servletPath.equals(deleteKataURL)) {
+            deleteKata(request, response);
         }
         logger.setLevel(Level.WARN);
     }
@@ -48,24 +48,24 @@ public class Katas extends HttpServlet {
         logger.warn("Get Path: " + servletPath);
         String baseURL = "/pr/katas";
 
-        String newPatternURL = baseURL + "/new";
-        String updatePatternURL = baseURL + "/update";
-        String showPatternURL = baseURL + "/show";
+        String newKataURL = baseURL + "/new";
+        String updateKataURL = baseURL + "/update";
+        String showKataURL = baseURL + "/show";
 
-        if (servletPath.equals(updatePatternURL)) {
-            updatePatternPost(request, response);
-        } else if (servletPath.equals(showPatternURL)) {
-            showPattern(request, response);
-        } else if (servletPath.equals(newPatternURL)) {
-            createPattern(request, response);
+        if (servletPath.equals(updateKataURL)) {
+            updateKataPost(request, response);
+        } else if (servletPath.equals(showKataURL)) {
+            showKata(request, response);
+        } else if (servletPath.equals(newKataURL)) {
+            createKata(request, response);
         } else if (servletPath.equals(baseURL)) {
-            showPatterns(request, response);
+            showKatas(request, response);
         }
 
         logger.setLevel(Level.WARN);
     }
 
-    private void createPattern(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void createKata(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url;
         request = TopicService.postNewWithTypeName(request, "kata");
 
@@ -80,7 +80,7 @@ public class Katas extends HttpServlet {
         forwardRequestToURL(request, response, url);
     }
 
-    private void showPatterns(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void showKatas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "read/katas.jsp";
         request = TopicService.getAllTopicsForTypeName(request, "kata");
 
@@ -88,28 +88,28 @@ public class Katas extends HttpServlet {
 
     }
 
-    private void showPattern(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void showKata(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "../read/show-kata.jsp";
         request = TopicService.getTopicForId(request);
 
         forwardRequestToURL(request, response, url);
     }
 
-    private void updatePatternGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void updateKataGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "../update/update-kata.jsp";
         request = TopicService.getTopicForId(request);
 
         forwardRequestToURL(request, response, url);
     }
 
-    private  void updatePatternPost(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
+    private  void updateKataPost(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
         String url = "../katas/show";
         request = TopicService.updateTopicById(request);
 
         forwardRequestToURL(request, response, url);
     }
 
-    private void deletePattern(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
+    private void deleteKata(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
         String url = "../read/katas.jsp";
 
         TopicService.deleteTopicById(request);

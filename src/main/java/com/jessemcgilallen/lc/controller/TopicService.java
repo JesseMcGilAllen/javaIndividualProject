@@ -6,13 +6,12 @@ import com.jessemcgilallen.lc.entity.Type;
 import com.jessemcgilallen.lc.persistence.LanguageDao;
 import com.jessemcgilallen.lc.persistence.TopicDao;
 import com.jessemcgilallen.lc.persistence.TypeDao;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -25,7 +24,7 @@ public class TopicService {
     private static TypeDao typeDao = new TypeDao();
 
     public static HttpServletRequest getNewWithLanguage(HttpServletRequest request) {
-        String name = request.getParameter("name");
+        String name = request.getParameter("languageName");
 
         Language language = (Language) languageDao.findByName(name);
         request.setAttribute("language", language);
@@ -41,8 +40,7 @@ public class TopicService {
 
         String name = request.getParameter("nameField");
         String description = request.getParameter("descriptionField");
-        String languageName = request.getParameter("language");
-
+        String languageName = request.getParameter("languageName");
         Language language = (Language) languageDao.findByName(languageName);
         Type type = (Type) typeDao.findByName(typeName);
 
@@ -128,8 +126,12 @@ public class TopicService {
         logger.info("Id: " + id);
 
         Topic topic = (Topic) topicDao.findById(id);
+        logger.error("Topic: " + topic);
+
 
         topicDao.delete(topic);
+
+        logger.setLevel(Level.WARN);
 
     }
 
@@ -175,6 +177,16 @@ public class TopicService {
         List<Topic> topics = topicDao.topicsUsingTopicCriteria(type, language);
 
         return topics;
+    }
+
+    public static Language languageForTopicId(int id) {
+        Topic topic = (Topic) topicDao.findById(id);
+
+        Set<Language> languages = topic.getLanguages();
+        logger.warn("Languages:" + languages);
+        Language language = languages.iterator().next();
+
+        return language;
     }
 
 

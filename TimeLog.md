@@ -78,3 +78,5 @@
 | 5/5/16 | Discussing Feedback and removingFindById and Name from Implemented DAOs | 1 |
 | 5/9/16 | Creating Design-Patterns and Kata Servlets | 2.5 |
 | 5/10/16 | Hooking up Create and Showall Design Pattern | 1 | 
+| 5/10/16 | Hooking up rest of Design Patterns and Kata jsps | 1 |
+
