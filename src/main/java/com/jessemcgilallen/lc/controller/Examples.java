@@ -75,13 +75,14 @@ public class Examples extends HttpServlet {
     }
 
     private void deleteExample(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "../";
+
 
         int id = Integer.parseInt(request.getParameter("id"));
         Example example = (Example) exampleDao.findById(id);
         exampleDao.delete(example);
 
         request = TopicService.getAllTopicsForTypeName(request, "kata");
+        String url = backToTopicURL(request);
 
         forwardRequestToURL(request, response, url);
     }
