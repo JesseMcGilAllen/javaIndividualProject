@@ -12,9 +12,9 @@
         </id>
         <property name="code" column="code" type="string" />
         <many-to-one name="Language" class="com.jessemcgilallen.lc.entity.Language"
-                     foreign-key="language_id" unique="false" not-null="true" />
+                     column="language_id" unique="false" not-null="true" />
 
         <many-to-one name="topic" class="com.jessemcgilallen.lc.entity.Topic"
-                     foreign-key="topic_id" unique="false" not-null="true"  />
+                     column="topic_id" unique="false" not-null="true"  />
     </class>
 </hibernate-mapping>

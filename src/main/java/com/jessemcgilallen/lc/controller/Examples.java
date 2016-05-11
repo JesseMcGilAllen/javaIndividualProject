@@ -69,7 +69,7 @@ public class Examples extends HttpServlet {
         String idString = request.getParameter("topicId");
 
         request.setAttribute("languages", languages);
-        request.setAttribute("id", idString);
+        request.setAttribute("topicId", idString);
 
         forwardRequestToURL(request, response, url);
     }
@@ -104,8 +104,12 @@ public class Examples extends HttpServlet {
     }
 
     private int createExample(HttpServletRequest request) {
-        int topicId = Integer.parseInt(request.getParameter("topicField"));
-        int languageId = Integer.parseInt(request.getParameter("languageSelect"));
+        String topicString = request.getParameter("topicId");
+        String languageString = request.getParameter("languageSelect");
+        logger.debug("Request Language: " + languageString);
+        int topicId = Integer.parseInt(topicString);
+        int languageId = Integer.parseInt(languageString);
+        logger.error("Language: " + languageId);
 
         Language language = (Language) languageDao.findById(languageId);
         Topic topic = (Topic) topicDao.findById(topicId);
@@ -117,6 +121,8 @@ public class Examples extends HttpServlet {
         example.setCode(gistURL);
         example.setLanguage(language);
         example.setTopic(topic);
+
+        logger.error("Example: " + example);
 
         return exampleDao.create(example);
     }
