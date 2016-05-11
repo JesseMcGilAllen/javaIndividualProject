@@ -122,9 +122,13 @@ public class Examples extends HttpServlet {
         example.setLanguage(language);
         example.setTopic(topic);
 
-        logger.error("Example: " + example);
+        logger.error("Example: Code" + example.getCode()
+                + "Language : " + example.getLanguage()
+                + "Topic : " + example.getTopic());
 
-        return exampleDao.create(example);
+        int id = exampleDao.create(example);
+
+        return id;
     }
 
     private String backToTopicURL(HttpServletRequest request) {
