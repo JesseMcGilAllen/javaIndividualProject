@@ -44,12 +44,12 @@ public abstract class AbstractDao<T> {
     }
 
     public List<T> findAll() {
-       // session = SessionFactoryProvider.getSessionFactory().openSession();
+        session = SessionFactoryProvider.getSessionFactory().openSession();
         List<T> list = new ArrayList<T>();
         Transaction transaction = null;
 
         try {
-            getSession().beginTransaction();
+            session.beginTransaction();
             Criteria criteria = getSession().createCriteria(getTypeParameterClass());
             list = criteria.list();
 
@@ -161,8 +161,8 @@ public abstract class AbstractDao<T> {
         Integer id = null;
 
         try {
-            transaction = getSession().beginTransaction();
-            id = (Integer) getSession().save(entity);
+            transaction = session.beginTransaction();
+            id = (Integer) session.save(entity);
             logger.warn("Saved: " + id);
             transaction.commit();
 

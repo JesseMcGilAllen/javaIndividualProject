@@ -10,11 +10,16 @@
     </Appenders>
     <Loggers>
         <Logger name="org.apache.log4j.xml" level="debug">
+            <AppenderRef ref="STDOUT"/>
             <AppenderRef ref="Log"/>
         </Logger>
         <Root level="warn">
             <AppenderRef ref="STDOUT"/>
             <AppenderRef ref="Log" />
         </Root>
+        <Logger name="org.hibernate" level="debug">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="Log"/>
+        </Logger>
     </Loggers>
 </Configuration>

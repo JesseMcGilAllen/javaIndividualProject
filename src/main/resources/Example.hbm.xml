@@ -11,10 +11,10 @@
             <generator class="native"/>
         </id>
         <property name="code" column="code" type="string" />
-        <many-to-one name="Language" class="com.jessemcgilallen.lc.entity.Language"
-                     column="language_id" unique="false" not-null="true" cascade="all" />
+        <many-to-one name="language" class="com.jessemcgilallen.lc.entity.Language"
+                     foreign-key="language_id" column="language_id" unique="false" />
 
         <many-to-one name="topic" class="com.jessemcgilallen.lc.entity.Topic"
-                     column="topic_id" unique="false" not-null="true"  cascade="all" />
+                     foreign-key="language_id" column="topic_id" unique="false"  />
     </class>
 </hibernate-mapping>

@@ -86,4 +86,16 @@ public class Topic {
     public void setExamples(Set<Example> examples) {
         this.examples = examples;
     }
+
+    public void addExample(Example example) {
+        if (examples == null) {
+            examples = new HashSet<Example>();
+        }
+
+        if (examples.contains(example)) {
+            return;
+        }
+
+        examples.add(example);
+    }
 }
