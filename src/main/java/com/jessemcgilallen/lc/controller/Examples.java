@@ -54,7 +54,7 @@ public class Examples extends HttpServlet {
     }
 
     private void createExample(HttpServletRequest request, HttpServletResponse response) {
-        
+
     }
 
     private void forwardRequestToURL(HttpServletRequest request,
