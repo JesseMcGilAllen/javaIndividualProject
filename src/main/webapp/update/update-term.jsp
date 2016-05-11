@@ -32,6 +32,7 @@
         <textarea class="form-control" id="descriptionField"
                   name="descriptionField" rows="5">${term.description}</textarea>
     </div>
+    <input type="hidden" id="languageName" name="languageName" value="${languageName}" />
     <button type="submit" class="btn btn-default">Update Term</button>
 </form>
 </body>

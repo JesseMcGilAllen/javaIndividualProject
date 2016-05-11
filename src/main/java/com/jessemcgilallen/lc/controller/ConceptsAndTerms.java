@@ -131,6 +131,9 @@ public class ConceptsAndTerms extends HttpServlet {
     private void showTermOrConcept(String type, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "../read/show-" + type + ".jsp";
         request = TopicService.getTopicForId(request);
+        String name = request.getParameter("languageName");
+        request.setAttribute("languageName", name);
+        logger.info("attribute: " + request.getAttribute("languageName"));
 
         forwardRequestToURL(request, response, url);
     }
@@ -139,12 +142,19 @@ public class ConceptsAndTerms extends HttpServlet {
     private void updateTermOrConceptGet(String type, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "../update/update-" + type + ".jsp";
         request = TopicService.getTopicForId(request);
+        
+        String languageName = request.getParameter("languageName");
+        request.setAttribute("languageName", languageName);
+
+        logger.info("Update: " + request.getAttribute("languageName"));
 
         forwardRequestToURL(request, response, url);
     }
 
     private  void updateTermOrConceptPost(String type, HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
-        String url = "../" + type  + "s/show";
+        String languageName = (String) request.getParameter("languageName");
+        String url = "../language?name=" + languageName;
+
         request = TopicService.updateTopicById(request);
 
         forwardRequestToURL(request, response, url);
@@ -152,8 +162,8 @@ public class ConceptsAndTerms extends HttpServlet {
 
     private void deleteTermOrConcept(String type, HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
 
-        String language = request.getParameter("languageName");
-        String url = "../language?name=" + language;
+        String languageName = (String) request.getParameter("languageName");
+        String url = "../language?name=" + languageName;
 
         TopicService.deleteTopicById(request);
 
