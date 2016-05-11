@@ -79,4 +79,5 @@
 | 5/9/16 | Creating Design-Patterns and Kata Servlets | 2.5 |
 | 5/10/16 | Hooking up Create and Showall Design Pattern | 1 | 
 | 5/10/16 | Hooking up rest of Design Patterns and Kata jsps | 1 |
-
+| 5/10/16 | Hooking up Concepts & Terms jsps to servlet | 4 |
+| 5/10/16 | Starting work on Examples | .5 |

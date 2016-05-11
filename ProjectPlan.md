@@ -83,7 +83,7 @@
 - [X] Weekly journal entry
 
 ### Week 15
-- [ ] Implement remaining Topic Servlets
+- [X] Implement remaining Topic Servlets
 - [ ] Write Some Documentation
 - [ ] Write Tests where appropriate
 - [ ] Add some Javascript validation

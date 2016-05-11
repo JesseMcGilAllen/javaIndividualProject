@@ -356,6 +356,13 @@ Completed:
     Gave Presentation
     Implemented Web service on show Algorithm page
 
+05/09/16 - 5/10/16
+
+Completed:
+    Hooked up remaining Servlets to jsps
+
 I gave the presentation and only had a few hiccups.  I was able to fix the delete language bug.  I looking forward to see what feedback Paula provides in the code review.
 
 I set myself up for quite a bit to do in the next week.  I plan on starting with finishing the topic implementation as that should only take a couple of hours at most.  Hopefully, I will be able to find some time over the next couple of days to do that while I focus on iOS.
+
+I finally got the Topic servlets done.  I was cruising along until I ran into hooking up the rest of the Term and Concept actions.  Since those two are tied to the Language I wanted to return to the Language show page.  After many struggles, I decided to pass the languageName all over the place.  I am sure that there is a better way to implement this but I am running on fumes at this point mentally.
