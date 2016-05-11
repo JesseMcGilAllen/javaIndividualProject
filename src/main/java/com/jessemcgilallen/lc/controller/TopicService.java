@@ -1,8 +1,10 @@
 package com.jessemcgilallen.lc.controller;
 
+import com.jessemcgilallen.lc.entity.Example;
 import com.jessemcgilallen.lc.entity.Language;
 import com.jessemcgilallen.lc.entity.Topic;
 import com.jessemcgilallen.lc.entity.Type;
+import com.jessemcgilallen.lc.persistence.ExampleDao;
 import com.jessemcgilallen.lc.persistence.LanguageDao;
 import com.jessemcgilallen.lc.persistence.TopicDao;
 import com.jessemcgilallen.lc.persistence.TypeDao;
@@ -22,6 +24,7 @@ public class TopicService {
     private static TopicDao topicDao = new TopicDao();
     private static LanguageDao languageDao = new LanguageDao();
     private static TypeDao typeDao = new TypeDao();
+    private static ExampleDao exampleDao = new ExampleDao();
 
     public static HttpServletRequest getNewWithLanguage(HttpServletRequest request) {
         String name = request.getParameter("languageName");
@@ -99,6 +102,12 @@ public class TopicService {
         logger.info("Id: " + id);
 
         Topic topic = (Topic) topicDao.findById(id);
+
+        List<Example> examples = exampleDao.findExamplesForTopic(topic);
+
+        if (examples.size() > 0) {
+            request.setAttribute("examples", examples);
+        }
 
         logger.info("Topic: " + topic.toString());
 

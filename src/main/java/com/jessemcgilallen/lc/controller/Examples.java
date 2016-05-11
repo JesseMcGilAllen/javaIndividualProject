@@ -122,21 +122,27 @@ public class Examples extends HttpServlet {
         example.setLanguage(language);
         example.setTopic(topic);
 
+
         logger.error("Example: Code" + example.getCode()
                 + "Language : " + example.getLanguage()
                 + "Topic : " + example.getTopic());
 
         int id = exampleDao.create(example);
 
+
         return id;
     }
 
     private String backToTopicURL(HttpServletRequest request) {
         String url;
-
-        int topicId = Integer.parseInt(request.getParameter("topicField"));
+        String topicParameter = request.getParameter("topicId");
+        int topicId = Integer.parseInt(topicParameter);
         Topic topic = (Topic) topicDao.findById(topicId);
         Type type = topic.getType();
+
+        List<Example> examples = exampleDao.findExamplesForTopic(topic);
+
+        request.setAttribute("examples", examples);
 
         url = "../" + type.getName() + "s/show?id=" + topic.getId();
 
