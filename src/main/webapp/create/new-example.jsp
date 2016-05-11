@@ -26,6 +26,15 @@
     </div>
 
     <div class="form-group">
+        <div>To add an Example</div>
+        <ul>
+            <li>go to <a href="https://gist.github.com">gist.github.com</a></li>
+            <li>create a gist</li>
+            <li>Copy the gist url</li>
+            <li>Paste the url in the Gist URL box</li>
+            <li>URL Should follow 'https://' + url + '.js'</li>
+        </ul>
+
         <label for="gistField">Gist URL</label>
         <input type="text" class="form-control" id="gistField" name="gistField" placeholder="Gist URL">
     </div>
