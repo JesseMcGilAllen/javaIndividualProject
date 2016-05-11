@@ -142,7 +142,7 @@ public class ConceptsAndTerms extends HttpServlet {
     private void updateTermOrConceptGet(String type, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = "../update/update-" + type + ".jsp";
         request = TopicService.getTopicForId(request);
-        
+
         String languageName = request.getParameter("languageName");
         request.setAttribute("languageName", languageName);
 
