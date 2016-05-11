@@ -14,6 +14,8 @@
 <c:import url="../jsp/header-tag.jsp" />
 <body>
 <c:import url="../jsp/navigation-bar.jsp" />
+
+<div class="container">
 <h1>Add Example</h1>
 
 <form action="/pr/examples/new" method="post">
@@ -41,6 +43,7 @@
     <input type="hidden" id="topicId" name="topicId" value="${topicId}" />
     <button type="submit" class="btn btn-default">Add Example</button>
 </form>
+</div>
 
 </body>
 </html>
