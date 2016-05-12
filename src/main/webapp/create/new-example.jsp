@@ -18,7 +18,7 @@
 <div class="container">
 <h1>Add Example</h1>
 
-<form action="/pr/examples/new" method="post">
+<form action="/pr/examples/new" method="post" onsubmit="return checkExamples(this);">
     <div class="form-group">
         <select name="languageSelect">
             <c:forEach var="language" items="${languages}">

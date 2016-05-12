@@ -20,8 +20,25 @@ function checkLanguageForm(form) {
 }
 
 function checkExamples(form) {
-    var languageValid = checkField("Language", form.languageSelect.value);
+    var languageValid = checkField("Language", form.languageSelect.options[form.languageSelect.selectedIndex].text);
+    var gistValid = false;
 
+    if (languageValid) {
+        gistValid = checkGistUrl(form.gistField.value)
+    }
+
+    return languageValid && gistValid;
+}
+
+function checkGistUrl(fieldValue) {
+    var regex = regexForGist();
+    
+    if (regex.test(fieldValue)) {
+        return true;
+    } else {
+        alert("Error: GistURL does not meet proper format.");
+        return false;
+    }
 }
 
 function checkField(field, fieldValue) {
@@ -48,4 +65,8 @@ function checkField(field, fieldValue) {
 
     function regexForDescription() {
         return new RegExp(/^([\s]*[0-9A-Za-z]+[\s\w]*)+$/g);
+    }
+
+    function regexForGist() {
+        return new RegExp(/^(https:\/\/gist\.github\.com\/)([a-zA-Z0-9]+)\/([a-zA-Z0-9]+)(\.js)$/)
     }
