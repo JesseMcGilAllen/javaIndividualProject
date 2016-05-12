@@ -61,7 +61,10 @@ public class DesignPatterns extends HttpServlet {
         } else if (servletPath.equals(showPatternURL)) {
             showPattern(request, response);
         } else if (servletPath.equals(newPatternURL)) {
+            logger.debug("Hello World");
             createPattern(request, response);
+        } else if (servletPath.equals(baseURL)) {
+            showPatterns(request, response);
         }
 
         logger.setLevel(Level.WARN);
@@ -72,11 +75,11 @@ public class DesignPatterns extends HttpServlet {
         request = TopicService.postNewWithTypeName(request, "design pattern");
 
         int id = (Integer)request.getAttribute("id");
-
+        logger.debug(id);
         if (id > 0) {
             url = "../design-patterns";
         } else {
-           url = "../create/new-design-pattern.jsp";
+            url = "../create/new-design-pattern.jsp";
         }
 
         forwardRequestToURL(request, response, url);

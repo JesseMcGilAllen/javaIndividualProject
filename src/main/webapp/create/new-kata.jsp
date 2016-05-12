@@ -26,7 +26,7 @@
         <textarea class="form-control" id="descriptionField"
                   name="descriptionField" rows="5"></textarea>
     </div>
-    <button type="submit" class="btn btn-default">Add Design Pattern</button>
+    <button type="submit" class="btn btn-default">Add Kata</button>
 </form>
 </body>
 </body>

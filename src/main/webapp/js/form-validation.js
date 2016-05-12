@@ -20,12 +20,18 @@ function checkLanguageForm(form) {
 }
 
 function checkExamples(form) {
-    var languageValid checkField("Language", form.languageSelect.value);
-    
+    var languageValid = checkField("Language", form.languageSelect.value);
+
 }
 
-function checkField(field, fieldValue)  {
-    var regex = new RegExp(/^([\w]+[\w \+#]*)+$/g);
+function checkField(field, fieldValue) {
+    var regex;
+
+    if (field == "Name" || field == "Language") {
+        regex = regexForName();
+    } else if (field == "Description") {
+        regex = regexForDescription();
+    }
 
     if (regex.test(fieldValue)) {
         return true;
@@ -34,3 +40,12 @@ function checkField(field, fieldValue)  {
         return false;
     }
 }
+
+    function regexForName() {
+        return new RegExp(/^([\w]+[\w \+#]*)+$/g);
+
+    }
+
+    function regexForDescription() {
+        return new RegExp(/^([\s]*[0-9A-Za-z]+[\s\w]*)+$/g);
+    }
