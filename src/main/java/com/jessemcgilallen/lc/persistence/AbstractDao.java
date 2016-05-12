@@ -49,10 +49,10 @@ public abstract class AbstractDao<T> {
         Transaction transaction = null;
 
         try {
-            session.beginTransaction();
+            transaction = session.beginTransaction();
             Criteria criteria = getSession().createCriteria(getTypeParameterClass());
             list = criteria.list();
-
+            transaction.commit();
         } catch (HibernateException exception) {
             if (transaction != null) {
                 transaction.rollback();
@@ -147,14 +147,6 @@ public abstract class AbstractDao<T> {
     public int create(T entity) {
         logger.warn("InCreate");
         session = SessionFactoryProvider.getSessionFactory().openSession();
-       // getSession().SessionFactoryProvider.getSessionFactory().openSession();
-//        if (session.isConnected()) {
-//            logger.warn("connected");
-//           // session = SessionFactoryProvider.getSessionFactory().getCurrentSession();
-//        } else {
-//            logger.warn("closed");
-//
-//        }
 
         logger.warn("Past session open");
         Transaction transaction = null;
@@ -187,10 +179,8 @@ public abstract class AbstractDao<T> {
     }
 
     public void update(T entity) {
-        if (!session.isOpen()) {
-            session = SessionFactoryProvider.getSessionFactory().openSession();
-        }
 
+        session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
 
         try {
