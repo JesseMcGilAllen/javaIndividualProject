@@ -86,7 +86,7 @@
 - [X] Implement remaining Topic Servlets
 - [ ] Write Some Documentation
 - [ ] Write Tests where appropriate
-- [ ] Add some Javascript validation
+- [X] Add some Javascript validation
 - [X] Add simple code examples
 - [X] Add content to index page
 - [X] Update Openshift
