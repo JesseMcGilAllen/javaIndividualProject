@@ -16,7 +16,7 @@
 <c:import url="../jsp/navigation-bar.jsp" />
 <h1>Add Algorithm</h1>
 
-<form action="/pr/algorithms/new" method="post">
+<form action="/pr/algorithms/new" method="post" onsubmit="return checkTopicsForm(this);">
     <div class="form-group">
         <label for="nameField">Name</label>
         <input type="text" class="form-control" id="nameField" name="nameField" placeholder="Name">

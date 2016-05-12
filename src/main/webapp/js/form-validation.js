@@ -4,7 +4,11 @@
 
 function checkTopicsForm(form) {
     var nameValid = checkField("Name", form.nameField.value);
-    var descriptionValid = checkField("Description", form.descriptionField);
+    var descriptionValid = false;
+
+    if (nameValid) {
+        descriptionValid = checkField("Description", form.descriptionField.value);
+    }
 
     return nameValid && descriptionValid;
 }
@@ -16,13 +20,14 @@ function checkLanguageForm(form) {
 }
 
 function checkExamples(form) {
+    var languageValid checkField("Language", form.languageSelect.value);
     
 }
 
 function checkField(field, fieldValue)  {
-    var regex = /^[\w]+[\w ]+[\w]+$/
+    var regex = new RegExp(/^([\w]+[\w \+#]*)+$/g);
 
-    if (fieldValue == regex) {
+    if (regex.test(fieldValue)) {
         return true;
     } else {
         alert("Error: " + field + " cannot be Blank.");

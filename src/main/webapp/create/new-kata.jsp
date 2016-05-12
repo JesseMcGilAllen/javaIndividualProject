@@ -16,7 +16,7 @@
 <c:import url="../jsp/navigation-bar.jsp" />
 <h1>Add Kata</h1>
 
-<form action="/pr/katas/new" method="post">
+<form action="/pr/katas/new" method="post" onsubmit="return checkTopicsForm(this);">
     <div class="form-group">
         <label for="nameField">Name</label>
         <input type="text" class="form-control" id="nameField" name="nameField" placeholder="Name">
