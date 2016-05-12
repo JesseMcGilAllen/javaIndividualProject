@@ -18,7 +18,7 @@
 
 <h1>Update Concept</h1>
 
-<form action="/pr/concepts/update" method="post">
+<form action="/pr/concepts/update" method="post" onsubmit="return checkTopicsForm(this);">
     <div>
         <input type="hidden" id="id" name="id" value="${concept.id}"
     </div>

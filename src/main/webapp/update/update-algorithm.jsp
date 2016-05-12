@@ -18,7 +18,7 @@
 
 <h1>Update Algorithm</h1>
 
-<form action="/pr/algorithms/update" method="post">
+<form action="/pr/algorithms/update" method="post" onsubmit="return checkTopicsForm(this);">
     <div>
         <input type="hidden" id="id" name="id" value="${algorithm.id}"
     </div>

@@ -18,7 +18,7 @@
 
 <h1>Update kata</h1>
 
-<form action="/pr/katas/update" method="post">
+<form action="/pr/katas/update" method="post" onsubmit="return checkTopicsForm(this);">
     <div>
         <input type="hidden" id="id" name="id" value="${kata.id}"
     </div>

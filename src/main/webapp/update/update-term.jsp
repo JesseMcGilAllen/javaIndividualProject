@@ -19,7 +19,7 @@
 <h1>Term</h1>
 
 
-<form action="/pr/terms/update" method="post">
+<form action="/pr/terms/update" method="post" onsubmit="return checkTopicsForm(this);">
     <div>
         <input type="hidden" id="id" name="id" value="${term.id}"
     </div>

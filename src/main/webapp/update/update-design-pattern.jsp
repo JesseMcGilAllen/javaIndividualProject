@@ -18,7 +18,7 @@
 
 <h1>Update Design Pattern</h1>
 
-<form action="/pr/design-patterns/update" method="post">
+<form action="/pr/design-patterns/update" method="post" onsubmit="return checkTopicsForm(this);">
     <div>
         <input type="hidden" id="id" name="id" value="${designPattern.id}"
     </div>
