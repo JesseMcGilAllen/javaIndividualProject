@@ -81,3 +81,5 @@
 | 5/10/16 | Hooking up rest of Design Patterns and Kata jsps | 1 |
 | 5/10/16 | Hooking up Concepts & Terms jsps to servlet | 4 |
 | 5/10/16 | Starting work on Examples | .5 |
+| 5/11/16 | Getting Examples working on Kata page | 5 |
+| 5/12/16 | Updating OpenShift deploy | 6 |

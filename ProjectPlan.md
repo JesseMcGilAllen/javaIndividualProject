@@ -87,8 +87,8 @@
 - [ ] Write Some Documentation
 - [ ] Write Tests where appropriate
 - [ ] Add some Javascript validation
-- [ ] Add simple code examples
-- [ ] Add content to index page
-- [ ] Update Openshift
+- [X] Add simple code examples
+- [X] Add content to index page
+- [X] Update Openshift
 - [ ] Weekly journal entry
 - [ ] Turn in project 
