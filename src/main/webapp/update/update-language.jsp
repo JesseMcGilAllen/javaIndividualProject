@@ -17,7 +17,7 @@
 
 <h1>Update Language</h1>
 
-<form action="/pr/languages/update" method="post">
+<form action="/pr/languages/update" method="post" onsubmit="return checkLanguageForm(this);">
     <div>
         <input type="hidden" id="idField" name="idField" value="${language.id}"
     </div>
