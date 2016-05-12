@@ -23,7 +23,7 @@ public class LanguageNew extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String name = request.getParameter("nameInput");
+        String name = request.getParameter("nameField");
         LanguageDao dao = new LanguageDao();
 
         Language language = new Language();

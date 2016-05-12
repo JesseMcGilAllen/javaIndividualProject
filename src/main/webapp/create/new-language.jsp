@@ -16,10 +16,10 @@
 <c:import url="../jsp/navigation-bar.jsp" />
 <h1>Add Language</h1>
 
-<form action="/pr/languages/add" method="post">
+<form action="/pr/languages/add" method="post" onsubmit="return checkLanguageForm(this);">
     <div class="form-group">
-        <label for="nameInput">Name</label>
-        <input type="text" class="form-control" id="nameInput" name="nameInput" placeholder="Name">
+        <label for="nameField">Name</label>
+        <input type="text" class="form-control" id="nameField" name="nameField" placeholder="Name">
     </div>
     <button type="submit" class="btn btn-default">Add Language</button>
 </form>
